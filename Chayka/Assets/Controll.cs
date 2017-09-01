@@ -44,7 +44,7 @@ public class Controll : MonoBehaviour {
 
             if (r)
             {
-                transform.position = new Vector3(transform.position.x, Camera.main.ScreenToWorldPoint(right.position).y, transform.position.z);
+                transform.position = new Vector3(transform.position.x, GetWorldPositionOnPlane(right.position, transform.position.z).y, transform.position.z);
                 if (right.phase == TouchPhase.Began)
                 {
 
@@ -59,7 +59,7 @@ public class Controll : MonoBehaviour {
         
         if (Input.GetMouseButton(0))
         {
-            transform.position = new Vector3(transform.position.x, GetWorldPositionOnPlane(Input.mousePosition,0).y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, GetWorldPositionOnPlane(Input.mousePosition,transform.position.z).y, transform.position.z);
         }
         
     }
