@@ -13,7 +13,7 @@ public class Joystick : MonoBehaviour {
         {
             
             transform.position = new Vector3(transform.position.x, Input.mousePosition.y, transform.position.z);
-            transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -240, 240), transform.position.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(transform.localPosition.y, -240, 240), transform.localPosition.z);
         }
 	}
     
