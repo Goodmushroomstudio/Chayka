@@ -10,20 +10,13 @@ public class Controll : MonoBehaviour
     bool l, r;
     float currentPosition, deltaPositon, lastPositon;
     float magn;
-<<<<<<< HEAD
+
     // Use this for initialization
     void Start()
     {
         focusPoint = 0;
         magn = 0;
     }
-=======
-	// Use this for initialization
-	void Start () {
-        focusPoint = 0;
-        magn = 0;
-	}
->>>>>>> ba14bf18120a9416111da98d5b16f0ea1b70577e
 
     // Update is called once per frame
     void Update()
@@ -83,21 +76,21 @@ public class Controll : MonoBehaviour
                 focusPoint = Mathf.Clamp(focusPoint, -3.5f, 3.5f);
             }
         }
-<<<<<<< HEAD
+
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, focusPoint, 0.01f), transform.position.z);
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(magn * 8)), 100f);
-=======
+
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y,focusPoint,0.03f),transform.position.z);
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(magn*8)), 100f);
->>>>>>> ba14bf18120a9416111da98d5b16f0ea1b70577e
+
         if (magn < -1)
         {
             GetComponent<Anim>().i_currentFrame = 6;
         }
-<<<<<<< HEAD
-=======
+
+
 
         if (magn > 2)
         {
@@ -107,7 +100,7 @@ public class Controll : MonoBehaviour
         {
             GetComponent<Anim>().f_maxTime = 0.1f;
         }
->>>>>>> ba14bf18120a9416111da98d5b16f0ea1b70577e
+
     }
 
 }
