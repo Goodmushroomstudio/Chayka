@@ -61,7 +61,8 @@ public class Controll : MonoBehaviour {
         {
            // transform.position = new Vector3(transform.position.x, GetWorldPositionOnPlane(Input.mousePosition,transform.position.z).y, transform.position.z);
         }
-        
+        transform.position += new Vector3(0, (GameData.gd.f_axisY),0);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
     }
 
 
