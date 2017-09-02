@@ -31,8 +31,9 @@ public class Joystick : MonoBehaviour {
         transform.position += new Vector3(0, f_resultPoint, 0)*-1;
         transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(transform.localPosition.y, -150, 150), transform.localPosition.z);
 
-       
+        GameData.gd.f_axisY = this.transform.localPosition.y;
 	}
+    
     public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
     {
         Ray ray = Camera.main.ScreenPointToRay(screenPosition);
@@ -41,5 +42,6 @@ public class Joystick : MonoBehaviour {
         xy.Raycast(ray, out distance);
         return ray.GetPoint(distance);
     }
+    
 }
 
