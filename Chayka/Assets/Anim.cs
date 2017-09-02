@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class Anim : MonoBehaviour {
-    int i_currentFrame;
+    public int i_currentFrame;
     float f_time;
     public float f_maxTime;
     public Sprite[] spriteArray;
