@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour {
     public GameObject cacula;
+    public float f_speed;
     // Use this for initialization
     void Start() {
-
+        
     }
     void Pocaculki()
     {
         GameData.gd.f_currentsp -= 0.1f;
-        GameObject clone = Instantiate(cacula, transform.position, transform.rotation);
+        GameObject clone = Instantiate(cacula,transform.position, transform.rotation);
+        cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }
 	
 	// Update is called once per frame
