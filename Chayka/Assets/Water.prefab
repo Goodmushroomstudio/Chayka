@@ -36,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103125509860082}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -5.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.015475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,11 +50,11 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103125509860082}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 8bf7e40456273fd4b9b2609dbbf28377, type: 2}
   m_StaticBatchInfo:
@@ -267,59 +267,59 @@ MonoBehaviour:
   - {x: 9, y: -1.5, z: 0}
   vertexTransforms:
   - position: 1.5
-    velocity: 0.6316143
-    acceleration: 0.8094472
+    velocity: -0.5322262
+    acceleration: -1.0069559
   - position: 1.5
-    velocity: -0.5199772
-    acceleration: -1.0132924
+    velocity: -0.6003894
+    acceleration: 1.0438961
   - position: 1.5
-    velocity: -0.6287359
-    acceleration: 1.0601412
+    velocity: 0.49699837
+    acceleration: 0.82038707
   - position: 1.5
-    velocity: -0.5278905
-    acceleration: -0.9116547
+    velocity: 0.6507196
+    acceleration: -0.91905963
   - position: 1.5
-    velocity: -0.6913912
-    acceleration: -1.0087599
+    velocity: 0.6694059
+    acceleration: -1.1208276
   - position: 1.5
-    velocity: 0.69171625
-    acceleration: 0.9749615
+    velocity: -0.6588381
+    acceleration: 0.89321303
   - position: 1.5
-    velocity: -0.63041234
-    acceleration: 1.0005002
+    velocity: -0.6203948
+    acceleration: -0.990765
   - position: 1.5
-    velocity: -0.55908376
-    acceleration: -1.1713641
+    velocity: -0.61054647
+    acceleration: -0.8155189
   - position: 1.5
-    velocity: 0.7003484
-    acceleration: 1.0843832
+    velocity: 0.48846573
+    acceleration: 1.0527604
   - position: 1.5
-    velocity: -0.5209121
-    acceleration: 0.88967663
+    velocity: -0.5422698
+    acceleration: 1.1911161
   - position: 1.5
-    velocity: 0.6925122
-    acceleration: 0.80777913
+    velocity: 0.63839996
+    acceleration: 0.82126087
   - position: 1.5
-    velocity: 0.7095287
-    acceleration: -0.9947765
+    velocity: 0.62294996
+    acceleration: 1.1693358
   - position: 1.5
-    velocity: -0.6559937
-    acceleration: 0.86137444
+    velocity: -0.57808036
+    acceleration: 0.8345541
   - position: 1.5
-    velocity: -0.5182432
-    acceleration: -0.9355608
+    velocity: 0.49390873
+    acceleration: 1.0995308
   - position: 1.5
-    velocity: -0.5383095
-    acceleration: 0.92487776
+    velocity: -0.49656928
+    acceleration: 1.1888437
   - position: 1.5
-    velocity: 0.5083907
-    acceleration: -0.8008328
+    velocity: -0.61967146
+    acceleration: -0.9927522
   - position: 1.5
-    velocity: 0.5914691
-    acceleration: -1.0262113
+    velocity: -0.5860292
+    acceleration: 0.97350264
   - position: 1.5
-    velocity: -0.4801852
-    acceleration: 1.1338651
+    velocity: 0.61340314
+    acceleration: -0.9589993
   - position: 1.5
-    velocity: -0.6697277
-    acceleration: 0.8894553
+    velocity: 0.6192175
+    acceleration: -0.97608083
