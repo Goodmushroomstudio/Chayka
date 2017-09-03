@@ -17,6 +17,8 @@ public class GameData
         f_speed = 0;
         f_sp = new float[] { 1 };
         f_hp = new float[] { 1 };
+        f_currenthp = 1;
+        f_currentsp = 1;
     }
 
 }

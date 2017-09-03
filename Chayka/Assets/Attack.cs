@@ -10,6 +10,7 @@ public class Attack : MonoBehaviour {
     }
     void Pocaculki()
     {
+        GameData.gd.f_currentsp -= 0.1f;
         GameObject clone = Instantiate(cacula, transform.position, transform.rotation);
     }
 	
@@ -18,6 +19,7 @@ public class Attack : MonoBehaviour {
 		if (Input.GetMouseButtonDown(1))
         {
             Pocaculki();
+            
         }
 	}
 }
