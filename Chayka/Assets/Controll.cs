@@ -76,10 +76,6 @@ public class Controll : MonoBehaviour
             }
         }
 
-        transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, focusPoint, 0.01f), transform.position.z);
-        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
-        transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(magn * 8)), 100f);
-
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y,focusPoint,0.03f),transform.position.z);
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(magn*8)), 100f);
