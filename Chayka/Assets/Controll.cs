@@ -67,7 +67,6 @@ public class Controll : MonoBehaviour
             }
         }
         magn = focusPoint - transform.position.y;
-        Debug.Log(magn.ToString());
         if (Input.GetMouseButton(0))
         {
             if (deltaPositon != 0)
