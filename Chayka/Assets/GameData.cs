@@ -6,6 +6,10 @@ public class GameData
     public float f_speed;
     public float f_currenthp;
     public float f_currentsp;
+    public float f_magn;
+    public float f_currentPosition;
+    public float f_deltaPosition;
+    public float f_lastPosition;
     public float[] f_sp;
     public float[] f_hp;
     public int i_currentChar;
@@ -19,6 +23,10 @@ public class GameData
         f_hp = new float[] { 1 };
         f_currenthp = 1;
         f_currentsp = 1;
+        f_magn = 0;
+        f_currentPosition = 0;
+        f_deltaPosition = 0;
+        f_lastPosition = 0;
     }
 
 }
