@@ -12,7 +12,7 @@ public class Move : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         transform.position -= new Vector3(GameData.gd.f_speed, 0, 0);
-        if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 10)
+        if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 15)
         {
             switch(this.gameObject.tag)
             {
@@ -21,8 +21,7 @@ public class Move : MonoBehaviour {
                     Destroy(this.gameObject);
                     return;
                 case "Water":
-                    transform.parent.GetComponent<World>().GenerationWater(transform.position);
-                    Destroy(this.gameObject);
+                    transform.position += new Vector3(50,0,0);
                     return;
             }
 
