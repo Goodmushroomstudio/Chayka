@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour {
     {
         GameData.gd.f_currentsp -= 0.1f;
         GameObject clone = Instantiate(cacula,transform.position, transform.rotation);
-        cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
+        //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }
 	
 	// Update is called once per frame

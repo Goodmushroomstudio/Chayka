@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8bf7e40456273fd4b9b2609dbbf28377, type: 2}
+  - {fileID: 2100000, guid: 339f851e82eac4a489390d6393e86b2c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -624,12 +624,12 @@ MonoBehaviour:
   vertexTransforms:
   - position: 1.5
     velocity: -0.6
-    acceleration: 1
-  - position: 1.5
-    velocity: 0.6
     acceleration: -1
   - position: 1.5
-    velocity: 0.6
+    velocity: -0.6
+    acceleration: -1
+  - position: 1.5
+    velocity: -0.6
     acceleration: -1
   - position: 1.5
     velocity: -0.6
@@ -638,8 +638,8 @@ MonoBehaviour:
     velocity: -0.6
     acceleration: -1
   - position: 1.5
-    velocity: 0.6
-    acceleration: -1
+    velocity: -0.6
+    acceleration: 1
 --- !u!114 &114392554321378690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -664,4 +664,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyRenderer: {fileID: 23793224331091742}
   MySortingLayer: 0
-  MySortingOrderInLayer: 1
+  MySortingOrderInLayer: 3

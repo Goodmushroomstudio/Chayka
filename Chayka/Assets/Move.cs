@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Move : MonoBehaviour {
-
+    
 	// Use this for initialization
 	void Start () {
         
@@ -23,11 +23,14 @@ public class Move : MonoBehaviour {
                 case "Water":
                     transform.position += new Vector3(50,0,0);
                     return;
+                case "lodka":
+                    transform.position += new Vector3(50, 0, 0);
+                    return;
+
+
             }
 
-                transform.parent.GetComponent<World>().NewGeneration();
-                Destroy(this.gameObject);
-
+               
             
 
         }
