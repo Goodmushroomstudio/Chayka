@@ -21,9 +21,5 @@ public class Mob : MonoBehaviour {
             transform.GetChild(0).GetComponent<Animation>().Play("boom");
             f_timer = f_reload;
         }
-        Quaternion newRotation = Quaternion.LookRotation(transform.GetChild(0).position - player.transform.position, Vector3.forward);
-        newRotation.x = 0;
-        newRotation.y = 0;
-        Quaternion.Slerp(transform.GetChild(0).rotation, newRotation, Time.deltaTime * 100);
 	}
 }
