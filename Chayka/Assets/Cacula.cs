@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cacula : MonoBehaviour {
-    public GameObject lodka;
+    
 	// Use this for initialization
 	void Start () {
   
