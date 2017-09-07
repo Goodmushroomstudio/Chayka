@@ -17,10 +17,12 @@ public class Eat : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         f_timer -= 1 * Time.deltaTime;
-        if (f_timer <= 0)
+        f_impulse = Random.Range(5f, 10f);
+        f_reload = Random.Range(1f, 3f);
+        if (f_timer <= 0 && GetComponent<Rigidbody2D>().gravityScale==0)
         {
             GetComponent<Rigidbody2D>().gravityScale = 1;
             rb.AddForce(new Vector2(0,f_impulse),ForceMode2D.Impulse);
@@ -37,9 +39,21 @@ public class Eat : MonoBehaviour
 
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("bird"))
+        {
+            GenerationEat();
+            
+        }
+        
+            
+        
+    }
+
     public void GenerationEat()
     {
-        transform.position = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,0,0)).x + 5,Camera.main.ScreenToWorldPoint(Vector3.zero).y +1) ;
+        transform.position = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,0,0)).x + 5,Camera.main.ScreenToWorldPoint(Vector3.zero).y +Random.Range(0.1f,1f)) ;
         rb.gravityScale = 0;
         rb.velocity =Vector2.zero;
     }

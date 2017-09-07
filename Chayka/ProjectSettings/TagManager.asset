@@ -8,6 +8,7 @@ TagManager:
   - Cloud
   - Water
   - lodka
+  - fish
   layers:
   - Default
   - TransparentFX
