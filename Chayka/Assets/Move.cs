@@ -26,6 +26,9 @@ public class Move : MonoBehaviour {
                 case "lodka":
                     transform.position += new Vector3(50, 0, 0);
                     return;
+                case "fish":
+                    transform.position += new Vector3(50, 0, 0);
+                    return;
 
 
             }
