@@ -22,8 +22,7 @@ public class World : MonoBehaviour {
     public void NewGeneration()
     {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(1.2f, 3), 0);
-        GameObject.Instantiate(cloud[Random.Range(0, 4)], coord, Quaternion.identity, transform);
-        GameObject newCloud = Instantiate(cloud[Random.Range(0, 4)], coord, Quaternion.identity, transform);
+        Instantiate(cloud[Random.Range(0, 4)], coord, Quaternion.identity, transform);
     }
     public void GenerationWater(Vector3 pos)
     {
