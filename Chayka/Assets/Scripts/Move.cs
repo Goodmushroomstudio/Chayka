@@ -17,7 +17,7 @@ public class Move : MonoBehaviour {
             switch(this.gameObject.tag)
             {
                 case "Cloud":
-                    transform.parent.GetComponent<World>().NewGeneration();
+                    transform.parent.GetComponent<World>().CloudGeneration();
                     Destroy(this.gameObject);
                     return;
                 case "Water":

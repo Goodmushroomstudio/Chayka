@@ -624,12 +624,6 @@ MonoBehaviour:
   vertexTransforms:
   - position: 1.5
     velocity: -0.6
-    acceleration: 1
-  - position: 1.5
-    velocity: 0.6
-    acceleration: -1
-  - position: 1.5
-    velocity: 0.6
     acceleration: -1
   - position: 1.5
     velocity: -0.6
@@ -639,7 +633,13 @@ MonoBehaviour:
     acceleration: -1
   - position: 1.5
     velocity: 0.6
-    acceleration: 1
+    acceleration: -1
+  - position: 1.5
+    velocity: 0.6
+    acceleration: -1
+  - position: 1.5
+    velocity: -0.6
+    acceleration: -1
 --- !u!114 &114392554321378690
 MonoBehaviour:
   m_ObjectHideFlags: 1
