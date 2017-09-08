@@ -50,6 +50,7 @@ public class Eat : MonoBehaviour
         {
             GenerationEat();
             GameData.gd.f_currentsp += 0.1f;
+            GameData.gd.f_currenthp += 0.05f;
             
         }
         

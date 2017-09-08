@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   f_reload: 2
   f_timer: 0
+  garpun: {fileID: 0}
 --- !u!114 &114864700825501146
 MonoBehaviour:
   m_ObjectHideFlags: 1
