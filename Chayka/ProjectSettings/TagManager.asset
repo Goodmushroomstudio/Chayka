@@ -9,6 +9,7 @@ TagManager:
   - Water
   - lodka
   - fish
+  - bird
   layers:
   - Default
   - TransparentFX

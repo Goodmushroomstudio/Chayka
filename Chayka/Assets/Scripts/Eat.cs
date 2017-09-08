@@ -44,6 +44,7 @@ public class Eat : MonoBehaviour
         if (collision.CompareTag("bird"))
         {
             GenerationEat();
+            GameData.gd.f_currentsp += 0.1f;
             
         }
         

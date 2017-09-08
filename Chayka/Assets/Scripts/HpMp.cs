@@ -28,7 +28,7 @@ public class HpMp : MonoBehaviour
         float f_scalesp = GameData.gd.f_currentsp / GameData.gd.f_sp[GameData.gd.i_currentChar];
 
         img_sp.transform.localScale = new Vector3(f_scalesp, img_sp.transform.localScale.y, 1);
-        GameData.gd.f_currentsp +=0.05f * Time.deltaTime;
+        GameData.gd.f_currentsp -=0.02f * Time.deltaTime;
 
 
 
