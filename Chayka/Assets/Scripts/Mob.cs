@@ -25,8 +25,8 @@ public class Mob : MonoBehaviour {
         {
             transform.GetChild(0).GetComponent<Animation>().Play("boom");
             GameObject bullet = Instantiate(garpun, transform.GetChild(0).position, transform.GetChild(0).localRotation);
-            float vX = Mathf.Clamp(((player.transform.position - transform.GetChild(0).position)*3).x,-10,10);
-            float vY = Mathf.Clamp(((player.transform.position - transform.GetChild(0).position)*3).y,-10,10);
+            float vX = Mathf.Clamp(((player.transform.position - transform.GetChild(0).position)*4).x,-10,10);
+            float vY = Mathf.Clamp(((player.transform.position - transform.GetChild(0).position)*4).y,-10,10);
             bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(vX,vY), ForceMode2D.Impulse);
             f_timer = f_reload;
         }

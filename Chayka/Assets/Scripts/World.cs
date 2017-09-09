@@ -9,6 +9,8 @@ public class World : MonoBehaviour {
     [Range(0,100)]
     public float f_speed;
     public float cloudChanse;
+    [Range(0, 50000)]
+    public int randomChanse;
 
 
     // Use this for initialization
@@ -27,13 +29,13 @@ public class World : MonoBehaviour {
 	}
     public void CloudGeneration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(1.2f, 3), 0);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(1f, 5), 0);
         GameObject newCloud = Instantiate(cloud, coord, Quaternion.identity, transform);
         newCloud.GetComponent<SpriteRenderer>().sprite = cloudSprites[Random.Range(0, cloudSprites.Length)];
         int r = Random.Range(-15,-5);
         newCloud.GetComponent<SpriteRenderer>().sortingOrder = r;
         newCloud.GetComponent<Move>().speed = GameData.gd.f_speed / Mathf.Abs(r) *5;
-        float size = 1-(Mathf.Abs(r)*0.1f);
+        float size = 1-((Mathf.Abs(r)/100)*2);
         newCloud.transform.localScale = new Vector3(size, size, size);
     }
     public void GenerationWater(Vector3 pos)
@@ -44,7 +46,7 @@ public class World : MonoBehaviour {
 
     public bool Chanse(float c)
     {
-        int r = Random.Range(0, 100);
+        int r = Random.Range(0, randomChanse);
         if (r <= c)
             return true;
         else
