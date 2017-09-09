@@ -624,11 +624,18 @@ MonoBehaviour:
   vertexTransforms:
   - position: 1.5
     velocity: -0.6
+<<<<<<< HEAD
+=======
+    acceleration: -1
+  - position: 1.5
+    velocity: -0.6
+>>>>>>> 44dba456b640f515a67d6552d6193bdad43b4c02
     acceleration: -1
   - position: 1.5
     velocity: -0.6
     acceleration: 1
   - position: 1.5
+<<<<<<< HEAD
     velocity: -0.6
     acceleration: 1
   - position: 1.5
@@ -637,9 +644,16 @@ MonoBehaviour:
   - position: 1.5
     velocity: 0.6
     acceleration: 1
+=======
+    velocity: 0.6
+    acceleration: -1
+>>>>>>> 44dba456b640f515a67d6552d6193bdad43b4c02
   - position: 1.5
     velocity: 0.6
-    acceleration: 1
+    acceleration: -1
+  - position: 1.5
+    velocity: -0.6
+    acceleration: -1
 --- !u!114 &114392554321378690
 MonoBehaviour:
   m_ObjectHideFlags: 1
