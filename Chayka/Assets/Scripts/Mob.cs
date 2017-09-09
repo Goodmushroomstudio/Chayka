@@ -30,4 +30,15 @@ public class Mob : MonoBehaviour {
             f_timer = f_reload;
         }
 	}
+    private void OnCollisionEnter2D(Collision2D collision)
+ 
+
+    {
+        if (collision.gameObject.CompareTag("kak"))
+        {
+            Debug.Log("srenk");
+            Instantiate(collision.gameObject.GetComponent<Cacula>().kaki[Random.Range(0, collision.gameObject.GetComponent<Cacula>().kaki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
+            Destroy(collision.gameObject);
+        }
+    }
 }

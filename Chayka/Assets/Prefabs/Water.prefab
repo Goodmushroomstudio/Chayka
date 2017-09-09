@@ -624,19 +624,19 @@ MonoBehaviour:
   vertexTransforms:
   - position: 1.5
     velocity: -0.6
+    acceleration: -1
+  - position: 1.5
+    velocity: -0.6
+    acceleration: 1
+  - position: 1.5
+    velocity: -0.6
     acceleration: 1
   - position: 1.5
     velocity: 0.6
-    acceleration: -1
+    acceleration: 1
   - position: 1.5
     velocity: 0.6
-    acceleration: -1
-  - position: 1.5
-    velocity: -0.6
-    acceleration: -1
-  - position: 1.5
-    velocity: -0.6
-    acceleration: -1
+    acceleration: 1
   - position: 1.5
     velocity: 0.6
     acceleration: 1
