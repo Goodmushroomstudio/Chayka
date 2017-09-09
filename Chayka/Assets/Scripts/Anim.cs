@@ -8,6 +8,7 @@ public class Anim : MonoBehaviour {
     float f_time;
     public float f_maxTime;
     public Sprite[] spriteArray;
+    public bool loop;
 	// Use this for initialization
 	void Start () {
         i_currentFrame = 0;
@@ -26,8 +27,17 @@ public class Anim : MonoBehaviour {
             f_time = f_maxTime;
             if (i_currentFrame + 1 > spriteArray.Length-1)
             {
-                i_currentFrame = 0;
+                
+                if(loop)
+                {
+                    i_currentFrame = 0;
+                }
+                else
+                {
+                    GetComponent<Anim>().enabled = false;
+                }
             }
+            
         }
         
 	}

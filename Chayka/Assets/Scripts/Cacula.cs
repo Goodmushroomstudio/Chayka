@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cacula : MonoBehaviour {
-    
-	// Use this for initialization
+
+    public GameObject[] kaki;
 	void Start () {
   
     }
@@ -18,12 +18,5 @@ public class Cacula : MonoBehaviour {
         
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("lodka"))
-        {
-
-            collision.transform.position += new Vector3(50, 0, 0);
-        }
-    }
+    
 }
