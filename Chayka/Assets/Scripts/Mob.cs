@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mob : MonoBehaviour {
     public float f_reload;
     public float f_timer;
+    public float f_value;
     GameObject player;
     public GameObject garpun;
 
@@ -36,9 +37,10 @@ public class Mob : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("kak"))
         {
-            Debug.Log("srenk");
+            
             Instantiate(collision.gameObject.GetComponent<Cacula>().kaki[Random.Range(0, collision.gameObject.GetComponent<Cacula>().kaki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
             Destroy(collision.gameObject);
+            GameData.gd.f_score += f_value;
         }
     }
 }
