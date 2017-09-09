@@ -13,6 +13,7 @@ public class GameData
     public float[] f_sp;
     public float[] f_hp;
     public int i_currentChar;
+    public float f_score;
 
     public GameData()
     {
