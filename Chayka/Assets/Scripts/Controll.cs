@@ -93,5 +93,13 @@ public class Controll : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("coin"))
+        {
+            Destroy(collision.gameObject);
+            GameData.gd.f_score += 10;
+        }
+    }
 
 }
