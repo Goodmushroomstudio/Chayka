@@ -20,7 +20,7 @@ public class Eat : MonoBehaviour
     void FixedUpdate()
     {
         f_timer -= 1 * Time.deltaTime;
-        f_impulse = Random.Range(5f, 10f);
+        f_impulse = Random.Range(8f, 12f);
         f_reload = Random.Range(1f, 3f);
         if (f_timer <= 0 && GetComponent<Rigidbody2D>().gravityScale==0)
         {
@@ -38,7 +38,7 @@ public class Eat : MonoBehaviour
         if (transform.position.y < Camera.main.ScreenToWorldPoint(Vector3.zero).y - 15)
         {
             GenerationEat();
-            f_timer = f_reload;
+            Destroy(this.gameObject);
         }
 
 
