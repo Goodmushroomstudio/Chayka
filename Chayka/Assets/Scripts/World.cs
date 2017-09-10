@@ -6,6 +6,7 @@ public class World : MonoBehaviour {
     public GameObject cloud;
     public GameObject fish;
     public GameObject coin;
+    public GameObject backGround;
     public Sprite[] cloudSprites;
     public GameObject water;
     [Range(0,100)]
@@ -68,6 +69,10 @@ public class World : MonoBehaviour {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(-1, 3.2f), 0);
         GameObject newCoin = Instantiate(coin, coord, Quaternion.identity, transform);
         newCoin.GetComponent<Move>().speed = Random.Range(3, 7);
+    }
+    public void BackGroundGeneration()
+    {
+
     }
 
     public bool Chanse(float c)
