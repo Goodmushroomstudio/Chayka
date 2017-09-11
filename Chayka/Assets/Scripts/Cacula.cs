@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cacula : MonoBehaviour {
 
-    public GameObject[] kaki;
+
 	void Start () {
   
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour {
     public GameObject cacula;
-    public float f_speed;
+    
     // Use this for initialization
     void Start() {
         
