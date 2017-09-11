@@ -35,6 +35,7 @@ public class Anim : MonoBehaviour {
                 else
                 {
                     GetComponent<Anim>().enabled = false;
+                    GetComponent<SpriteRenderer>().enabled = false;
                 }
             }
             
