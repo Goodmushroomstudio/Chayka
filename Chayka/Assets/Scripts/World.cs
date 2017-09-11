@@ -7,25 +7,35 @@ public class World : MonoBehaviour {
     public GameObject fish;
     public GameObject coin;
     public GameObject backGround;
+    public GameObject[] ships;
     public Sprite[] cloudSprites;
     public GameObject water;
     [Range(0,100)]
     public float f_speed;
     public float cloudChanse;
     public float fishChanse;
+    public float f_timerBackGround;
+    public float f_reloadBacground;
+    public float f_timerShips;
+    public float f_reloadships;
     [Range(0, 50000)]
     public int randomChanse;
     public int coinChanse;
+    public Sprite[] back;
+    
 
 
     // Use this for initialization
     void Start () {
+        f_timerBackGround = f_reloadBacground;
+        f_timerShips = f_reloadships;
         GameData.gd.f_speed = f_speed;
         CloudGeneration();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Chanse(cloudChanse))
         {
             CloudGeneration();
@@ -38,8 +48,21 @@ public class World : MonoBehaviour {
         {
             CoinGeneration();
         }
-		
-	}
+        f_timerBackGround -= 1 * Time.deltaTime;
+        if (f_timerBackGround <= 0)
+        {
+            BackGroundGeneration();
+            f_reloadBacground = Random.Range(3, 10);
+            f_timerBackGround = f_reloadBacground;
+        }
+        f_timerShips -= 1 * Time.deltaTime;
+        if (f_timerShips <= 0)
+        {
+            ShipsGeheration();
+            f_reloadships = Random.Range(3, 10);
+            f_timerShips = f_reloadships;
+        }
+    }
     public void CloudGeneration()
     {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(1f, 5), 0);
@@ -72,7 +95,15 @@ public class World : MonoBehaviour {
     }
     public void BackGroundGeneration()
     {
-
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -3);
+        GameObject newBackround = Instantiate(backGround, coord, Quaternion.identity, transform);
+        newBackround.GetComponent<SpriteRenderer>().sprite = back[Random.Range(1, 4)];
+    }
+    public void ShipsGeheration()
+    {
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -3);
+        GameObject newships = Instantiate(ships[Random.Range(0,4)], coord, Quaternion.identity, transform);
+        
     }
 
     public bool Chanse(float c)
@@ -83,5 +114,6 @@ public class World : MonoBehaviour {
         else
             return false;
     }
+
 
 }

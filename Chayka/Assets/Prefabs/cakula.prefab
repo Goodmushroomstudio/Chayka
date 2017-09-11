@@ -79,7 +79,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.9}
     oldSize: {x: 0.91, y: 1.77}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i_currentFrame: 0
-  f_maxTime: 0.09
+  f_maxTime: 0.06
   spriteArray:
   - {fileID: 21300000, guid: 5efc26e06c6b19c4995d711578592d52, type: 3}
   - {fileID: 21300000, guid: 1e07c01898963974d9095e47a287790c, type: 3}

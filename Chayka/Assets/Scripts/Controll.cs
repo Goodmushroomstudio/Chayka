@@ -9,6 +9,7 @@ public class Controll : MonoBehaviour
     float focusPoint;
     bool l, r;
     float currentPosition, deltaPositon, lastPositon;
+    public GameObject cacula;
 
 
     // Use this for initialization
@@ -41,7 +42,7 @@ public class Controll : MonoBehaviour
             {
                 if (left.phase == TouchPhase.Began)
                 {
-
+                    Pocaculki();
                 }
 
                 else if (left.phase == TouchPhase.Ended)
@@ -74,7 +75,7 @@ public class Controll : MonoBehaviour
             }
         }
         GameData.gd.f_magn = focusPoint - transform.position.y;
-        transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y,focusPoint,0.03f),transform.position.z);
+        transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, focusPoint, 0.03f), transform.position.z);
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(GameData.gd.f_magn * 8)), 100f);
 
@@ -91,15 +92,43 @@ public class Controll : MonoBehaviour
         {
             GetComponent<Anim>().f_maxTime = 0.1f;
         }
+#if UNITY_EDITOR
+        if (Input.GetMouseButtonDown(1))
+        {
+            Pocaculki();
+        }
+        if(Input.GetMouseButton(0))
+        {
+            GameData.gd.f_currentPosition = Input.mousePosition.y;
+            currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
+            deltaPositon = currentPosition - lastPositon;
+            lastPositon = currentPosition;
+            if (deltaPositon != 0)
+            {
+                focusPoint += deltaPositon;
+                focusPoint = Mathf.Clamp(focusPoint, -3.5f, 3.5f);
+            }
+        }
+
+#endif
+
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("coin"))
+        if (collision.gameObject.CompareTag("coin"))
         {
             Destroy(collision.gameObject);
             GameData.gd.f_score += 10;
         }
     }
+    void Pocaculki()
+    {
+        GameData.gd.f_currentsp -= 0.1f;
+        GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
+        //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
+    }
+
+
 
 }
