@@ -5,7 +5,6 @@ using UnityEngine;
 public class Mob : MonoBehaviour {
 
     public float f_value;
-    public bool paluba;
  
 
 
