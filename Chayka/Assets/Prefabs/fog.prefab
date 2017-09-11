@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212221127241191584}
   - component: {fileID: 114373784938826116}
   - component: {fileID: 114320584544352820}
+  - component: {fileID: 114400567065625020}
+  - component: {fileID: 114892100716335270}
   m_Layer: 0
   m_Name: fog
   m_TagString: Untagged
@@ -79,6 +81,33 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 34c5439f3c5dc3548acd970ad7c03d50, type: 3}
   - {fileID: 21300000, guid: ba0b091c19e17594c9e7cffcac845df1, type: 3}
   loop: 0
+--- !u!114 &114400567065625020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978011724213028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0235429911be63347805cc3f2c1b2010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  garpun: {fileID: 1515283808129652, guid: 0985f014bdbe71f439ef55af7ae94d09, type: 2}
+  fog: {fileID: 1978011724213028}
+  f_reload: 0.8
+  f_timer: 0
+--- !u!114 &114892100716335270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978011724213028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da35f64fee6495541984a25b70c03554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!212 &212221127241191584
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -110,10 +139,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: ab74bc5174f02044b8361f9d3d41b134, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.01, y: 3.19}
