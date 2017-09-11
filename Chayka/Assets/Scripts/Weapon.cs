@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour {
         {
             f_timer -= 1 * Time.deltaTime;
         }
-        Vector3 upper = new Vector3(player.transform.position.x, player.transform.position.y + (Vector3.Magnitude(player.transform.position - transform.position)) / 5);
+        Vector3 upper = new Vector3(player.transform.position.x, player.transform.position.y + (Vector3.Magnitude(player.transform.position - transform.position)) / 5.5f);
         Quaternion newRotation = Quaternion.LookRotation(transform.position - upper, Vector3.forward);
         newRotation.x = 0;
         newRotation.y = 0;
