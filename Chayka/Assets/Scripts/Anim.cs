@@ -22,7 +22,7 @@ public class Anim : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         f_time -= 1 * Time.deltaTime;
-        f_time = Mathf.Clamp(f_time, 0, f_interval);
+        f_time = Mathf.Clamp(f_time, 0, Mathf.Infinity);
         if(f_time==0)
         {
             GetComponent<SpriteRenderer>().enabled = true;
