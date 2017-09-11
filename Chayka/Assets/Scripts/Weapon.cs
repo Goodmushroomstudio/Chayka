@@ -22,20 +22,19 @@ public class Weapon : MonoBehaviour {
         {
             f_timer -= 1 * Time.deltaTime;
         }
-        if (f_timer <= 0)
-        {
-            GameObject bullet = Instantiate(garpun, transform.position, transform.localRotation);
-            float vX = Mathf.Clamp(((player.transform.position - transform.position) * 3).x, -15, 15);
-            float vY = Mathf.Clamp(((player.transform.position - transform.position) * 3).y, -15, 15);
-            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(vX, vY), ForceMode2D.Impulse);
-            GameObject newfog = Instantiate(fog, transform.position, new Quaternion (0,0,transform.rotation.z+30,100));
-            f_timer = f_reload;
-
-
-        }
-        Quaternion newRotation = Quaternion.LookRotation(transform.position - new Vector3(player.transform.position.x,player.transform.position.y), Vector3.forward);
+        Vector3 upper = new Vector3(player.transform.position.x, player.transform.position.y + (Vector3.Magnitude(player.transform.position - transform.position)) / 5);
+        Quaternion newRotation = Quaternion.LookRotation(transform.position - upper, Vector3.forward);
         newRotation.x = 0;
         newRotation.y = 0;
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 100);
+        if (f_timer <= 0)
+        {
+            GameObject bullet = Instantiate(garpun, transform.position, transform.localRotation);
+            float vX = Mathf.Clamp(((upper - transform.position) * 1.5f).x, -15, 15);
+            float vY = Mathf.Clamp(((upper - transform.position) * 1.5f).y, -15, 15);
+            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(vX, vY), ForceMode2D.Impulse);
+            GameObject newfog = Instantiate(fog, transform.position, new Quaternion(0, 0, transform.rotation.z + 30, 100));
+            f_timer = f_reload;
+        }
 	}
 }
