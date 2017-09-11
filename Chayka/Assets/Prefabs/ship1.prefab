@@ -40,9 +40,11 @@ GameObject:
   - component: {fileID: 114257534286089688}
   - component: {fileID: 50999340198076580}
   - component: {fileID: 114863388301938662}
+  - component: {fileID: 60475125454163548}
   - component: {fileID: 61311451205798800}
   - component: {fileID: 114909809949287800}
   m_Layer: 0
+  m_Name: Ship1
   m_Name: ship1
   m_TagString: lodka
   m_Icon: {fileID: 0}
@@ -58,6 +60,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4566350536401856}
   - component: {fileID: 212846683132156066}
+  - component: {fileID: 61717610309374278}
+  - component: {fileID: 114087559349621428}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -176,7 +180,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1218640301691368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.664278, y: -0.78898096, z: 0}
+  m_LocalPosition: {x: 11.929775, y: 0.6172898, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4297849501040864}
@@ -264,6 +268,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.5363607, y: 0.7767019}
   m_EdgeRadius: 0
+--- !u!61 &61717610309374278
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1252024072834528}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.08017206, y: -0.40086126}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.55, y: 2.61}
+    newSize: {x: 2.55, y: 2.61}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.923646, y: 1.8082771}
+  m_EdgeRadius: 0
 --- !u!111 &111305691207353606
 Animation:
   m_ObjectHideFlags: 1
@@ -294,6 +323,22 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114087559349621428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1252024072834528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2b99d4863cfd744a0734fa75ddeac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kakashki:
+  - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
+  - {fileID: 1294020009327054, guid: 08203dc01d733a746a6ad6d148776f86, type: 2}
+  - {fileID: 1552213533003124, guid: 5612606f603613046bd27ca771c00468, type: 2}
+  - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
 --- !u!114 &114257534286089688
 MonoBehaviour:
   m_ObjectHideFlags: 1

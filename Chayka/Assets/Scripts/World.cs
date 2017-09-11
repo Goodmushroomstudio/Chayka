@@ -97,12 +97,12 @@ public class World : MonoBehaviour {
     {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -3);
         GameObject newBackround = Instantiate(backGround, coord, Quaternion.identity, transform);
-        newBackround.GetComponent<SpriteRenderer>().sprite = back[Random.Range(1, 4)];
+        newBackround.GetComponent<SpriteRenderer>().sprite = back[Random.Range(0, 4)];
     }
     public void ShipsGeheration()
     {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -2.5f);
-        GameObject newships = Instantiate(ships[Random.Range(0,4)], coord, Quaternion.identity, transform);
+        GameObject newships = Instantiate(ships[Random.Range(0,ships.Length)], coord, Quaternion.identity, transform);
         
     }
 
