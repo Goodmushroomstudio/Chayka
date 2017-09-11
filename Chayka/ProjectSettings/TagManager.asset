@@ -12,6 +12,7 @@ TagManager:
   - bird
   - kak
   - coin
+  - facebird
   layers:
   - Default
   - TransparentFX

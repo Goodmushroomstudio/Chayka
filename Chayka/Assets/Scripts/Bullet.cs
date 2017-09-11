@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D collision)
     { 
-        if(collision.gameObject.CompareTag("bird"))
+        if(collision.gameObject.CompareTag("facebird"))
         {
             GameData.gd.f_currenthp -= 0.15f;
         }
