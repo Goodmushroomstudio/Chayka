@@ -12,18 +12,6 @@ public class Water : MonoBehaviour {
 	void Start () {
         min = transform.position.y - 0.2f;
         max = transform.position.y + 0.2f;
-        switch (layer)
-        { 
-            case 1:
-                GetComponent<SpriteRenderer>().sortingOrder = 7;
-                return;
-            case 2:
-                GetComponent<SpriteRenderer>().sortingOrder = -1;
-                return;
-            case 3:
-                GetComponent<SpriteRenderer>().sortingOrder = -2;
-                return;
-        }
 	}
 	
 	// Update is called once per frame
