@@ -40,11 +40,9 @@ GameObject:
   - component: {fileID: 114257534286089688}
   - component: {fileID: 50999340198076580}
   - component: {fileID: 114863388301938662}
-  - component: {fileID: 60475125454163548}
   - component: {fileID: 61311451205798800}
   - component: {fileID: 114909809949287800}
   m_Layer: 0
-  m_Name: Ship1
   m_Name: ship1
   m_TagString: lodka
   m_Icon: {fileID: 0}
@@ -362,9 +360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0235429911be63347805cc3f2c1b2010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garpun: {fileID: 0}
-  fog: {fileID: 0}
-  f_reload: 0
+  garpun: {fileID: 1515283808129652, guid: 0985f014bdbe71f439ef55af7ae94d09, type: 2}
+  fog: {fileID: 1978011724213028, guid: 60fad0070da26774085c038e308b9b0e, type: 2}
+  f_reload: 0.5
   f_timer: 0
 --- !u!114 &114863388301938662
 MonoBehaviour:
@@ -378,7 +376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   f_value: 10
-  paluba: 0
 --- !u!114 &114909809949287800
 MonoBehaviour:
   m_ObjectHideFlags: 1
