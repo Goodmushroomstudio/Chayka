@@ -71,8 +71,7 @@ public class World : MonoBehaviour {
         int r = Random.Range(-15,-5);
         newCloud.GetComponent<SpriteRenderer>().sortingOrder = r;
         newCloud.GetComponent<Move>().speed = GameData.gd.f_speed / Mathf.Abs(r) *5;
-        float size = 1-((Mathf.Abs(r)/100)*2);
-        newCloud.transform.localScale = new Vector3(size, size, size);
+        float size = 1 - ((Mathf.Abs((float)r) / 100));
     }
     public void GenerationWater(Vector3 pos)
     {
@@ -82,7 +81,7 @@ public class World : MonoBehaviour {
 
     public void FishGeneration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(-5, -4.5f), 0);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -5, 0);
         GameObject newFish = Instantiate(fish, coord, Quaternion.identity, transform);
         newFish.GetComponent<Eat>().f_reload = Random.Range(5, 8);
         
@@ -95,13 +94,13 @@ public class World : MonoBehaviour {
     }
     public void BackGroundGeneration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -3);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -4.3f);
         GameObject newBackround = Instantiate(backGround, coord, Quaternion.identity, transform);
         newBackround.GetComponent<SpriteRenderer>().sprite = back[Random.Range(0, 4)];
     }
     public void ShipsGeheration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -2.5f);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -3.2f);
         GameObject newships = Instantiate(ships[Random.Range(0,ships.Length)], coord, Quaternion.identity, transform);
         
     }

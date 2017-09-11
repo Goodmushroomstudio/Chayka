@@ -20,7 +20,11 @@ public class FecalDisperssion : MonoBehaviour {
         if (collision.gameObject.CompareTag("kak"))
         {
 
-            Instantiate(kakashki[Random.Range(0, kakashki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
+            GameObject fecal = Instantiate(kakashki[Random.Range(0, kakashki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
+            if (GetComponent<SpriteRenderer>() != null)
+            {
+                fecal.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder+1;
+            }
             Destroy(collision.gameObject);
            
         }
