@@ -101,7 +101,7 @@ public class World : MonoBehaviour {
     }
     public void ShipsGeheration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -3);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -2.5f);
         GameObject newships = Instantiate(ships[Random.Range(0,4)], coord, Quaternion.identity, transform);
         
     }

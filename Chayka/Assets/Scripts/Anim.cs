@@ -8,7 +8,7 @@ public class Anim : MonoBehaviour {
     float f_time;
     public float f_maxTime;
     public Sprite[] spriteArray;
-    public bool loop;
+    public bool loop, selfDestruct;
 	// Use this for initialization
 	void Start () {
         i_currentFrame = 0;
@@ -32,10 +32,13 @@ public class Anim : MonoBehaviour {
                 {
                     i_currentFrame = 0;
                 }
+                else if (selfDestruct)
+                {
+                    Destroy(this.gameObject);
+                }
                 else
                 {
                     GetComponent<Anim>().enabled = false;
-                    GetComponent<SpriteRenderer>().enabled = false;
                 }
             }
             
