@@ -18,7 +18,7 @@ public class UI : MonoBehaviour {
     }
        void SetScoreText()
         {
-            t_scoreText.text = "score:"+GameData.gd.f_score.ToString();
+            t_scoreText.text = GameData.gd.f_score.ToString();
             
         }
     
