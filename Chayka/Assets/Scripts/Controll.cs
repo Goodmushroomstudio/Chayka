@@ -10,7 +10,7 @@ public class Controll : MonoBehaviour
     bool l, r;
     float currentPosition, deltaPositon, lastPositon;
     public GameObject cacula;
-
+    public GameObject coinOff;
 
     // Use this for initialization
     void Start()
@@ -119,6 +119,7 @@ public class Controll : MonoBehaviour
         if (collision.gameObject.CompareTag("coin"))
         {
             Destroy(collision.gameObject);
+            Instantiate(coinOff,collision.transform.position,Quaternion.identity);
             GameData.gd.f_score += 10;
         }
     }
