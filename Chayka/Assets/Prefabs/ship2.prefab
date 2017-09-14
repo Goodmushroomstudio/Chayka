@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212740961199156942}
   - component: {fileID: 61988086427740910}
   - component: {fileID: 114699679011137098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "\u0447\u0435\u043B\u043E\u0432\u0435\u0447\u0435\u043A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114928376965941110}
   - component: {fileID: 61321188719185828}
   - component: {fileID: 61513720240421654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4734740330619924}
   - component: {fileID: 212058090258988188}
   - component: {fileID: 114963838829985278}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blesk (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4752897198413736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4221457317679516}
   - component: {fileID: 212130661689902212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4301200518988884}
   - component: {fileID: 61931246147101292}
   - component: {fileID: 114300618040493862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4831870196308028}
   - component: {fileID: 212906811161477680}
   - component: {fileID: 114278708173324636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4211544995869226}
   - component: {fileID: 212450649665102294}
   - component: {fileID: 114746009677315698}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 114418224182770346}
   - component: {fileID: 50422310691975562}
   - component: {fileID: 111103324331631126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ship2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

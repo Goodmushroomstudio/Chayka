@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 4172971263302702}
   - component: {fileID: 212319938530430128}
   - component: {fileID: 114362089288981856}
+  - component: {fileID: 114337161393395398}
   m_Layer: 0
-  m_Name: 1
+  m_Name: coinOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114337161393395398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658483437275582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe1656abc4e5b4d9aaaf4f2e665fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114362089288981856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i_currentFrame: 0
-  f_maxTime: 0
+  f_maxTime: 0.1
   f_interval: 0
   spriteArray:
   - {fileID: 21300000, guid: 6cbcc39935ce97b4281dbf8f1574f756, type: 3}

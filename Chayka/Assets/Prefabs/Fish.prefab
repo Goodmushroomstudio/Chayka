@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4348022188234286}
   - component: {fileID: 212813810809432160}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fish_sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114816907308443396}
   - component: {fileID: 50470982529394070}
   - component: {fileID: 61843616934570250}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fish
   m_TagString: fish
   m_Icon: {fileID: 0}

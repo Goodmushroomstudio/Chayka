@@ -104,7 +104,7 @@ public class World : MonoBehaviour {
         GameObject newships = Instantiate(ships[Random.Range(0,ships.Length)], coord, Quaternion.identity, transform);
         for (int i = 0; i < newships.transform.GetChild(newships.transform.childCount - 1).childCount; i++)
         {
-            newships.transform.GetChild(newships.transform.childCount - 1).GetChild(i).GetComponent<Anim>().f_interval = Random.Range(5, 15);
+            newships.transform.GetChild(newships.transform.childCount - 1).GetChild(i).GetComponent<Anim>().f_interval = Random.Range(5, 10);
         }
         
     }
