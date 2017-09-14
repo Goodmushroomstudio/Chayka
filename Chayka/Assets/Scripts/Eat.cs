@@ -46,7 +46,7 @@ public class Eat : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("bird"))
+        if (collision.CompareTag("facebird"))
         {
             GenerationEat();
             GameData.gd.f_currentsp += 0.1f;

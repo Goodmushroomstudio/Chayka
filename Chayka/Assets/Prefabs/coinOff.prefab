@@ -21,7 +21,11 @@ GameObject:
   - component: {fileID: 4172971263302702}
   - component: {fileID: 212319938530430128}
   - component: {fileID: 114362089288981856}
+<<<<<<< .merge_file_a12084
   - component: {fileID: 114349460438106168}
+=======
+  - component: {fileID: 114337161393395398}
+>>>>>>> .merge_file_a03200
   m_Layer: 0
   m_Name: coinOff
   m_TagString: Untagged
@@ -42,7 +46,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< .merge_file_a12084
 --- !u!114 &114349460438106168
+=======
+--- !u!114 &114337161393395398
+>>>>>>> .merge_file_a03200
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4121027222955972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4024652153413188}
   - component: {fileID: 212744021736736242}
   - component: {fileID: 114451888107912932}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4656169080719058}
   - component: {fileID: 61100227383063714}
   - component: {fileID: 114754776495249102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 114419944212355594}
   - component: {fileID: 50267458544640686}
   - component: {fileID: 111469785464129536}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ship3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4348084387352318}
   - component: {fileID: 212017849768259738}
   - component: {fileID: 114270576637613716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blesk (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 212016257092531750}
   - component: {fileID: 114484490561251226}
   - component: {fileID: 61611045304022578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4939687030581466}
   - component: {fileID: 212068703714641932}
   - component: {fileID: 114094422741385592}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

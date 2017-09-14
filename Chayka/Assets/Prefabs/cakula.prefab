@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114346394617362018}
   - component: {fileID: 61970299539269574}
   - component: {fileID: 114637896994440814}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: cakula
   m_TagString: kak
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1168356976363292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.04, y: 1.07, z: 0}
   m_LocalScale: {x: 0.4, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61970299539269574
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -76,7 +76,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.6911}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.9}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.16, y: 1.5422001}
   m_EdgeRadius: 0
 --- !u!114 &114346394617362018
 MonoBehaviour:
@@ -100,14 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929c7c0d6d8a194459e363c91bca826d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kaki:
-  - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
-  - {fileID: 1648431139705804, guid: c38ccc3c2e36e9445b92dfc0b1930677, type: 2}
-  - {fileID: 1896221164136782, guid: cba04f51656a3f542bd4cdbd66f16c01, type: 2}
-  - {fileID: 1665468321191332, guid: 99a3d51e901afcb44b6b282bb5648185, type: 2}
-  - {fileID: 1294020009327054, guid: 08203dc01d733a746a6ad6d148776f86, type: 2}
-  - {fileID: 1552213533003124, guid: 5612606f603613046bd27ca771c00468, type: 2}
-  - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
 --- !u!114 &114637896994440814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i_currentFrame: 0
   f_maxTime: 0.06
+  f_interval: 0
   spriteArray:
   - {fileID: 21300000, guid: 5efc26e06c6b19c4995d711578592d52, type: 3}
   - {fileID: 21300000, guid: 1e07c01898963974d9095e47a287790c, type: 3}
@@ -128,6 +121,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8ced5efa0f5c6a049b25e55254bb7ed5, type: 3}
   - {fileID: 21300000, guid: 75176fc247ff6d941b716cb7cb128464, type: 3}
   loop: 0
+  selfDestruct: 0
 --- !u!212 &212021448409904462
 SpriteRenderer:
   m_ObjectHideFlags: 1

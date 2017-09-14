@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 50820252295585598}
   - component: {fileID: 61987497702988050}
   - component: {fileID: 114547069659285198}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Garpun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4136951776733782}
   - component: {fileID: 212425187619295308}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
