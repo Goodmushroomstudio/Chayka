@@ -13,7 +13,6 @@ public class Weapon : MonoBehaviour {
     void Start () {
         f_timer = f_reload;
         player = GameObject.Find("07");
-
 	}
 	
 	// Update is called once per frame
@@ -33,7 +32,7 @@ public class Weapon : MonoBehaviour {
             float vX = Mathf.Clamp(((upper - transform.position) * 1.5f).x, -15, 15);
             float vY = Mathf.Clamp(((upper - transform.position) * 1.5f).y, -15, 15);
             bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(vX, vY), ForceMode2D.Impulse);
-            GameObject newfog = Instantiate(fog, transform.position, new Quaternion(0, 0, transform.rotation.z + 30, 100));
+            GameObject newfog = Instantiate(fog, transform.position, new Quaternion(0, 0, transform.rotation.z+10, 100));
             f_timer = f_reload;
         }
 	}
