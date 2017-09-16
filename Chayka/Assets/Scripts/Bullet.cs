@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-
+    public bool core;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,11 +15,13 @@ public class Bullet : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        Quaternion newRotation = Quaternion.LookRotation(transform.GetChild(0).localPosition - new Vector3(GetComponent<Rigidbody2D>().velocity.x - 5, GetComponent<Rigidbody2D>().velocity.y, 0), Vector3.forward);
-        newRotation.x = 0;
-        newRotation.y = 0;
-        transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation, newRotation, Time.deltaTime * 100);
-       
+        if (!core)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(transform.GetChild(0).localPosition - new Vector3(GetComponent<Rigidbody2D>().velocity.x - 5, GetComponent<Rigidbody2D>().velocity.y, 0), Vector3.forward);
+            newRotation.x = 0;
+            newRotation.y = 0;
+            transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation, newRotation, Time.deltaTime * 100);
+        }
 	}
     void OnTriggerEnter2D(Collider2D collision)
     { 
@@ -27,6 +29,7 @@ public class Bullet : MonoBehaviour {
         {
             GameData.gd.f_currenthp -= 0.15f;
             collision.transform.parent.GetComponent<Controll>().Bang();
+
         }
     }
 }
