@@ -31,7 +31,6 @@ public class Anim : MonoBehaviour {
             f_time = f_maxTime;
             if (i_currentFrame + 1 > spriteArray.Length-1)
             {
-                
                 if(loop)
                 {
                     i_currentFrame = 0;
