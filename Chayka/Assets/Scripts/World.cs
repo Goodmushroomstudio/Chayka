@@ -81,7 +81,7 @@ public class World : MonoBehaviour {
 
     public void FishGeneration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -5, 0);
+        Vector3 coord = new Vector3(Random.Range(Camera.main.ScreenToWorldPoint(Vector3.zero).x, Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,0)).x),Camera.main.ScreenToWorldPoint(Vector3.zero).y-1);
         GameObject newFish = Instantiate(fish, coord, Quaternion.identity, transform);
         newFish.GetComponent<Eat>().f_timer = Random.Range(5, 10);
         
