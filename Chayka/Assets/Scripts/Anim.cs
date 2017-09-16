@@ -11,7 +11,7 @@ public class Anim : MonoBehaviour {
     public float f_interval;
 
     public Sprite[] spriteArray;
-    public bool loop, selfDestruct;
+    public bool loop, selfDestruct,hide;
 	// Use this for initialization
 	void Start () {
         i_currentFrame = 0;
@@ -43,6 +43,10 @@ public class Anim : MonoBehaviour {
                 else if (selfDestruct)
                 {
                     Destroy(this.gameObject);
+                }
+                else if(hide)
+                {
+                    GetComponent<SpriteRenderer>().enabled = false;
                 }
                 else
                 {

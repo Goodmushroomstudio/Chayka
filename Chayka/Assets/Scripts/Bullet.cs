@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour {
         if(collision.gameObject.CompareTag("facebird"))
         {
             GameData.gd.f_currenthp -= 0.15f;
+            collision.transform.parent.GetComponent<Controll>().Bang();
         }
     }
 }
