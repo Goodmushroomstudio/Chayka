@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i_currentFrame: 0
   f_maxTime: 0.1
+  f_interval: 0
   spriteArray:
   - {fileID: 21300000, guid: 1956ae53c3beab94c934b7463da95ca5, type: 3}
   - {fileID: 21300000, guid: b01ec61c042ff2b4f9bd7887a1dd4bb9, type: 3}
@@ -113,6 +114,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1a1c3a328b4f4c748b06efaf2e1550a2, type: 3}
   - {fileID: 21300000, guid: 6b624a4f84c81a348998108e85108bb5, type: 3}
   loop: 1
+  selfDestruct: 0
 --- !u!114 &114796045417995620
 MonoBehaviour:
   m_ObjectHideFlags: 1
