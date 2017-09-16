@@ -11,6 +11,7 @@ public class Controll : MonoBehaviour
     Vector3 currentPosition, deltaPositon, lastPositon;
     public GameObject cacula;
     public GameObject coinOff;
+    public GameObject bang;
 
     // Use this for initialization
     void Start()
@@ -142,6 +143,14 @@ public class Controll : MonoBehaviour
         GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }
+    public void Bang()
+    {
+        transform.GetChild(1).GetComponent<Anim>().enabled = true;
+        transform.GetChild(1).GetComponent<Anim>().i_currentFrame = 0;
+        Instantiate(bang, transform.position, Quaternion.identity);
+
+    }
+
 
 
 
