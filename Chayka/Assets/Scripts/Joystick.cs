@@ -10,7 +10,6 @@ public class Joystick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         GameData.gd.f_deltaPosition = GameData.gd.f_currentPosition - GameData.gd.f_lastPosition;
         GameData.gd.f_lastPosition = GameData.gd.f_currentPosition;
         if (GameData.gd.f_deltaPosition != 0)

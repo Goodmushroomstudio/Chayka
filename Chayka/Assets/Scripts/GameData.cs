@@ -1,4 +1,6 @@
-﻿[System.Serializable]
+﻿using UnityEngine;
+
+[System.Serializable]
 public class GameData
 {
     public static GameData gd = new GameData();
@@ -16,6 +18,7 @@ public class GameData
     public float[] f_hp;
     public int i_currentChar;
     public float f_score;
+    public Vector3 f_focusPoint;
 
     public GameData()
     {
@@ -31,6 +34,7 @@ public class GameData
         f_currentPosition = 0;
         f_deltaPosition = 0;
         f_lastPosition = 0;
+        f_focusPoint = Vector3.zero;
     }
 
 }

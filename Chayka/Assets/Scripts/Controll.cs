@@ -6,7 +6,6 @@ public class Controll : MonoBehaviour
 {
 
     Touch left, right;
-    Vector3 focusPoint;
     bool l, r;
     Vector3 currentPosition, deltaPositon, lastPositon;
     public GameObject cacula;
@@ -16,7 +15,7 @@ public class Controll : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        focusPoint = new Vector3(-6, 0, 0);
+        GameData.gd.f_focusPoint = new Vector3(-6, 0, 0);
         GameData.gd.f_magnY = 0;
     }
 
@@ -57,7 +56,7 @@ public class Controll : MonoBehaviour
                 // transform.position = new Vector3(transform.position.x, GetWorldPositionOnPlane(right.position, transform.position.z).y, transform.position.z);
                 if (right.phase == TouchPhase.Began)
                 {
-                    focusPoint += new Vector3(2, 0, 0);
+                    GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
                 }
 
                 else if (right.phase == TouchPhase.Ended)
@@ -70,14 +69,14 @@ public class Controll : MonoBehaviour
                 lastPositon = currentPosition;
                 if (deltaPositon != Vector3.zero)
                 {
-                    focusPoint += deltaPositon;
-                    focusPoint = new Vector3(focusPoint.x, Mathf.Clamp(focusPoint.y, -3.5f, 3.5f));
+                    GameData.gd.f_focusPoint += deltaPositon;
+                    GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 3.5f));
                 }
             }
         }
-        GameData.gd.f_magnY = focusPoint.y - transform.position.y;
-        GameData.gd.f_magnX = focusPoint.x - transform.position.x;
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, focusPoint.x, 0.03f), Mathf.Lerp(transform.position.y, focusPoint.y, 0.03f), transform.position.z);
+        GameData.gd.f_magnY = GameData.gd.f_focusPoint.y - transform.position.y;
+        GameData.gd.f_magnX = GameData.gd.f_focusPoint.x - transform.position.x;
+        transform.position = new Vector3(Mathf.Lerp(transform.position.x, GameData.gd.f_focusPoint.x, 0.03f), Mathf.Lerp(transform.position.y, GameData.gd.f_focusPoint.y, 0.03f), transform.position.z);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -6f, 0f), Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(GameData.gd.f_magnY * 8)), 100f);
 
@@ -112,20 +111,20 @@ public class Controll : MonoBehaviour
             lastPositon = currentPosition;
             if (deltaPositon != Vector3.zero)
             {
-                focusPoint += deltaPositon;
-                focusPoint = new Vector3(focusPoint.x, Mathf.Clamp(focusPoint.y, -3.5f, 3.5f));
+                GameData.gd.f_focusPoint += deltaPositon;
+                GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 3.5f));
             }
         }
         if(Input.GetMouseButtonDown(0))
         {
-            focusPoint += new Vector3(2, 0, 0);
+            GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
 
         }
 
 
 #endif
-        focusPoint -= new Vector3(4, 0, 0)*Time.deltaTime;
-        focusPoint = new Vector3(Mathf.Clamp(focusPoint.x, -6, -1), focusPoint.y);
+        GameData.gd.f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;
+        GameData.gd.f_focusPoint = new Vector3(Mathf.Clamp(GameData.gd.f_focusPoint.x, -6, -1), GameData.gd.f_focusPoint.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

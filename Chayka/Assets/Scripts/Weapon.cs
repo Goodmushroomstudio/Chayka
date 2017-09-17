@@ -17,15 +17,17 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Vector3 upper = new Vector3(player.transform.position.x, player.transform.position.y + (Vector3.Magnitude(player.transform.position - transform.position)) / 5.5f);
         if (transform.position.x > (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x / 2) && transform.position.x < (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x))
         {
             f_timer -= 1 * Time.deltaTime;
+            Quaternion newRotation = Quaternion.LookRotation(transform.position - upper, Vector3.forward);
+            newRotation.x = 0;
+            newRotation.y = 0;
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 100);
         }
-        Vector3 upper = new Vector3(player.transform.position.x, player.transform.position.y + (Vector3.Magnitude(player.transform.position - transform.position)) / 5.5f);
-        Quaternion newRotation = Quaternion.LookRotation(transform.position - upper, Vector3.forward);
-        newRotation.x = 0;
-        newRotation.y = 0;
-        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 100);
+        
+
         if (f_timer <= 0)
         {
             GameObject bullet = Instantiate(garpun, transform.position, transform.localRotation);

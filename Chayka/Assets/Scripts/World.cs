@@ -67,11 +67,25 @@ public class World : MonoBehaviour {
     {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(1f, 5), 0);
         GameObject newCloud = Instantiate(cloud, coord, Quaternion.identity, transform);
-        newCloud.GetComponent<SpriteRenderer>().sprite = cloudSprites[Random.Range(0, cloudSprites.Length)];
-        int r = Random.Range(-15,-5);
-        newCloud.GetComponent<SpriteRenderer>().sortingOrder = r;
-        newCloud.GetComponent<Move>().speed = GameData.gd.f_speed / Mathf.Abs(r) *5;
-        float size = 1 - ((Mathf.Abs((float)r) / 100));
+        int r = Random.Range(0, 3);
+        switch (r)
+        { 
+            case 0:
+                newCloud.GetComponent<SpriteRenderer>().sortingOrder = -5;
+                newCloud.GetComponent<Move>().speed = 2.5f;
+                newCloud.GetComponent<SpriteRenderer>().sprite = cloudSprites[Random.Range(5, 8)];
+                return;
+            case 1:
+                newCloud.GetComponent<SpriteRenderer>().sortingOrder = -10;
+                newCloud.GetComponent<Move>().speed = 1.5f;
+                newCloud.GetComponent<SpriteRenderer>().sprite = cloudSprites[Random.Range(3, 5)];
+                return;
+            case 2:
+                newCloud.GetComponent<SpriteRenderer>().sortingOrder = -15;
+                newCloud.GetComponent<Move>().speed = 0.5f;
+                newCloud.GetComponent<SpriteRenderer>().sprite = cloudSprites[Random.Range(0, 3)];
+                return;
+        }
     }
     public void GenerationWater(Vector3 pos)
     {
