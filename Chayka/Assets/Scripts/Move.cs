@@ -11,7 +11,7 @@ public class Move : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
+        transform.position -= new Vector3(speed*GameData.gd.f_speed, 0, 0) * Time.deltaTime;
         if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 15)
         {
             Destroy(this.gameObject);

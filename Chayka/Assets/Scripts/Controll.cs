@@ -76,6 +76,8 @@ public class Controll : MonoBehaviour
         }
         GameData.gd.f_magnY = GameData.gd.f_focusPoint.y - transform.position.y;
         GameData.gd.f_magnX = GameData.gd.f_focusPoint.x - transform.position.x;
+        GameData.gd.f_speed -= 1f*Time.deltaTime;
+        GameData.gd.f_speed = Mathf.Clamp(GameData.gd.f_speed, 1, 2.5f);
         transform.position = new Vector3(Mathf.Lerp(transform.position.x, GameData.gd.f_focusPoint.x, 0.03f), Mathf.Lerp(transform.position.y, GameData.gd.f_focusPoint.y, 0.03f), transform.position.z);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -6f, 0f), Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(GameData.gd.f_magnY * 8)), 100f);
@@ -91,7 +93,12 @@ public class Controll : MonoBehaviour
         }
         if (GameData.gd.f_magnX > 1)
         {
-            GetComponent<Anim>().f_maxTime = 0;
+            GetComponent<Anim>().f_maxTime = 0.05f;
+        }
+
+        if (GameData.gd.f_speed>1f)
+        {
+            GetComponent<Anim>().f_maxTime = 0.05f;
         }
         else
         {
@@ -118,6 +125,10 @@ public class Controll : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
+            if (transform.position.x > -2)
+            {
+                GameData.gd.f_speed += 0.5f;
+            }
 
         }
 

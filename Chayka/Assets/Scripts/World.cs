@@ -7,6 +7,7 @@ public class World : MonoBehaviour {
     public GameObject fish;
     public GameObject coin;
     public GameObject backGround;
+    public GameObject line;
     public GameObject[] ships;
     public Sprite[] cloudSprites;
     public GameObject water;
@@ -14,6 +15,7 @@ public class World : MonoBehaviour {
     public float f_speed;
     public float cloudChanse;
     public float fishChanse;
+    public float lineChanse;
     public float f_timerBackGround;
     public float f_reloadBacground;
     public float f_timerShips;
@@ -48,6 +50,12 @@ public class World : MonoBehaviour {
         {
             CoinGeneration();
         }
+
+        if (GameData.gd.f_speed > 2 && Chanse(lineChanse))
+        {
+            LineGeneration();
+        }
+
         f_timerBackGround -= 1 * Time.deltaTime;
         if (f_timerBackGround <= 0)
         {
@@ -62,6 +70,8 @@ public class World : MonoBehaviour {
             f_reloadships = Random.Range(3, 10);
             f_timerShips = f_reloadships;
         }
+
+
     }
     public void CloudGeneration()
     {
@@ -121,6 +131,12 @@ public class World : MonoBehaviour {
             newships.transform.GetChild(newships.transform.childCount - 1).GetChild(i).GetComponent<Anim>().f_interval = Random.Range(5, 10);
         }
         
+    }
+
+    public void LineGeneration()
+    {
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(-3,5));
+        Instantiate(line, coord,Quaternion.identity);
     }
 
     public bool Chanse(float c)

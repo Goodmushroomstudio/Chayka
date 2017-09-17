@@ -18,9 +18,12 @@ public class Weapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector3 upper = new Vector3(player.transform.position.x, player.transform.position.y + (Vector3.Magnitude(player.transform.position - transform.position)) / 5.5f);
-        if (transform.position.x > (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x / 2) && transform.position.x < (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x))
+        if (transform.position.x > (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x / 2))
         {
-            f_timer -= 1 * Time.deltaTime;
+            if (transform.position.x < (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x))
+            {
+                f_timer -= 1 * Time.deltaTime;
+            }
             Quaternion newRotation = Quaternion.LookRotation(transform.position - upper, Vector3.forward);
             newRotation.x = 0;
             newRotation.y = 0;

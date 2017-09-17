@@ -8,6 +8,7 @@ public class Water : MonoBehaviour {
     public float speed;
     float min, max;
     bool up;
+    public bool move;
 	// Use this for initialization
 	void Start () {
         min = transform.position.y - 0.2f;
@@ -16,23 +17,37 @@ public class Water : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
+        if (move)
+        {
+            transform.position -= new Vector3(speed * GameData.gd.f_speed, 0, 0) * Time.deltaTime;
 
-        if (transform.position.y < max && up)
-        {
-            transform.position += new Vector3(0, speed / 5, 0) * Time.deltaTime;
-            if (transform.position.y > max)
-                up = false;
+            if (transform.position.y < max && up)
+            {
+                transform.position += new Vector3(0, speed / 5, 0) * Time.deltaTime;
+                if (transform.position.y > max)
+                    up = false;
+            }
+            else if (transform.position.y > min && !up)
+            {
+                transform.position -= new Vector3(0, speed / 5, 0) * Time.deltaTime;
+                if (transform.position.y < min)
+                    up = true;
+            }
         }
-        else if (transform.position.y > min && !up)
+        if (!move)
         {
-            transform.position -= new Vector3(0, speed / 5, 0) * Time.deltaTime;
-            if (transform.position.y < min)
-                up = true;
+            if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 10)
+            {
+                transform.position += new Vector3(38.4f, 0, 0);
+            }
         }
-        if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 10)
+        else
         {
-            transform.position += new Vector3(38.4f, 0, 0);
+            if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 10)
+            {
+                transform.localPosition += new Vector3(38.4f, 0, 0);
+                transform.GetChild(0).position -= new Vector3(38.4f, 0, 0);
+            }
         }
 	}
 }
