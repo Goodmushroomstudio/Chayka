@@ -44,10 +44,6 @@ public class Anim : MonoBehaviour {
                 {
                     Destroy(this.gameObject);
                 }
-                else if(hide)
-                {
-                    GetComponent<SpriteRenderer>().enabled = false;
-                }
                 else
                 {
                     GetComponent<Anim>().enabled = false;
