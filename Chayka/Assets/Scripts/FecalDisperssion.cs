@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FecalDisperssion : MonoBehaviour {
     public GameObject[] kakashki;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public float f_value;
+    public GameObject textMesh;
+    public GameObject canvas;
+
+    // Use this for initialization
+    void Start () {
+        canvas = GameObject.Find("WorldCanvas");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,14 +24,21 @@ public class FecalDisperssion : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("kak"))
         {
-
+            GameData.gd.f_score += f_value;
+            ScoreText(collision.contacts[0].point);
             GameObject fecal = Instantiate(kakashki[Random.Range(0, kakashki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
             if (GetComponent<SpriteRenderer>() != null)
             {
                 fecal.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder+1;
             }
             Destroy(collision.gameObject);
+            
            
         }
+    }
+    public void ScoreText(Vector2 point)
+    {
+        GameObject textred = Instantiate(textMesh, point, Quaternion.identity, canvas.transform);
+        textred.GetComponent<Text>().text = f_value.ToString();
     }
 }

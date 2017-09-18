@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1152371856915454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.8793125, y: -2.5878258, z: 0}
+  m_LocalPosition: {x: -34.06584, y: -4.903076, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4539977351210694}
@@ -177,6 +177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kakashki:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
+  f_value: 20
+  textMesh: {fileID: 1941389890761372, guid: 90a40ea4b34fa99419634d1d1db45ded, type: 2}
+  canvas: {fileID: 0}
 --- !u!114 &114516902215234440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +223,9 @@ MonoBehaviour:
   - {fileID: 1294020009327054, guid: 08203dc01d733a746a6ad6d148776f86, type: 2}
   - {fileID: 1552213533003124, guid: 5612606f603613046bd27ca771c00468, type: 2}
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
+  f_value: 5
+  textMesh: {fileID: 1941389890761372, guid: 90a40ea4b34fa99419634d1d1db45ded, type: 2}
+  canvas: {fileID: 0}
 --- !u!212 &212622332558938762
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Mob : MonoBehaviour {
 
-    public float f_value;
- 
 
 
 	// Use this for initialization
