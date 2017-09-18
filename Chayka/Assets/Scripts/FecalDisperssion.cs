@@ -8,6 +8,7 @@ public class FecalDisperssion : MonoBehaviour {
     public float f_value;
     public GameObject textMesh;
     public GameObject canvas;
+    public GameObject shlep;
 
     // Use this for initialization
     void Start () {
@@ -26,6 +27,7 @@ public class FecalDisperssion : MonoBehaviour {
         {
             GameData.gd.f_score += f_value;
             ScoreText(collision.contacts[0].point);
+            Instantiate(shlep, collision.contacts[0].point, Quaternion.identity,transform);
             GameObject fecal = Instantiate(kakashki[Random.Range(0, kakashki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
             if (GetComponent<SpriteRenderer>() != null)
             {

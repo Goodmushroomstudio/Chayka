@@ -179,7 +179,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1371265225220102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.24252, y: -4.8001604, z: 0}
+  m_LocalPosition: {x: -11.852371, y: -2.1500678, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4839449732413146}
@@ -410,6 +410,7 @@ MonoBehaviour:
   f_value: 5
   textMesh: {fileID: 1941389890761372, guid: 90a40ea4b34fa99419634d1d1db45ded, type: 2}
   canvas: {fileID: 0}
+  shlep: {fileID: 1210436445497870, guid: 945f0e1809d36564b9bed1992617a885, type: 2}
 --- !u!114 &114492716668432854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -431,6 +432,7 @@ MonoBehaviour:
   f_value: 5
   textMesh: {fileID: 1941389890761372, guid: 90a40ea4b34fa99419634d1d1db45ded, type: 2}
   canvas: {fileID: 0}
+  shlep: {fileID: 1210436445497870, guid: 945f0e1809d36564b9bed1992617a885, type: 2}
 --- !u!114 &114936763172286132
 MonoBehaviour:
   m_ObjectHideFlags: 1
