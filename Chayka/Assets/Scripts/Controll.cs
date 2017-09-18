@@ -11,6 +11,7 @@ public class Controll : MonoBehaviour
     public GameObject cacula;
     public GameObject coinOff;
     public GameObject bang;
+    bool anal;
 
     // Use this for initialization
     void Start()
