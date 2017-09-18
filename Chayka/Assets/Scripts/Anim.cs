@@ -37,7 +37,10 @@ public class Anim : MonoBehaviour {
                     if (f_maxTime < f_interval)
                     {
                         f_time = f_interval;
-                        GetComponent<SpriteRenderer>().enabled = false;
+                        if (hide)
+                        {
+                            GetComponent<SpriteRenderer>().enabled = false;
+                        }
                     }
                 }
                 else if (selfDestruct)

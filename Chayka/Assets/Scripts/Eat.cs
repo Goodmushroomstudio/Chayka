@@ -25,7 +25,7 @@ public class Eat : MonoBehaviour
     {
         if (f_timer <= 0 && !inJump)
         {
-            f_impulse = Random.Range(8f, 12f);
+            f_impulse = Random.Range(10f, 15f);
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.AddForce(new Vector2(0, f_impulse), ForceMode2D.Impulse);
             inJump = true;
