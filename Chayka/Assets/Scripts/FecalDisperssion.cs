@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class FecalDisperssion : MonoBehaviour {
     public GameObject[] kakashki;
     public float f_value;
-    public GameObject textMesh;
     public GameObject canvas;
-    public GameObject shlep;
 
     // Use this for initialization
     void Start () {
@@ -26,8 +24,8 @@ public class FecalDisperssion : MonoBehaviour {
         if (collision.gameObject.CompareTag("kak"))
         {
             GameData.gd.f_score += f_value;
-            ScoreText(collision.contacts[0].point);
-            Instantiate(shlep, collision.contacts[0].point, Quaternion.identity,transform);
+            ScoreText(collision.contacts[0].point,collision);
+            Instantiate(collision.gameObject.GetComponent<Cacula>() .shlep, collision.contacts[0].point, Random.rotation,transform);
             GameObject fecal = Instantiate(kakashki[Random.Range(0, kakashki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
             if (GetComponent<SpriteRenderer>() != null)
             {
@@ -38,9 +36,9 @@ public class FecalDisperssion : MonoBehaviour {
            
         }
     }
-    public void ScoreText(Vector2 point)
+    public void ScoreText(Vector2 point, Collision2D collision)
     {
-        GameObject textred = Instantiate(textMesh, point, Quaternion.identity, canvas.transform);
+        GameObject textred = Instantiate(collision.gameObject.GetComponent<Cacula>().textMesh, point, Quaternion.identity, canvas.transform);
         textred.GetComponent<Text>().text = f_value.ToString();
     }
 }

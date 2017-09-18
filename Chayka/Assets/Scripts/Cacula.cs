@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cacula : MonoBehaviour {
-
+    public GameObject shlep;
+    public GameObject textMesh;
 
 	void Start () {
   
