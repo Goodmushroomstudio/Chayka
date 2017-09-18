@@ -70,7 +70,11 @@ public class Controll : MonoBehaviour
                 if (deltaPositon != Vector3.zero)
                 {
                     GameData.gd.f_focusPoint += deltaPositon;
-                    GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 3.5f));
+                    GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 8.5f));
+                }
+                if (transform.position.x > -2)
+                {
+                    GameData.gd.f_speed += 0.5f;
                 }
             }
         }
@@ -79,8 +83,12 @@ public class Controll : MonoBehaviour
         GameData.gd.f_speed -= 1f*Time.deltaTime;
         GameData.gd.f_speed = Mathf.Clamp(GameData.gd.f_speed, 1, 2.5f);
         transform.position = new Vector3(Mathf.Lerp(transform.position.x, GameData.gd.f_focusPoint.x, 0.03f), Mathf.Lerp(transform.position.y, GameData.gd.f_focusPoint.y, 0.03f), transform.position.z);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -6f, 0f), Mathf.Clamp(transform.position.y, -3.5f, 3.5f), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, 0f), Mathf.Clamp(transform.position.y, -3.5f, 8.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(GameData.gd.f_magnY * 8)), 100f);
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, Camera.main.orthographicSize + (transform.position.y / 2), Time.deltaTime);
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 5, 8);
+        Camera.main.transform.position = new Vector3(0, Mathf.Lerp(Camera.main.transform.position.y, transform.position.y/2, Time.deltaTime));
+        Camera.main.transform.position = new Vector3(0, Mathf.Clamp(Camera.main.transform.position.y, 0, 3), -10);
 
         if (GameData.gd.f_magnY < -1)
         {
@@ -119,7 +127,7 @@ public class Controll : MonoBehaviour
             if (deltaPositon != Vector3.zero)
             {
                 GameData.gd.f_focusPoint += deltaPositon;
-                GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 3.5f));
+                GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 8.5f));
             }
         }
         if(Input.GetMouseButtonDown(0))
@@ -135,7 +143,7 @@ public class Controll : MonoBehaviour
 
 #endif
         GameData.gd.f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;
-        GameData.gd.f_focusPoint = new Vector3(Mathf.Clamp(GameData.gd.f_focusPoint.x, -6, -1), GameData.gd.f_focusPoint.y);
+        GameData.gd.f_focusPoint = new Vector3(Mathf.Clamp(GameData.gd.f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, -1), GameData.gd.f_focusPoint.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -36,17 +36,18 @@ public class Water : MonoBehaviour {
         }
         if (!move)
         {
-            if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 10)
+            if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 13)
             {
-                transform.position += new Vector3(38.4f, 0, 0);
+                transform.position += new Vector3(57.6f, 0, 0);
             }
         }
         else
         {
-            if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 10)
+            if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 13)
             {
-                transform.localPosition += new Vector3(38.4f, 0, 0);
-                transform.GetChild(0).position -= new Vector3(38.4f, 0, 0);
+                transform.localPosition += new Vector3(57.6f, 0, 0);
+                transform.GetChild(0).position -= new Vector3(57.6f, 0, 0);
+                transform.GetChild(1).position -= new Vector3(57.6f, 0, 0);
             }
         }
 	}
