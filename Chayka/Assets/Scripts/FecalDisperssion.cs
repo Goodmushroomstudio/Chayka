@@ -8,9 +8,11 @@ public class FecalDisperssion : MonoBehaviour {
     public float f_value;
     public GameObject canvas;
 
+
     // Use this for initialization
     void Start () {
         canvas = GameObject.Find("WorldCanvas");
+        
     }
 	
 	// Update is called once per frame
@@ -24,7 +26,6 @@ public class FecalDisperssion : MonoBehaviour {
         if (collision.gameObject.CompareTag("kak"))
         {
             GameData.gd.f_score += f_value;
-            ScoreText(collision.contacts[0].point,collision);
             Instantiate(collision.gameObject.GetComponent<Cacula>() .shlep, collision.contacts[0].point, Random.rotation,transform);
             GameObject fecal = Instantiate(kakashki[Random.Range(0, kakashki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
             if (GetComponent<SpriteRenderer>() != null)
@@ -32,13 +33,40 @@ public class FecalDisperssion : MonoBehaviour {
                 fecal.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder+1;
             }
             Destroy(collision.gameObject);
-            
-           
+            transform.parent.GetComponent<Mob>().hitCount += 1;
+            ScoreText(collision.contacts[0].point, collision);
+
+
+
+
+
         }
     }
     public void ScoreText(Vector2 point, Collision2D collision)
     {
         GameObject textred = Instantiate(collision.gameObject.GetComponent<Cacula>().textMesh, point, Quaternion.identity, canvas.transform);
         textred.GetComponent<Text>().text = f_value.ToString();
+        if(transform.parent.GetComponent<Mob>().hitCount>=0)
+        {
+   
+            textred.GetComponent<Text>().color = new Color32(155, 255, 0, 255);
+            textred.GetComponent<Outline>().effectColor = new Color32(255, 0, 0, 255);
+        }
+        if(transform.parent.GetComponent<Mob>().hitCount >= 5)
+        {
+            textred.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y + 0.5f, 0);
+            textred.GetComponent<Text>().color = new Color32(255, 255, 0, 255);
+            textred.GetComponent<Outline>().effectColor = new Color32(238, 125, 16, 255);
+        }
+        if (transform.parent.GetComponent<Mob>().hitCount >= 10)
+        {
+            textred.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.7f, transform.localScale.y + 0.7f, 0);
+            textred.GetComponent<Text>().color = new Color32(255, 0, 0, 255);
+            textred.GetComponent<Outline>().effectColor = new Color32(238, 255, 16, 255);
+        }
+
+                
+
+
     }
 }
