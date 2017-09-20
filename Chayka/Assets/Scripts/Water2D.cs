@@ -83,6 +83,7 @@ namespace EasyWater2D
 
                 vertices[i * softFacesPerSegment * 2].y = v1.position;
 
+
             }
 
             for (int i = 1; i < softVertexCount-1; i++)
@@ -135,7 +136,11 @@ namespace EasyWater2D
 
                 Gizmos.DrawLine(ul, ur);
                 Gizmos.DrawLine(ll, lr);
-
+                for (int i = 1; i < vertexCount - 1; i++)
+                {
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawSphere(vertices[i], 0.2f);
+                }
             }
         }
 #endif
