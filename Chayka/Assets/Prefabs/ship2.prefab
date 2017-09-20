@@ -500,6 +500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a64c7134d8b0944b0c05bf60f69685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitCount: 0
+  oldHit: 0
+  combo: {fileID: 1296974701845802, guid: 441057b85d6fd2f4695d6ee4b0b2b70f, type: 2}
+  f_alpha: 0
 --- !u!114 &114278708173324636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -544,9 +548,7 @@ MonoBehaviour:
   - {fileID: 1552213533003124, guid: 5612606f603613046bd27ca771c00468, type: 2}
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 5
-  textMesh: {fileID: 1941389890761372, guid: 90a40ea4b34fa99419634d1d1db45ded, type: 2}
   canvas: {fileID: 0}
-  shlep: {fileID: 1210436445497870, guid: 945f0e1809d36564b9bed1992617a885, type: 2}
 --- !u!114 &114679601441981122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -588,9 +590,7 @@ MonoBehaviour:
   kakashki:
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 20
-  textMesh: {fileID: 1941389890761372, guid: 90a40ea4b34fa99419634d1d1db45ded, type: 2}
   canvas: {fileID: 0}
-  shlep: {fileID: 1210436445497870, guid: 945f0e1809d36564b9bed1992617a885, type: 2}
 --- !u!114 &114746009677315698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,9 +645,7 @@ MonoBehaviour:
   - {fileID: 1552213533003124, guid: 5612606f603613046bd27ca771c00468, type: 2}
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 5
-  textMesh: {fileID: 1941389890761372, guid: 90a40ea4b34fa99419634d1d1db45ded, type: 2}
   canvas: {fileID: 0}
-  shlep: {fileID: 1210436445497870, guid: 945f0e1809d36564b9bed1992617a885, type: 2}
 --- !u!114 &114963838829985278
 MonoBehaviour:
   m_ObjectHideFlags: 1
