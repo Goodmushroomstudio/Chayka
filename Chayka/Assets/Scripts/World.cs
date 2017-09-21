@@ -38,39 +38,41 @@ public class World : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Chanse(cloudChanse))
+        if (GameData.gd.f_speed != 0)
         {
-            CloudGeneration();
-        }
-        if (Chanse(fishChanse))
-        {
-            FishGeneration();
-        }
-        if (Chanse(coinChanse))
-        {
-            CoinGeneration();
-        }
+            if (Chanse(cloudChanse))
+            {
+                CloudGeneration();
+            }
+            if (Chanse(fishChanse))
+            {
+                FishGeneration();
+            }
+            if (Chanse(coinChanse))
+            {
+                CoinGeneration();
+            }
 
-        if (GameData.gd.f_speed > 2 && Chanse(lineChanse))
-        {
-            LineGeneration();
-        }
+            if (GameData.gd.f_speed > 2 && Chanse(lineChanse))
+            {
+                LineGeneration();
+            }
 
-        f_timerBackGround -= 1 * Time.deltaTime;
-        if (f_timerBackGround <= 0)
-        {
-            BackGroundGeneration();
-            f_reloadBacground = Random.Range(3, 10);
-            f_timerBackGround = f_reloadBacground;
+            f_timerBackGround -= 1 * Time.deltaTime;
+            if (f_timerBackGround <= 0)
+            {
+                BackGroundGeneration();
+                f_reloadBacground = Random.Range(3, 10);
+                f_timerBackGround = f_reloadBacground;
+            }
+            f_timerShips -= 1 * Time.deltaTime;
+            if (f_timerShips <= 0)
+            {
+                ShipsGeheration();
+                f_reloadships = Random.Range(3, 5);
+                f_timerShips = f_reloadships;
+            }
         }
-        f_timerShips -= 1 * Time.deltaTime;
-        if (f_timerShips <= 0)
-        {
-            ShipsGeheration();
-            f_reloadships = Random.Range(3, 5);
-            f_timerShips = f_reloadships;
-        }
-
 
     }
     public void CloudGeneration()
