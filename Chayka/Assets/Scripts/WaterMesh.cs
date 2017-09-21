@@ -10,6 +10,8 @@ public class WaterMesh : MonoBehaviour {
     public float height;
     public float width;
     float step;
+    Vector3 min, max;
+    bool up;
     Mesh mesh;
     Vector3[] meshVertices;
     Vector2[] meshVertTriangle, baseuvs;
@@ -17,6 +19,7 @@ public class WaterMesh : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        
         mesh = GetComponent<MeshFilter>().mesh;
         meshVertices = new Vector3[segments];
         meshVertTriangle = new Vector2[segments];
@@ -53,19 +56,16 @@ public class WaterMesh : MonoBehaviour {
         mesh.uv = baseuvs;
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
+        min = new Vector3(meshVertices[5].x, meshVertices[5].y - 0.2f);
 	}
 	
 	// Update is called once per frame
-	/*void Update () {
-        for (int i = 0; i < segments - 2; i++)
+	void Update () {
+        for (int i = 1; i < segments - 1; i++)
         {
-            meshVertices[i] = new Vector3(transform.position.x + step * i, transform.position.y + height);
+            meshVertices[i] = new Vector3(transform.position.x + step * (i - 1), transform.position.y + height);
             meshVertTriangle[i] = meshVertices[i];
         }
-        meshVertices[segments - 1] = new Vector3(width, transform.position.y);
-        meshVertices[segments - 2] = new Vector3(transform.position.x, transform.position.y);
-        meshVertTriangle[segments - 1] = meshVertices[segments - 1];
-        meshVertTriangle[segments - 2] = meshVertices[segments - 2];
 
         Triangulator tr = new Triangulator(meshVertTriangle);
         newTriangles = tr.Triangulate();
@@ -74,5 +74,5 @@ public class WaterMesh : MonoBehaviour {
         mesh.uv = baseuvs;
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
-	}*/
+	}
 }
