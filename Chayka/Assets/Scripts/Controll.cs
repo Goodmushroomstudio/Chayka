@@ -16,27 +16,31 @@ public class Controll : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GameData.gd.death = false;
         GameData.gd.f_focusPoint = new Vector3(-6, 0, 0);
         GameData.gd.f_magnY = 0;
+        GameData.gd.f_speed = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.touchCount != 0)
+        if (!GameData.gd.death)
         {
-            for (int i = 0; i < Input.touchCount; i++)
+            if (Input.touchCount != 0)
             {
-                if (Input.touches[i].position.x < Screen.width / 2)
+                for (int i = 0; i < Input.touchCount; i++)
                 {
-                    left = Input.touches[i];
-                    l = true;
-                }
-                else
-                {
-                    right = Input.touches[i];
-                    r = true;
+                    if (Input.touches[i].position.x < Screen.width / 2)
+                    {
+                        left = Input.touches[i];
+                        l = true;
+                    }
+                    else
+                    {
+                        right = Input.touches[i];
+                        r = true;
+                    }
                 }
             }
             if (l)
@@ -168,6 +172,13 @@ public class Controll : MonoBehaviour
         transform.GetChild(1).GetComponent<Anim>().i_currentFrame = 0;
         Instantiate(bang, transform.position, Quaternion.identity);
 
+    }
+    public void DieMotherFuckerDie()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
+        GameData.gd.f_speed = 0;
+        transform.GetChild(1).GetComponent<BoxCollider2D>().enabled = false;
     }
 
 

@@ -19,7 +19,7 @@ public class GameData
     public int i_currentChar;
     public float f_score;
     public Vector3 f_focusPoint;
-
+    public bool death;
     public GameData()
     {
         i_currentChar = 0;
