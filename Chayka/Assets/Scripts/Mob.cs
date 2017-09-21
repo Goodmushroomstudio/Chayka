@@ -55,12 +55,7 @@ public class Mob : MonoBehaviour {
         {
            newcombo.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y +0.5f);
         }
-        if (hitCount >= 10)
-        {
-            newcombo.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.8f, transform.localScale.y + 0.8f);
-            newcombo.GetComponent<Text>().color = new Color32(255, 0, 0, 255);
-            newcombo.GetComponent<Outline>().effectColor = new Color32(238, 255, 16, 255);
-        }
+
     }
 
 

@@ -46,27 +46,5 @@ public class FecalDisperssion : MonoBehaviour {
     {
         GameObject textred = Instantiate(collision.gameObject.GetComponent<Cacula>().textMesh, point, Quaternion.identity, canvas.transform);
         textred.GetComponent<Text>().text = f_value.ToString();
-        if(transform.parent.GetComponent<Mob>().hitCount>=0)
-        {
-   
-            textred.GetComponent<Text>().color = new Color32(155, 255, 0, 255);
-            textred.GetComponent<Outline>().effectColor = new Color32(255, 0, 0, 255);
-        }
-        if(transform.parent.GetComponent<Mob>().hitCount >= 5)
-        {
-            textred.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y + 0.5f, 0);
-            textred.GetComponent<Text>().color = new Color32(255, 255, 0, 255);
-            textred.GetComponent<Outline>().effectColor = new Color32(238, 125, 16, 255);
-        }
-        if (transform.parent.GetComponent<Mob>().hitCount >= 10)
-        {
-            textred.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.7f, transform.localScale.y + 0.7f, 0);
-            textred.GetComponent<Text>().color = new Color32(255, 0, 0, 255);
-            textred.GetComponent<Outline>().effectColor = new Color32(238, 255, 16, 255);
-        }
-
-                
-
-
     }
 }

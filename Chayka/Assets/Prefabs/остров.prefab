@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da35f64fee6495541984a25b70c03554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.67
+  speed: 3
 --- !u!114 &114193507096885912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,6 +290,7 @@ MonoBehaviour:
   hitCount: 0
   oldHit: 0
   combo: {fileID: 1296974701845802, guid: 441057b85d6fd2f4695d6ee4b0b2b70f, type: 2}
+  newcombo: {fileID: 0}
   f_alpha: 0
 --- !u!212 &212622332558938762
 SpriteRenderer:
