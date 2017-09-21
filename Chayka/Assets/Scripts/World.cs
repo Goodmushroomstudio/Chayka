@@ -67,7 +67,7 @@ public class World : MonoBehaviour {
         if (f_timerShips <= 0)
         {
             ShipsGeheration();
-            f_reloadships = Random.Range(3, 10);
+            f_reloadships = Random.Range(3, 5);
             f_timerShips = f_reloadships;
         }
 
