@@ -135,11 +135,24 @@ public class World : MonoBehaviour {
     public void ShipsGeheration()
     {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -3.2f);
-        GameObject newships = Instantiate(ships[Random.Range(0,ships.Length)], coord, Quaternion.identity, transform);
-        for (int i = 0; i < newships.transform.GetChild(newships.transform.childCount - 1).childCount; i++)
+        if (GameData.gd.f_range > 0 && GameData.gd.f_range<200)
         {
-            newships.transform.GetChild(newships.transform.childCount - 1).GetChild(i).GetComponent<Anim>().f_interval = Random.Range(5, 10);
+            GameObject newships = Instantiate(ships[Random.Range(0, 3)], coord, Quaternion.identity, transform);
         }
+        else if (GameData.gd.f_range>200 && GameData.gd.f_range < 1000)
+        {
+            GameObject newships = Instantiate(ships[Random.Range(0, 5)], coord, Quaternion.identity, transform);
+        }
+        else if(GameData.gd.f_range > 1000 && GameData.gd.f_range < 1500)
+        {
+            GameObject newships = Instantiate(ships[Random.Range(0, 7)], coord, Quaternion.identity, transform);
+        }
+        else if (GameData.gd.f_range > 1500 && GameData.gd.f_range < 2000)
+        {
+            GameObject newships = Instantiate(ships[Random.Range(0, ships.Length-1)], coord, Quaternion.identity, transform);
+        }
+
+       
         
     }
 
