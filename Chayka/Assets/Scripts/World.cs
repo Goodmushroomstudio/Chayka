@@ -47,9 +47,9 @@ public class World : MonoBehaviour {
         GameData.gd.f_range += 3 * GameData.gd.f_speed * Time.deltaTime;
         if (range <= 0)
         {
-            range = 10;
+            range = 10 - Mathf.Abs(range);
             GameObject txtRange = Instantiate(textPrefab,  canvas.transform.GetChild(0).transform);
-            txtRange.GetComponent<Text>().text = Mathf.FloorToInt(GameData.gd.f_range-0.1f).ToString() + "m";
+            txtRange.GetComponent<Text>().text = Mathf.CeilToInt(GameData.gd.f_range-0.5f).ToString() + "m";
         }
         if (GameData.gd.f_speed != 0)
         {

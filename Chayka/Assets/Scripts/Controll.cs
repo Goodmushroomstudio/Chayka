@@ -47,7 +47,10 @@ public class Controll : MonoBehaviour
             {
                 if (left.phase == TouchPhase.Began)
                 {
-                    Pocaculki();
+                    if (GameData.gd.f_currentsp > 0.01f)
+                    {
+                        Pocaculki();
+                    }
                 }
 
                 else if (left.phase == TouchPhase.Ended)
@@ -97,7 +100,7 @@ public class Controll : MonoBehaviour
 
         if (GameData.gd.f_magnY < -1)
         {
-            GetComponent<Anim>().i_currentFrame = 6;
+            GetComponent<Anim>().i_currentFrame = 0;
         }
 
         if (GameData.gd.f_magnY > 1)
@@ -119,7 +122,7 @@ public class Controll : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && GameData.gd.f_currentsp > 0.01f)
         {
             Pocaculki();
         }
@@ -169,7 +172,7 @@ public class Controll : MonoBehaviour
     }
     void Pocaculki()
     {
-        GameData.gd.f_currentsp -= 0.1f;
+        GameData.gd.f_currentsp -= 0.01f;
         GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }
