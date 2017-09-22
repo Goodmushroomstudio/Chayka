@@ -149,6 +149,13 @@ public class Controll : MonoBehaviour
 #endif
         GameData.gd.f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;
         GameData.gd.f_focusPoint = new Vector3(Mathf.Clamp(GameData.gd.f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, -1), GameData.gd.f_focusPoint.y);
+
+        if (GameData.gd.f_currenthp <= 0)
+        {
+            DieMotherFuckerDie();
+        }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -171,14 +178,14 @@ public class Controll : MonoBehaviour
         transform.GetChild(1).GetComponent<Anim>().enabled = true;
         transform.GetChild(1).GetComponent<Anim>().i_currentFrame = 0;
         Instantiate(bang, transform.position, Quaternion.identity);
-
     }
     public void DieMotherFuckerDie()
     {
         GetComponent<SpriteRenderer>().enabled = false;
         transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         GameData.gd.f_speed = 0;
-        transform.GetChild(1).GetComponent<BoxCollider2D>().enabled = false;
+        transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Anim>().enabled = false;
     }
 
 

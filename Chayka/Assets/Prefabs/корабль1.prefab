@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 114559851574764894}
   m_Layer: 9
   m_Name: "\u043A\u043E\u0440\u0430\u0431\u043B\u044C1"
-  m_TagString: Untagged
+  m_TagString: lodka
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4554447250877476}
   - component: {fileID: 114629055855977066}
   - component: {fileID: 61800709390570916}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,6 +398,7 @@ MonoBehaviour:
   hitCount: 0
   oldHit: 0
   combo: {fileID: 1296974701845802, guid: 441057b85d6fd2f4695d6ee4b0b2b70f, type: 2}
+  newcombo: {fileID: 0}
   f_alpha: 0
 --- !u!114 &114629055855977066
 MonoBehaviour:

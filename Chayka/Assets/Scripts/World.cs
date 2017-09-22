@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class World : MonoBehaviour {
     public GameObject cloud;
@@ -10,7 +11,7 @@ public class World : MonoBehaviour {
     public GameObject line;
     public GameObject[] ships;
     public Sprite[] cloudSprites;
-    public GameObject water;
+    public GameObject textPrefab;
     [Range(0,100)]
     public float f_speed;
     public float cloudChanse;
@@ -20,10 +21,12 @@ public class World : MonoBehaviour {
     public float f_reloadBacground;
     public float f_timerShips;
     public float f_reloadships;
+    float range;
     [Range(0, 50000)]
     public int randomChanse;
     public int coinChanse;
     public Sprite[] back;
+    GameObject canvas;
     
 
 
@@ -33,11 +36,21 @@ public class World : MonoBehaviour {
         f_timerShips = f_reloadships;
         GameData.gd.f_speed = f_speed;
         CloudGeneration();
+        canvas = GameObject.Find("Canvas");
+        range = 10;
 	}
 
     // Update is called once per frame
     void Update()
     {
+        range -= 3 * GameData.gd.f_speed * Time.deltaTime;
+        GameData.gd.f_range += 3 * GameData.gd.f_speed * Time.deltaTime;
+        if (range <= 0)
+        {
+            range = 10;
+            GameObject txtRange = Instantiate(textPrefab,  canvas.transform.GetChild(0).transform);
+            txtRange.GetComponent<Text>().text = Mathf.FloorToInt(GameData.gd.f_range-0.1f).ToString() + "m";
+        }
         if (GameData.gd.f_speed != 0)
         {
             if (Chanse(cloudChanse))
@@ -98,11 +111,6 @@ public class World : MonoBehaviour {
                 newCloud.GetComponent<SpriteRenderer>().sprite = cloudSprites[Random.Range(0, 3)];
                 return;
         }
-    }
-    public void GenerationWater(Vector3 pos)
-    {
-        Vector3 coordW = new Vector3(pos.x+36, pos.y, 0);
-        Instantiate(water, coordW, Quaternion.identity, transform);
     }
 
     public void FishGeneration()

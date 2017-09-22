@@ -56,14 +56,12 @@ MonoBehaviour:
   f_maxTime: 0.08
   f_interval: 0
   spriteArray:
-  - {fileID: 21300000, guid: 201dd5f1a41c56645b5e225d19d8b4d1, type: 3}
-  - {fileID: 21300000, guid: 539f52aab290e74499fde7bf4e4257b8, type: 3}
-  - {fileID: 21300000, guid: 6c255745c25d6a74bbe1e7bcbfb61c2c, type: 3}
-  - {fileID: 21300000, guid: 54fe14cfaab35604b9393c5546963486, type: 3}
-  - {fileID: 21300000, guid: 7c8fe2729cd5e5f4a8594ed0dd0b11ad, type: 3}
-  - {fileID: 21300000, guid: d8080e352088a1f418258570c9901be4, type: 3}
-  - {fileID: 21300000, guid: 8191ee04f6edf8240b31f5b40a44d552, type: 3}
-  - {fileID: 21300000, guid: e97feead7412d2e4599f2abd8010dccd, type: 3}
+  - {fileID: 21300000, guid: 15bbcdaee5010b942a49ab67467f40bb, type: 3}
+  - {fileID: 21300000, guid: d81b184ab66d2d943beedc8163f03913, type: 3}
+  - {fileID: 21300000, guid: 1e4f5dd9deaa6e740aaf10f1917225d9, type: 3}
+  - {fileID: 21300000, guid: 717fa6bdcb295e2469f9d79d62e5d711, type: 3}
+  - {fileID: 21300000, guid: dd488bf51096c8f439f1b81602c01914, type: 3}
+  - {fileID: 21300000, guid: 0d6d06da295e6034c91903a2b4721a5f, type: 3}
   loop: 0
   selfDestruct: 1
   hide: 0
