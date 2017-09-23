@@ -47,7 +47,10 @@ public class Controll : MonoBehaviour
             {
                 if (left.phase == TouchPhase.Began)
                 {
-                    Pocaculki();
+                    if (GameData.gd.f_currentsp > 0.01f)
+                    {
+                        Pocaculki();
+                    }
                 }
 
                 else if (left.phase == TouchPhase.Ended)
@@ -88,7 +91,7 @@ public class Controll : MonoBehaviour
         GameData.gd.f_speed -= 1f*Time.deltaTime;
         GameData.gd.f_speed = Mathf.Clamp(GameData.gd.f_speed, 1, 2.5f);
         transform.position = new Vector3(Mathf.Lerp(transform.position.x, GameData.gd.f_focusPoint.x, 0.03f), Mathf.Lerp(transform.position.y, GameData.gd.f_focusPoint.y, 0.03f), transform.position.z);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, 0f), Mathf.Clamp(transform.position.y, -3.5f, 8.5f), transform.position.z);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, 0f), Mathf.Clamp(transform.position.y, -3.5f, 8.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(GameData.gd.f_magnY * 8)), 100f);
         Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, Camera.main.orthographicSize + (transform.position.y / 2), Time.deltaTime);
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 5, 8);
@@ -97,7 +100,7 @@ public class Controll : MonoBehaviour
 
         if (GameData.gd.f_magnY < -1)
         {
-            GetComponent<Anim>().i_currentFrame = 6;
+            GetComponent<Anim>().i_currentFrame = 0;
         }
 
         if (GameData.gd.f_magnY > 1)
@@ -119,7 +122,7 @@ public class Controll : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && GameData.gd.f_currentsp > 0.01f)
         {
             Pocaculki();
         }
@@ -169,7 +172,7 @@ public class Controll : MonoBehaviour
     }
     void Pocaculki()
     {
-        GameData.gd.f_currentsp -= 0.1f;
+        GameData.gd.f_currentsp -= 0.01f;
         GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }
