@@ -19,6 +19,10 @@ public class Mob : MonoBehaviour {
         canvas = GameObject.Find("WorldCanvas");
         comboPlace = GetComponent<SpriteRenderer>().bounds.max;
         f_alpha = 1;
+        for (int i = 0; i < transform.GetChild(transform.childCount - 1).childCount; i++)
+        {
+            transform.GetChild(transform.childCount - 1).GetChild(i).GetComponent<Anim>().f_interval = Random.Range(5, 10);
+        }
 
     }
 	
