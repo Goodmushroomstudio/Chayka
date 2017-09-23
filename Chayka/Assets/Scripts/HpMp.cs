@@ -32,7 +32,7 @@ public class HpMp : MonoBehaviour
         float f_scalesp = GameData.gd.f_currentsp / GameData.gd.f_sp[GameData.gd.i_currentChar];
 
         img_sp.GetComponent<Image>().fillAmount = f_scalesp; 
-        GameData.gd.f_currentsp -=0.02f * Time.deltaTime;
+        GameData.gd.f_currenthp -=0.01f * Time.deltaTime;
 
 
 
