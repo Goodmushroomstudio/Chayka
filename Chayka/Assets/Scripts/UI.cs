@@ -14,6 +14,10 @@ public class UI : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if(GameData.gd.death)
+        {
+            transform.GetChild(6).GetComponent<Animator>().Play("board");
+        }
         SetScoreText();
     }
        void SetScoreText()
