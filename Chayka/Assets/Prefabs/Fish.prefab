@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114556955761844794}
   - component: {fileID: 50571133334209796}
   - component: {fileID: 61650113346050860}
-  - component: {fileID: 114950060712481068}
+  - component: {fileID: 114127237710463762}
   m_Layer: 11
   m_Name: Fish
   m_TagString: fish
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1118455300695732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.513514, y: -5.9590626, z: 0}
+  m_LocalPosition: {x: 11.2134695, y: -4.8526387, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4699270273121722}
@@ -118,6 +118,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.79, y: 1.29}
   m_EdgeRadius: 0
+--- !u!114 &114127237710463762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1118455300695732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da35f64fee6495541984a25b70c03554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!114 &114556955761844794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,18 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   f_timer: 2
   f_impulse: 10
---- !u!114 &114950060712481068
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1118455300695732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 850c01260f4a029458d361472bf7eb57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!212 &212118532990713964
 SpriteRenderer:
   m_ObjectHideFlags: 1

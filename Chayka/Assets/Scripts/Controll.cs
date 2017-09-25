@@ -11,6 +11,8 @@ public class Controll : MonoBehaviour
     public GameObject cacula;
     public GameObject coinOff;
     public GameObject bang;
+    public float reload;
+    float timer;
     bool anal;
 
     // Use this for initialization
@@ -47,15 +49,17 @@ public class Controll : MonoBehaviour
             {
                 if (left.phase == TouchPhase.Began)
                 {
-                    if (GameData.gd.f_currentsp > 0.01f)
-                    {
-                        Pocaculki();
-                    }
+
                 }
 
                 else if (left.phase == TouchPhase.Ended)
                 {
                     l = false;
+                }
+
+                if (GameData.gd.f_currentsp > 0.03f && timer == 0)
+                {
+                    Pocaculki();
                 }
             }
 
@@ -64,7 +68,11 @@ public class Controll : MonoBehaviour
                 // transform.position = new Vector3(transform.position.x, GetWorldPositionOnPlane(right.position, transform.position.z).y, transform.position.z);
                 if (right.phase == TouchPhase.Began)
                 {
-                    GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
+                    if (deltaPositon.x < 0.1 && deltaPositon.y < 0.1)
+                    {
+                        GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
+                        GameData.gd.f_speed += 0.5f;
+                    }
                 }
 
                 else if (right.phase == TouchPhase.Ended)
@@ -77,15 +85,17 @@ public class Controll : MonoBehaviour
                 lastPositon = currentPosition;
                 if (deltaPositon != Vector3.zero)
                 {
-                    GameData.gd.f_focusPoint += deltaPositon;
+                    GameData.gd.f_focusPoint += new Vector3(0, deltaPositon.y);
                     GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 8.5f));
-                }
-                if (transform.position.x > -2)
-                {
-                    GameData.gd.f_speed += 0.5f;
+                    if (deltaPositon.x < 0)
+                    {
+                        GameData.gd.f_focusPoint += new Vector3(deltaPositon.x, 0);
+                    }
                 }
             }
         }
+        timer -= 1 * Time.deltaTime;
+        timer = Mathf.Clamp(timer, 0, reload);
         GameData.gd.f_magnY = GameData.gd.f_focusPoint.y - transform.position.y;
         GameData.gd.f_magnX = GameData.gd.f_focusPoint.x - transform.position.x;
         GameData.gd.f_speed -= 1f*Time.deltaTime;
@@ -122,7 +132,7 @@ public class Controll : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        if (Input.GetMouseButtonDown(1) && GameData.gd.f_currentsp > 0.01f)
+        if (Input.GetMouseButton(1) && GameData.gd.f_currentsp > 0.03f && timer == 0)
         {
             Pocaculki();
         }
@@ -134,18 +144,21 @@ public class Controll : MonoBehaviour
             lastPositon = currentPosition;
             if (deltaPositon != Vector3.zero)
             {
-                GameData.gd.f_focusPoint += deltaPositon;
+                GameData.gd.f_focusPoint += new Vector3(0, deltaPositon.y);
                 GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 8.5f));
+                if (deltaPositon.x < 0)
+                {
+                    GameData.gd.f_focusPoint += new Vector3(deltaPositon.x, 0);
+                }
             }
         }
         if(Input.GetMouseButtonDown(0))
         {
-            GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
-            if (transform.position.x > -2)
+            if (deltaPositon.x < 0.1 && deltaPositon.y < 0.1)
             {
-                GameData.gd.f_speed += 0.5f;
+                GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
+                GameData.gd.f_speed += 0.3f;
             }
-
         }
 
 
@@ -172,7 +185,8 @@ public class Controll : MonoBehaviour
     }
     void Pocaculki()
     {
-        GameData.gd.f_currentsp -= 0.01f;
+        GameData.gd.f_currentsp -= 0.03f;
+        timer = reload;
         GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }

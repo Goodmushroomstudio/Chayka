@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Eat : MonoBehaviour
 {
-    public float f_timer;
     public float f_impulse;
     bool inJump;
     private Rigidbody2D rb;
@@ -13,19 +12,23 @@ public class Eat : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        f_impulse = Random.Range(5, 15);
     }
 
     void Update()
     {
-        f_timer -= 1 * Time.deltaTime;
+        if (transform.position.y < -5)
+        {
+            rb.velocity = Vector2.zero;
+            rb.AddForce(new Vector2(0, f_impulse), ForceMode2D.Impulse);
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (f_timer <= 0 && !inJump)
+        if (!inJump)
         {
-            f_impulse = Random.Range(10f, 15f);
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.AddForce(new Vector2(0, f_impulse), ForceMode2D.Impulse);
             inJump = true;
