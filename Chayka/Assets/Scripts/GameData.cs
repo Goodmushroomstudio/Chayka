@@ -21,6 +21,7 @@ public class GameData
     public float f_score;
     public Vector3 f_focusPoint;
     public bool death;
+    public bool bichGenered;
     public GameData()
     {
         i_currentChar = 0;
@@ -38,5 +39,6 @@ public class GameData
         f_focusPoint = Vector3.zero;
         f_range = 0;
     }
+    
 
 }

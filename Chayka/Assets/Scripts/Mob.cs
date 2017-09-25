@@ -13,6 +13,7 @@ public class Mob : MonoBehaviour {
     GameObject canvas;
     Vector3 comboPlace;
     public float f_alpha;
+    public bool bich;
 
 	// Use this for initialization
 	void Start () {
@@ -28,19 +29,21 @@ public class Mob : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (hitCount > oldHit && hitCount>5)
+        if (!bich)
         {
+            if (hitCount > oldHit && hitCount > 5)
+            {
 
-            Combo();
-            
+                Combo();
+
+            }
+
+            oldHit = hitCount;
+            if (spawn)
+            {
+                newcombo.GetComponent<Text>().color -= new Color(0, 0, 0, f_alpha) * Time.deltaTime;
+            }
         }
-
-        oldHit = hitCount;
-        if (spawn)
-        {
-            newcombo.GetComponent<Text>().color -= new Color(0, 0, 0, f_alpha) * Time.deltaTime; 
-        }
-
         
     }
     
