@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour {
     // Use this for initialization
     void Start () {
         f_timer = f_reload;
-        player = GameObject.Find("07");
+        player = GameObject.Find("Bird");
 	}
 	
 	// Update is called once per frame

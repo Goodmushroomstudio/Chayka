@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Sprites;
 
 public class Controll : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Controll : MonoBehaviour
     public GameObject cacula;
     public GameObject coinOff;
     public GameObject bang;
+    public Sprite[] puzo;
     public float reload;
     float timer;
     bool anal;
@@ -94,6 +96,26 @@ public class Controll : MonoBehaviour
                 }
             }
         }
+        if (GameData.gd.f_currentsp >= 0 && GameData.gd.f_currentsp < 0.2f)
+        {
+            GetComponent<SpriteRenderer>().sprite = puzo[0];
+        }
+        else if (GameData.gd.f_currentsp >= 0.2f && GameData.gd.f_currentsp < 0.4f)
+        {
+            GetComponent<SpriteRenderer>().sprite = puzo[1];
+        }
+        else if (GameData.gd.f_currentsp >= 0.4f && GameData.gd.f_currentsp < 0.6f)
+        {
+            GetComponent<SpriteRenderer>().sprite = puzo[2];
+        }
+        else if (GameData.gd.f_currentsp >= 0.6f && GameData.gd.f_currentsp < 0.75f)
+        {
+            GetComponent<SpriteRenderer>().sprite = puzo[3];
+        }
+        else if (GameData.gd.f_currentsp >= 0.75f && GameData.gd.f_currentsp < 2f)
+        {
+            GetComponent<SpriteRenderer>().sprite = puzo[4];
+        }
         timer -= 1 * Time.deltaTime;
         timer = Mathf.Clamp(timer, 0, reload);
         GameData.gd.f_magnY = GameData.gd.f_focusPoint.y - transform.position.y;
@@ -110,25 +132,31 @@ public class Controll : MonoBehaviour
 
         if (GameData.gd.f_magnY < -1)
         {
-            GetComponent<Anim>().i_currentFrame = 0;
+            transform.GetChild(0).GetComponent<Anim>().i_currentFrame = 0;
+            transform.GetChild(1).GetComponent<Anim>().i_currentFrame = 0;
         }
 
         if (GameData.gd.f_magnY > 1)
         {
-            GetComponent<Anim>().f_maxTime /= (GameData.gd.f_magnY / 2);
+            transform.GetChild(0).GetComponent<Anim>().f_maxTime /= (GameData.gd.f_magnY / 2);
+            transform.GetChild(1).GetComponent<Anim>().f_maxTime /= (GameData.gd.f_magnY / 2);
         }
         if (GameData.gd.f_magnX > 1)
         {
-            GetComponent<Anim>().f_maxTime = 0.05f;
+            transform.GetChild(0).GetComponent<Anim>().f_maxTime = 0.05f;
+            transform.GetChild(1).GetComponent<Anim>().f_maxTime = 0.05f;
         }
 
         if (GameData.gd.f_speed>1f)
         {
-            GetComponent<Anim>().f_maxTime = 0.05f;
+            transform.GetChild(0).GetComponent<Anim>().f_maxTime = 0.05f;
+            transform.GetChild(1).GetComponent<Anim>().f_maxTime = 0.05f;
         }
         else
         {
-            GetComponent<Anim>().f_maxTime = 0.1f;
+            transform.GetChild(0).GetComponent<Anim>().f_maxTime = 0.1f;
+            transform.GetChild(1).GetComponent<Anim>().f_maxTime = 0.1f;
+
         }
 
 #if UNITY_EDITOR
@@ -202,7 +230,7 @@ public class Controll : MonoBehaviour
         transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         GameData.gd.f_speed = 0;
         transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
-        GetComponent<Anim>().enabled = false;
+        this.gameObject.SetActive(false);
     }
 
 
