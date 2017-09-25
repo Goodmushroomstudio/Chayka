@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour {
         {
             GameData.gd.f_currenthp -= 0.15f;
             collision.transform.parent.GetComponent<Controll>().Bang();
-
+            Destroy(this.gameObject);
         }
     }
 }
