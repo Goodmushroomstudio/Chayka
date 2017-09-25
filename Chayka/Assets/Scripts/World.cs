@@ -25,6 +25,7 @@ public class World : MonoBehaviour {
     [Range(0, 50000)]
     public int randomChanse;
     public int coinChanse;
+    public bool bichgen;
     public Sprite[] back;
     GameObject canvas;
     
@@ -86,6 +87,7 @@ public class World : MonoBehaviour {
                 f_timerShips = f_reloadships;
             }
         }
+        BichGeneration();
 
     }
     public void CloudGeneration()
@@ -159,6 +161,10 @@ public class World : MonoBehaviour {
     {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(-3,5));
         Instantiate(line, coord,Quaternion.identity);
+    }
+    public void BichGeneration()
+    {
+
     }
 
     public bool Chanse(float c)
