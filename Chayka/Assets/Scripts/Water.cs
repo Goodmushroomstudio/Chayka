@@ -17,9 +17,9 @@ public class Water : MonoBehaviour {
         transform.position -= new Vector3(speed * GameData.gd.f_speed, 0, 0) * Time.deltaTime;
 
 
-        if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 13)
+        if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 5)
         {
-            transform.position += new Vector3(GetComponent<SpriteRenderer>().bounds.size.x*9, 0, 0);
+            transform.position += new Vector3(GetComponent<SpriteRenderer>().bounds.size.x*11, 0, 0);
         }
 
     }
