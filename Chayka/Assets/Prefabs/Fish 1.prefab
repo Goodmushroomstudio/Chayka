@@ -215,6 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   f_impulse: 10
+  f_timer: 0
+  f_reload: 1
 --- !u!114 &114395545463812500
 MonoBehaviour:
   m_ObjectHideFlags: 1

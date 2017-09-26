@@ -20,36 +20,42 @@ public class Mob : MonoBehaviour {
         canvas = GameObject.Find("WorldCanvas");
         comboPlace = GetComponent<SpriteRenderer>().bounds.max;
         f_alpha = 1;
-        for (int i = 0; i < transform.GetChild(transform.childCount - 1).childCount; i++)
+        if (!bich)
         {
-            transform.GetChild(transform.childCount - 1).GetChild(i).GetComponent<Anim>().f_interval = Random.Range(5, 10);
+            for (int i = 0; i < transform.GetChild(transform.childCount - 1).childCount; i++)
+            {
+                transform.GetChild(transform.childCount - 1).GetChild(i).GetComponent<Anim>().f_interval = Random.Range(5, 10);
+            }
         }
+
 
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (!bich)
+    void Update()
+    {
         {
-            if (hitCount > oldHit && hitCount > 5)
+            if (!bich)
             {
+                if (hitCount > oldHit && hitCount > 5)
+                {
 
-                Combo();
+                    Combo();
 
-            }
+                }
 
-            oldHit = hitCount;
-            if (spawn)
-            {
-                newcombo.GetComponent<Text>().color -= new Color(0, 0, 0, f_alpha) * Time.deltaTime;
+                oldHit = hitCount;
+                if (spawn)
+                {
+                    newcombo.GetComponent<Text>().color -= new Color(0, 0, 0, f_alpha) * Time.deltaTime;
+                }
             }
         }
-        
     }
     
    public void Combo()
     {
-        if (!spawn)
+        if (!spawn && !bich)
         {
             comboPlace = new Vector3(transform.position.x, comboPlace.y);
            newcombo = Instantiate(combo,comboPlace , Quaternion.identity,canvas.transform);
