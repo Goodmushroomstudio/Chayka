@@ -11,7 +11,7 @@ public class Anim : MonoBehaviour {
     public float f_interval;
 
     public Sprite[] spriteArray;
-    public bool loop, selfDestruct,hide;
+    public bool loop, selfDestruct,hide, mask;
 	// Use this for initialization
 	void Start () {
         i_currentFrame = 0;
@@ -28,6 +28,10 @@ public class Anim : MonoBehaviour {
             GetComponent<SpriteRenderer>().enabled = true;
             i_currentFrame++;
             GetComponent<SpriteRenderer>().sprite = spriteArray[i_currentFrame];
+            if (mask)
+            {
+                GetComponent<SpriteMask>().sprite = spriteArray[i_currentFrame];
+            }
             f_time = f_maxTime;
             if (i_currentFrame + 1 > spriteArray.Length-1)
             {
