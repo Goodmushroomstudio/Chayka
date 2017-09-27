@@ -35,7 +35,7 @@ public class FecalDisperssion : MonoBehaviour {
             Destroy(collision.gameObject);
             transform.parent.GetComponent<Mob>().hitCount += 1;
             ScoreText(collision.contacts[0].point, collision);
-
+          
 
 
 

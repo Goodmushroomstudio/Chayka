@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Cacula : MonoBehaviour {
     public GameObject shlep;
     public GameObject textMesh;
-
+    public float massEffect;
 	void Start () {
-  
+
     }
 	
 	// Update is called once per frame

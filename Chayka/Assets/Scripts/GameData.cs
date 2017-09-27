@@ -17,6 +17,7 @@ public class GameData
     public float[] f_sp;
     public float[] f_hp;
     public float f_range;
+    public float f_massFecal;
     public int i_currentChar;
     public float f_score;
     public Vector3 f_focusPoint;
@@ -38,6 +39,7 @@ public class GameData
         f_lastPosition = 0;
         f_focusPoint = Vector3.zero;
         f_range = 0;
+        f_massFecal = 0.5f;
     }
     
 

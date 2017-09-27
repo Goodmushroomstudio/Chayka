@@ -12,11 +12,14 @@ public class Mob : MonoBehaviour {
     bool spawn;
     GameObject canvas;
     Vector3 comboPlace;
+    Vector3 centrMass;
     public float f_alpha;
     public bool bich;
+    public bool ship;
 
 	// Use this for initialization
 	void Start () {
+        centrMass = transform.position;
         canvas = GameObject.Find("WorldCanvas");
         comboPlace = GetComponent<SpriteRenderer>().bounds.max;
         f_alpha = 1;
@@ -34,6 +37,7 @@ public class Mob : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, centrMass.y, Time.deltaTime)) ;
         {
             if (!bich)
             {
@@ -44,13 +48,18 @@ public class Mob : MonoBehaviour {
 
                 }
 
-                oldHit = hitCount;
-                if (spawn)
+                
+                if (spawn&&newcombo!=null)
                 {
                     newcombo.GetComponent<Text>().color -= new Color(0, 0, 0, f_alpha) * Time.deltaTime;
                 }
             }
         }
+        if (hitCount > oldHit&&ship)
+        {
+            centrMass = transform.position - new Vector3(0, GameData.gd.f_massFecal);
+        }
+        oldHit = hitCount;
     }
     
    public void Combo()
@@ -70,6 +79,7 @@ public class Mob : MonoBehaviour {
         }
 
     }
+
 
 
 }
