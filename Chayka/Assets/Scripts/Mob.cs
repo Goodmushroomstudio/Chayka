@@ -16,9 +16,11 @@ public class Mob : MonoBehaviour {
     public float f_alpha;
     public bool bich;
     public bool ship;
+    public float f_strength;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         centrMass = transform.position;
         canvas = GameObject.Find("WorldCanvas");
         comboPlace = GetComponent<SpriteRenderer>().bounds.max;
@@ -60,6 +62,10 @@ public class Mob : MonoBehaviour {
             centrMass = transform.position - new Vector3(0, GameData.gd.f_massFecal);
         }
         oldHit = hitCount;
+        if(gameObject.transform.position.y <= f_strength&&ship )
+        {
+            transform.position -= new Vector3(0, 10) * Time.deltaTime;
+        }
     }
     
    public void Combo()

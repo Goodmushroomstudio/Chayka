@@ -85,7 +85,7 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
   m_Size: {x: 0.16, y: 1.5422001}
   m_EdgeRadius: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shlep: {fileID: 1210436445497870, guid: 945f0e1809d36564b9bed1992617a885, type: 2}
   textMesh: {fileID: 1941389890761372, guid: 90a40ea4b34fa99419634d1d1db45ded, type: 2}
+  massEffect: 0
 --- !u!114 &114637896994440814
 MonoBehaviour:
   m_ObjectHideFlags: 1

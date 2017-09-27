@@ -222,6 +222,8 @@ public class Controll : MonoBehaviour
     {
         transform.GetChild(1).GetComponent<Anim>().enabled = true;
         transform.GetChild(1).GetComponent<Anim>().i_currentFrame = 0;
+        transform.GetChild(0).GetComponent<Anim>().enabled = true;
+        transform.GetChild(0).GetComponent<Anim>().i_currentFrame = 0;
         Instantiate(bang, transform.position, Quaternion.identity);
     }
     public void DieMotherFuckerDie()
