@@ -245,6 +245,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114538872129640890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,6 +271,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114671478507511674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,6 +286,7 @@ MonoBehaviour:
   middleEarth: {fileID: 1305282886406122, guid: b9a669a5eb07e2343a0718e6c02c0d18,
     type: 2}
   endEarth: {fileID: 1651718811292322, guid: 56a9f880b92cd174a92822c5bb021787, type: 2}
+  last: {fileID: 1651718811292322, guid: 56a9f880b92cd174a92822c5bb021787, type: 2}
 --- !u!114 &114760973537215400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,6 +324,7 @@ MonoBehaviour:
   newcombo: {fileID: 0}
   f_alpha: 0
   bich: 1
+  ship: 0
 --- !u!114 &114852249554027972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -346,6 +350,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!212 &212165163468748992
 SpriteRenderer:
   m_ObjectHideFlags: 1

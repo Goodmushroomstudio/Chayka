@@ -505,6 +505,8 @@ MonoBehaviour:
   combo: {fileID: 1296974701845802, guid: 441057b85d6fd2f4695d6ee4b0b2b70f, type: 2}
   newcombo: {fileID: 0}
   f_alpha: 0
+  bich: 0
+  ship: 1
 --- !u!114 &114278708173324636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -530,6 +532,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114300618040493862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -577,6 +580,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 1
+  mask: 0
 --- !u!114 &114699679011137098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -617,6 +621,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114833712569533874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -672,6 +677,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114996373910821266
 MonoBehaviour:
   m_ObjectHideFlags: 1
