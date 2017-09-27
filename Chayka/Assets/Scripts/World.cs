@@ -10,9 +10,11 @@ public class World : MonoBehaviour {
     public GameObject backGround;
     public GameObject line;
     public GameObject[] ships;
+    public GameObject bich;
     public Sprite[] cloudSprites;
     public GameObject textPrefab;
     [Range(0,100)]
+
     public float f_speed;
     public float cloudChanse;
     public float fishChanse;
@@ -25,7 +27,7 @@ public class World : MonoBehaviour {
     [Range(0, 50000)]
     public int randomChanse;
     public int coinChanse;
-    public bool bichgen;
+    int schetchik;
     public Sprite[] back;
     GameObject canvas;
     
@@ -80,14 +82,21 @@ public class World : MonoBehaviour {
                 f_timerBackGround = f_reloadBacground;
             }
             f_timerShips -= 1 * Time.deltaTime;
-            if (f_timerShips <= 0)
+            if (f_timerShips <= 0 && !GameData.gd.bichGenered)
             {
                 ShipsGeheration();
                 f_reloadships = Random.Range(3, 5);
                 f_timerShips = f_reloadships;
             }
         }
-        BichGeneration();
+        if (GameData.gd.f_range >= schetchik*500)
+        {
+            BichGeneration();
+            schetchik++;
+            GameData.gd.bichGenered = true;
+        }
+
+
 
     }
     public void CloudGeneration()
@@ -164,7 +173,8 @@ public class World : MonoBehaviour {
     }
     public void BichGeneration()
     {
-
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -2.8f);
+        Instantiate(bich, coord, Quaternion.identity, transform);
     }
 
     public bool Chanse(float c)
