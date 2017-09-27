@@ -5,6 +5,8 @@ using UnityEngine;
 public class Water : MonoBehaviour {
 
     public float speed;
+    public bool generateBubble;
+    public GameObject bubble;
 	// Use this for initialization
 	void Start () {
 
@@ -21,6 +23,15 @@ public class Water : MonoBehaviour {
         {
             transform.position += new Vector3(GetComponent<SpriteRenderer>().bounds.size.x*11, 0, 0);
         }
-
+        if (generateBubble)
+        {
+            if (transform.position.x <= Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x)
+            {
+                if (Random.Range(0, 100) == 0)
+                {
+                    Instantiate(bubble, new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x, GetComponent<SpriteRenderer>().bounds.max.x), Camera.main.ScreenToWorldPoint(Vector3.zero).y - 1), Quaternion.identity, transform);
+                }
+            }
+        }
     }
 }
