@@ -20,24 +20,18 @@ public class HpMp : MonoBehaviour
     void Update()
     {
         //убывание хп
-        GameData.gd.f_currenthp = Mathf.Clamp(GameData.gd.f_currenthp, 0, 1);
-        float f_scalexhp = GameData.gd.f_currenthp / GameData.gd.f_hp[GameData.gd.i_currentChar];
+        GameData.gd.f_currenthp = Mathf.Clamp(GameData.gd.f_currenthp, 0, GameData.gd.f_hp[GameData.gd.hpLevel]);
+        float f_scalexhp = GameData.gd.f_currenthp / GameData.gd.f_hp[GameData.gd.hpLevel];
         img_hp.GetComponent<Image>().fillAmount = f_scalexhp;
         if (f_scalexhp<=0)
         {
             GameData.gd.death = true;
         }
         //убывание сп
-        GameData.gd.f_currentsp = Mathf.Clamp(GameData.gd.f_currentsp, 0, 1);
-        float f_scalesp = GameData.gd.f_currentsp / GameData.gd.f_sp[GameData.gd.i_currentChar];
-
+        GameData.gd.f_currentsp = Mathf.Clamp(GameData.gd.f_currentsp, 0, GameData.gd.f_sp[GameData.gd.spLevel]);
+        float f_scalesp = GameData.gd.f_currentsp / GameData.gd.f_sp[GameData.gd.spLevel]; // проценты (через полгода такой: чё бля? какие нахуй процеты? чё за хуйня?)
         img_sp.GetComponent<Image>().fillAmount = f_scalesp; 
         GameData.gd.f_currenthp -=0.01f *GameData.gd.f_speed * Time.deltaTime;
-
-
-
-
-
 
     }
 }

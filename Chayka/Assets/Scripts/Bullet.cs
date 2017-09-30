@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour {
     { 
         if(collision.gameObject.CompareTag("facebird"))
         {
-            GameData.gd.f_currenthp -= 0.15f;
+            GameData.gd.f_currenthp -= 0.15f*GameData.gd.armor[GameData.gd.armorLevel];
             collision.GetComponent<Controll>().Bang();
             Destroy(this.gameObject);
         }

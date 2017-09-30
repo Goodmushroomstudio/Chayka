@@ -6,7 +6,6 @@ public class Functions : MonoBehaviour {
 
     public void StartGame()
     {
-        GameData.gd = new GameData();
         SceneManager.LoadScene("Main");
     }
 }	

@@ -648,7 +648,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0be3b68e941fcb748bec300189c21123, type: 3}
   loop: 1
   selfDestruct: 0
-  hide: 0
+  hide: 1
   mask: 0
 --- !u!114 &114734364076247438
 MonoBehaviour:
@@ -694,6 +694,7 @@ MonoBehaviour:
   f_alpha: 0
   bich: 0
   ship: 1
+  f_strength: -4
 --- !u!212 &212264691630256862
 SpriteRenderer:
   m_ObjectHideFlags: 1

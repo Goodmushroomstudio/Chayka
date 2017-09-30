@@ -59,7 +59,7 @@ public class Mob : MonoBehaviour {
         }
         if (hitCount > oldHit&&ship)
         {
-            centrMass = transform.position - new Vector3(0, GameData.gd.f_massFecal);
+            centrMass = transform.position - new Vector3(0, GameData.gd.massFecal[GameData.gd.massFecalLevel]);
         }
         oldHit = hitCount;
         if(gameObject.transform.position.y <= f_strength&&ship )

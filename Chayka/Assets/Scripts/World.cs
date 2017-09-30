@@ -30,8 +30,18 @@ public class World : MonoBehaviour {
     int schetchik;
     public Sprite[] back;
     GameObject canvas;
-    
 
+    void Awake()
+    {
+        SaveLoad.Load();
+        GameData.gd.death = false;
+        GameData.gd.f_currenthp = 1;
+        GameData.gd.f_currentsp = 1;
+        GameData.gd.f_score = 0;
+        GameData.gd.f_magnY = 0;
+        GameData.gd.f_speed = 1;
+        GameData.gd.f_range = 0;
+    }
 
     // Use this for initialization
     void Start () {
@@ -88,13 +98,15 @@ public class World : MonoBehaviour {
                 f_reloadships = Random.Range(3, 5);
                 f_timerShips = f_reloadships;
             }
+            if (GameData.gd.f_range >= schetchik * 500)
+            {
+                schetchik++;
+                GameData.gd.bichGenered = true;
+                BichGeneration();
+                
+            }
         }
-        if (GameData.gd.f_range >= schetchik*500)
-        {
-            BichGeneration();
-            schetchik++;
-            GameData.gd.bichGenered = true;
-        }
+
 
 
 

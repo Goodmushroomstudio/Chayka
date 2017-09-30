@@ -68,8 +68,8 @@ public class Eat : MonoBehaviour
     {
         if (collision.CompareTag("facebird"))
         {
-            GameData.gd.f_currentsp += 0.1f;
-            GameData.gd.f_currenthp += 0.05f;
+            GameData.gd.f_currentsp += GameData.gd.kishechnik[GameData.gd.kishechnikLevel];
+            GameData.gd.f_currenthp += GameData.gd.jeludok[GameData.gd.jeludokLevel];
             Destroy(this.gameObject);
         }
         

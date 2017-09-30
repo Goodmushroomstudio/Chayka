@@ -8,24 +8,33 @@ public class Controll : MonoBehaviour
 
     Touch left, right;
     bool l, r;
-    Vector3 currentPosition, deltaPositon, lastPositon;
+    Vector3 currentPosition, deltaPositon, lastPositon, f_focusPoint;
     public GameObject cacula;
     public GameObject coinOff;
     public GameObject bang;
     public Sprite[] puzo;
-    public float reload;
     float screenExt;
     float timer;
+    float movement;
     bool anal;
 
     // Use this for initialization
     void Start()
     {
-        GameData.gd.death = false;
-        GameData.gd.f_focusPoint = new Vector3(-6, 0, 0);
-        GameData.gd.f_magnY = 0;
-        GameData.gd.f_speed = 1;
+        GameData.gd.hpLevel = 9;
+        GameData.gd.spLevel = 9;
+        GameData.gd.jeludokLevel = 9;
+        GameData.gd.kishechnikLevel = 9;
+        GameData.gd.birdSpeedLevel = 9;
+        GameData.gd.maneurLevel = 9;
+        GameData.gd.massFecalLevel = 9;
+        GameData.gd.fecalReloadLevel = 9;
+        GameData.gd.armorLevel = 9;
+        GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
+        GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
+        f_focusPoint = new Vector3(-6, 0, 0);
         screenExt = Screen.width / Screen.height;
+
     }
 
     // Update is called once per frame
@@ -41,11 +50,13 @@ public class Controll : MonoBehaviour
                     {
                         left = Input.touches[i];
                         l = true;
+                        r = false;
                     }
-                    else
+                    if (Input.touches[i].position.x >= Screen.width/2)
                     {
                         right = Input.touches[i];
                         r = true;
+                        l = false;
                     }
                 }
             }
@@ -74,7 +85,7 @@ public class Controll : MonoBehaviour
                 {
                     if (deltaPositon.x < 0.1 && deltaPositon.y < 0.1)
                     {
-                        GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
+                        f_focusPoint += new Vector3(2, 0, 0);
                         GameData.gd.f_speed += 0.5f;
                     }
                 }
@@ -89,11 +100,11 @@ public class Controll : MonoBehaviour
                 lastPositon = currentPosition;
                 if (deltaPositon != Vector3.zero)
                 {
-                    GameData.gd.f_focusPoint += new Vector3(0, deltaPositon.y);
-                    GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 8.5f));
+                    f_focusPoint += new Vector3(0, deltaPositon.y);
+                    f_focusPoint = new Vector3(f_focusPoint.x, Mathf.Clamp(f_focusPoint.y, -3.5f, 8.5f));
                     if (deltaPositon.x < 0)
                     {
-                        GameData.gd.f_focusPoint += new Vector3(deltaPositon.x, 0);
+                        f_focusPoint += new Vector3(deltaPositon.x, 0);
                     }
                 }
             }
@@ -101,33 +112,38 @@ public class Controll : MonoBehaviour
         if (GameData.gd.f_currentsp >= 0 && GameData.gd.f_currentsp < 0.2f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[0];
+            movement = 0.04f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
         }
         else if (GameData.gd.f_currentsp >= 0.2f && GameData.gd.f_currentsp < 0.4f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[1];
+            movement = 0.035f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
         }
         else if (GameData.gd.f_currentsp >= 0.4f && GameData.gd.f_currentsp < 0.6f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[2];
+            movement = 0.03f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
         }
         else if (GameData.gd.f_currentsp >= 0.6f && GameData.gd.f_currentsp < 0.75f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[3];
+            movement = 0.02f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
         }
-        else if (GameData.gd.f_currentsp >= 0.75f && GameData.gd.f_currentsp < 2f)
+        else if (GameData.gd.f_currentsp >= 0.75f && GameData.gd.f_currentsp < 3f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[4];
+            movement = 0.01f + GameData.gd.maneur[GameData.gd.maneurLevel];
         }
         timer -= 1 * Time.deltaTime;
-        timer = Mathf.Clamp(timer, 0, reload);
-        GameData.gd.f_magnY = GameData.gd.f_focusPoint.y - transform.position.y;
-        GameData.gd.f_magnX = GameData.gd.f_focusPoint.x - transform.position.x;
+        timer = Mathf.Clamp(timer, 0, GameData.gd.fecalReload[GameData.gd.fecalReloadLevel]);
+        GameData.gd.f_magnY = f_focusPoint.y - transform.position.y;
+        GameData.gd.f_magnX = f_focusPoint.x - transform.position.x;
         GameData.gd.f_speed -= 1f*Time.deltaTime;
-        GameData.gd.f_speed = Mathf.Clamp(GameData.gd.f_speed, 1, 2.5f);
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, GameData.gd.f_focusPoint.x, 0.03f), Mathf.Lerp(transform.position.y, GameData.gd.f_focusPoint.y, 0.03f), transform.position.z);
+        GameData.gd.f_speed = Mathf.Clamp(GameData.gd.f_speed, 1, GameData.gd.birdSpeed[GameData.gd.birdSpeedLevel]);
+        transform.position = new Vector3(Mathf.Lerp(transform.position.x, f_focusPoint.x, movement), Mathf.Lerp(transform.position.y, f_focusPoint.y, movement), transform.position.z);
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, 0f), Mathf.Clamp(transform.position.y, -3.5f, 8.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(GameData.gd.f_magnY * 8)), 100f);
-        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, Camera.main.orthographicSize-GameData.gd.f_axisY, Time.deltaTime*5);
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, Camera.main.orthographicSize+transform.position.y, Time.deltaTime*2);
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 5, 8);
         Camera.main.transform.position = new Vector3(Mathf.Lerp(Camera.main.transform.position.x, (Camera.main.orthographicSize*screenExt - 5), Time.deltaTime * 10), Mathf.Lerp(Camera.main.transform.position.y, (Camera.main.orthographicSize - 5), Time.deltaTime * 2));
         Camera.main.transform.position = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, 0, 3*screenExt), Mathf.Clamp(Camera.main.transform.position.y, 0, 3), -10);
@@ -174,11 +190,11 @@ public class Controll : MonoBehaviour
             lastPositon = currentPosition;
             if (deltaPositon != Vector3.zero)
             {
-                GameData.gd.f_focusPoint += new Vector3(0, deltaPositon.y);
-                GameData.gd.f_focusPoint = new Vector3(GameData.gd.f_focusPoint.x, Mathf.Clamp(GameData.gd.f_focusPoint.y, -3.5f, 8.5f));
+                f_focusPoint += new Vector3(0, deltaPositon.y);
+                f_focusPoint = new Vector3(f_focusPoint.x, Mathf.Clamp(f_focusPoint.y, -3.5f, 8.5f));
                 if (deltaPositon.x < 0)
                 {
-                    GameData.gd.f_focusPoint += new Vector3(deltaPositon.x, 0);
+                    f_focusPoint += new Vector3(deltaPositon.x, 0);
                 }
             }
         }
@@ -186,15 +202,15 @@ public class Controll : MonoBehaviour
         {
             if (deltaPositon.x < 0.1 && deltaPositon.y < 0.1)
             {
-                GameData.gd.f_focusPoint += new Vector3(2, 0, 0);
+                f_focusPoint += new Vector3(2, 0, 0);
                 GameData.gd.f_speed += 0.3f;
             }
         }
 
 
 #endif
-        GameData.gd.f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;
-        GameData.gd.f_focusPoint = new Vector3(Mathf.Clamp(GameData.gd.f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, -1), GameData.gd.f_focusPoint.y);
+        f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;
+        f_focusPoint = new Vector3(Mathf.Clamp(f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, -1), f_focusPoint.y);
 
         if (GameData.gd.f_currenthp <= 0)
         {
@@ -216,7 +232,7 @@ public class Controll : MonoBehaviour
     void Pocaculki()
     {
         GameData.gd.f_currentsp -= 0.03f;
-        timer = reload;
+        timer = GameData.gd.fecalReload[GameData.gd.fecalReloadLevel];
         GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }
@@ -230,6 +246,7 @@ public class Controll : MonoBehaviour
     }
     public void DieMotherFuckerDie()
     {
+        SaveLoad.Save();
         GetComponent<SpriteRenderer>().enabled = false;
         transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         GameData.gd.f_speed = 0;

@@ -27,7 +27,7 @@ public class BichControll : MonoBehaviour {
 	}
     void PeopleGeneration()
     {
-        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x, GetComponent<SpriteRenderer>().bounds.max.x), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y+1, GetComponent<SpriteRenderer>().bounds.max.y));
+        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x+1, GetComponent<SpriteRenderer>().bounds.max.x-1), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y+1, GetComponent<SpriteRenderer>().bounds.max.y));
         GameObject newPeeople = Instantiate(people[Random.Range(0,people.Length)], coord, Quaternion.identity, transform);
         if(!Proverka(coord))
         {
@@ -37,7 +37,7 @@ public class BichControll : MonoBehaviour {
     }
     void UmbrellaGeneration()
     {
-        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x, GetComponent<SpriteRenderer>().bounds.max.x), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y + 1, GetComponent<SpriteRenderer>().bounds.max.y));
+        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x+1, GetComponent<SpriteRenderer>().bounds.max.x-1), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y + 1, GetComponent<SpriteRenderer>().bounds.max.y));
         GameObject newUmbrella = Instantiate(umbrella[Random.Range(0, umbrella.Length)], coord, Quaternion.identity, transform);
         if (!Proverka(coord))
         {
@@ -55,7 +55,7 @@ public class BichControll : MonoBehaviour {
     }
     void PeopleDownGeneration()
     {
-        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x, GetComponent<SpriteRenderer>().bounds.max.x), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y+1 , GetComponent<SpriteRenderer>().bounds.max.y -1));
+        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x+1, GetComponent<SpriteRenderer>().bounds.max.x-1), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y+1.5f , GetComponent<SpriteRenderer>().bounds.max.y-1));
         GameObject newPeopleDown = Instantiate(peopleDown[Random.Range(0, peopleDown.Length)], coord, Quaternion.identity, transform);
         if (!Proverka(coord))
         {
@@ -68,7 +68,7 @@ public class BichControll : MonoBehaviour {
         bool ret = true;
         if(transform.childCount>0)
         {
-            for (int i = 0; i < transform.childCount - 1; i++)
+            for (int i = 0; i < transform.childCount-1; i++)
             {
                 if (Vector3.Magnitude(currentPos - transform.GetChild(i).transform.position) <0.9f)
                 {
