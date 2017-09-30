@@ -321,7 +321,6 @@ MonoBehaviour:
   f_alpha: 0
   bich: 0
   ship: 1
-  f_strength: -4
 --- !u!114 &114834933745345158
 MonoBehaviour:
   m_ObjectHideFlags: 1

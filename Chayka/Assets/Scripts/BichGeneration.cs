@@ -24,7 +24,6 @@ public class BichGeneration : MonoBehaviour {
 	void Update () {
         if (last.transform.position.x <= Camera.main.ScreenToWorldPoint(Vector3.zero).x)
         {
-            Debug.Log("hui");
             GameData.gd.bichGenered = false;
         }
 	}
