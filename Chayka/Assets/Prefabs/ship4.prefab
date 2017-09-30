@@ -321,7 +321,7 @@ MonoBehaviour:
   f_alpha: 0
   bich: 0
   ship: 1
-  f_strength: 0
+  f_strength: -4
 --- !u!114 &114834933745345158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,6 +347,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!212 &212854559760391146
 SpriteRenderer:
   m_ObjectHideFlags: 1
