@@ -22,6 +22,8 @@ public class UI : MonoBehaviour {
             transform.GetChild(6).GetComponent<Animator>().Play("board");
         }
         SetCurrentScoreText();
+        CurrentCoinText();
+        CoinText();
     }
     void SetCurrentScoreText()
     {

@@ -23,7 +23,7 @@ public class Controll : MonoBehaviour
     {
         GameData.gd.massFecalLevel = 9;
         GameData.gd.fecalReloadLevel = 9;
-        GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
+        GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel]*0.1f;
         GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
         //GameData.gd.f_currenthp = 0.01f;
         f_focusPoint = new Vector3(-6, 0, 0);
