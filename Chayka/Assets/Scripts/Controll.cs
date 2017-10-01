@@ -27,7 +27,7 @@ public class Controll : MonoBehaviour
         GameData.gd.kishechnikLevel = 9;
         GameData.gd.birdSpeedLevel = 9;
         GameData.gd.maneurLevel = 9;
-        GameData.gd.massFecalLevel = 9;
+        GameData.gd.massFecalLevel = 3;
         GameData.gd.fecalReloadLevel = 9;
         GameData.gd.armorLevel = 9;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];

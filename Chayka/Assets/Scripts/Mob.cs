@@ -39,7 +39,7 @@ public class Mob : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, centrMass.y, Time.deltaTime)) ;
+        transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, centrMass.y, (Time.deltaTime*3))) ;
         {
             if (!bich)
             {
@@ -64,7 +64,7 @@ public class Mob : MonoBehaviour {
         oldHit = hitCount;
         if(gameObject.transform.position.y <= f_strength&&ship )
         {
-            transform.position -= new Vector3(0, 10) * Time.deltaTime;
+            transform.position -= new Vector3(0, 10) * Time.deltaTime/2;
         }
     }
     
