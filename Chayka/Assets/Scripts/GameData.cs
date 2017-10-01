@@ -47,7 +47,7 @@ public class GameData
         i_currentChar = 0;
         f_axisY = 0;
         f_speed = 0;
-        f_sp = new float[] { 1, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1.70f, 1.80f, 2f };
+        f_sp = new float[] { 1, 1.1f, 1.2f, 1.3f};
         f_hp = new float[] { 1, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1.70f, 1.80f, 2f };
         jeludok = new float[] {0.06f, 0.07f, 0.08f, 0.9f, 0.1f, 0.11f, 0.12f, 0.13f, 0.14f, 0.15f };
         kishechnik = new float[] { 0.06f, 0.07f, 0.08f, 0.9f, 0.1f, 0.11f, 0.12f, 0.13f, 0.14f, 0.15f };

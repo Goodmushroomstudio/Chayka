@@ -31,10 +31,11 @@ public class UI : MonoBehaviour {
 
     public void HpUp()
     {
-        if(GameData.gd.hpLevel+1 < GameData.gd.f_hp.Length)
+        if(GameData.gd.hpLevel+1 <= GameData.gd.f_hp.Length)
         {
-            GameData.gd.hpLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(0).GetComponent<Text>().text = GameData.gd.hpLevel.ToString();
+            GameData.gd.hpLevel++;
+            transform.GetChild(6).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
+            Debug.Log(GameData.gd.f_hp[GameData.gd.hpLevel] + " Level: " + GameData.gd.hpLevel);
             SaveLoad.Save();
         }
     }
