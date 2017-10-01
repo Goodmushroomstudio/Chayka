@@ -20,9 +20,5 @@ public class SaveLoad {
             GameData.gd = (GameData)bf.Deserialize(file);
             file.Close();
         }
-        else
-        {
-            GameData.gd = new GameData();
-        }
 	}
 }
