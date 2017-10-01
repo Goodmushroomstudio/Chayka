@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class GameData
@@ -20,6 +21,7 @@ public class GameData
     public float f_massFecal;
     public int i_currentChar;
     public float f_score;
+    public float f_currentScore;
     public bool death;
     public bool bichGenered;
     public float[] jeludok;
@@ -38,6 +40,8 @@ public class GameData
     public int massFecalLevel;
     public int fecalReloadLevel;
     public int armorLevel;
+    public int coin;
+    public int currentCoin;
     public GameData()
     {
         i_currentChar = 0;
@@ -61,6 +65,8 @@ public class GameData
         f_lastPosition = 0;
         f_range = 0;
         f_massFecal = 0.5f;
+        currentCoin = 0;
+        coin = 0;
     }
     
 

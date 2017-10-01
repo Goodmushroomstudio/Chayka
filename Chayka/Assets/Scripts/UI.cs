@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour {
     public Text t_scoreText;
-	
-	void Start () {
+    public Text t_currentScoreText;
+    public Text t_coinText;
+    public Text t_currentCoinText;
+
+    void Start () {
         
         
 	}
@@ -18,12 +21,13 @@ public class UI : MonoBehaviour {
         {
             transform.GetChild(6).GetComponent<Animator>().Play("board");
         }
-        SetScoreText();
+        SetCurrentScoreText();
     }
-    void SetScoreText()
+    void SetCurrentScoreText()
     {
-            t_scoreText.text = GameData.gd.f_score.ToString();
+            t_currentScoreText.text = GameData.gd.f_currentScore.ToString();
     }
+
 
     public void HpUp()
     {
@@ -112,6 +116,14 @@ public class UI : MonoBehaviour {
             transform.GetChild(6).GetChild(8).GetChild(0).GetComponent<Text>().text = GameData.gd.maneurLevel.ToString();
             SaveLoad.Save();
         }
+    }
+    public void CurrentCoinText()
+    {
+        t_currentCoinText.text = GameData.gd.currentCoin.ToString();
+    }
+    public void CoinText()
+    {
+        t_coinText.text = GameData.gd.coin.ToString();
     }
     
 }

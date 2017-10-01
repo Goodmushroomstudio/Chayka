@@ -25,7 +25,7 @@ public class FecalDisperssion : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("kak"))
         {
-            GameData.gd.f_score += f_value;
+            GameData.gd.f_currentScore += f_value;
             Instantiate(collision.gameObject.GetComponent<Cacula>() .shlep, collision.contacts[0].point, Random.rotation,transform);
             GameObject fecal = Instantiate(kakashki[Random.Range(0, kakashki.Length)], collision.contacts[0].point, Quaternion.identity, transform);
             if (GetComponent<SpriteRenderer>() != null)
