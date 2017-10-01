@@ -35,8 +35,8 @@ public class World : MonoBehaviour {
     {
         SaveLoad.Load();
         GameData.gd.death = false;
-        GameData.gd.f_currenthp = 1;
-        GameData.gd.f_currentsp = 1;
+        GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
+        GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
         GameData.gd.f_score = 0;
         GameData.gd.f_magnY = 0;
         GameData.gd.f_speed = 1;
