@@ -17,10 +17,15 @@ public class Mob : MonoBehaviour {
     public bool bich;
     public bool ship;
     public float f_strength;
+    public float hp;
 
 
     // Use this for initialization
     void Start () {
+        if (ship)
+        {
+            hp = GetComponent<SpriteRenderer>().bounds.size.y;
+        }
         centrMass = transform.position;
         canvas = GameObject.Find("WorldCanvas");
         comboPlace = GetComponent<SpriteRenderer>().bounds.max;
@@ -39,6 +44,7 @@ public class Mob : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
+        
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, centrMass.y, Time.deltaTime)) ;
         {
             if (!bich)
@@ -60,11 +66,12 @@ public class Mob : MonoBehaviour {
         if (hitCount > oldHit&&ship)
         {
             centrMass = transform.position - new Vector3(0, GameData.gd.massFecal[GameData.gd.massFecalLevel]);
+            hp -= GameData.gd.massFecal[GameData.gd.massFecalLevel];
         }
         oldHit = hitCount;
-        if(gameObject.transform.position.y <= f_strength&&ship )
+        if(hp<=0 && ship )
         {
-            transform.position -= new Vector3(0, 10) * Time.deltaTime;
+            transform.position -= new Vector3(0, 3) * Time.deltaTime;
         }
     }
     
