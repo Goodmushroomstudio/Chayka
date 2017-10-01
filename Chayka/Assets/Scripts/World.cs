@@ -41,6 +41,7 @@ public class World : MonoBehaviour {
         GameData.gd.f_magnY = 0;
         GameData.gd.f_speed = 1;
         GameData.gd.f_range = 0;
+        GameData.gd.currentCoin = 0;
     }
 
     // Use this for initialization
