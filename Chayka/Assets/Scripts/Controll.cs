@@ -35,19 +35,20 @@ public class Controll : MonoBehaviour
         {
             if (Input.touchCount != 0)
             {
+                l = false;
+                r = false;
                 for (int i = 0; i < Input.touchCount; i++)
                 {
                     if (Input.touches[i].position.x < Screen.width / 2)
                     {
                         left = Input.touches[i];
                         l = true;
-                        r = false;
                     }
-                    if (Input.touches[i].position.x >= Screen.width/2)
+
+                    if (Input.touches[i].position.x >= Screen.width / 2)
                     {
                         right = Input.touches[i];
                         r = true;
-                        l = false;
                     }
                 }
             }
@@ -85,6 +86,7 @@ public class Controll : MonoBehaviour
                 {
                     r = false;
                 }
+
                 GameData.gd.f_currentPosition = right.position.y;
                 currentPosition = Camera.main.ScreenToWorldPoint(right.position);
                 deltaPositon = currentPosition - lastPositon;

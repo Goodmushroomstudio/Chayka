@@ -42,6 +42,7 @@ public class GameData
     public int armorLevel;
     public int coin;
     public int currentCoin;
+    public bool music;
     public GameData()
     {
         i_currentChar = 0;
@@ -67,6 +68,7 @@ public class GameData
         f_massFecal = 0.5f;
         currentCoin = 0;
         coin = 0;
+        music = true;
     }
     
 

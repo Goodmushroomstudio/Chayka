@@ -8,5 +8,19 @@ public class Functions : MonoBehaviour {
     {
         SceneManager.LoadScene("Main");
     }
+
+    public void MusicOfOn()
+    {
+        if (GameData.gd.music)
+        {
+            GameData.gd.music = false;
+            GameObject.Find("MainTheme").GetComponent<AudioSource>().mute = false;
+        }
+        else
+        {
+            GameData.gd.music = true;
+            GameObject.Find("MainTheme").GetComponent<AudioSource>().mute = true;
+        }
+    }
 }	
 
