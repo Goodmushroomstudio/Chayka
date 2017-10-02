@@ -245,6 +245,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114261652099098950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,6 +271,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114289937940851472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,6 +291,7 @@ MonoBehaviour:
   - {fileID: 1873601934956074, guid: 0986d21728f6f754da9611f3b928810a, type: 2}
   - {fileID: 1788729377510296, guid: 87cd3e2127b7f9f44ba4957f8c82cd0f, type: 2}
   - {fileID: 1940951969681370, guid: 8e6c333d5c06e1546bf24cfee9bfbaed, type: 2}
+  - {fileID: 1869864666026622, guid: c219f5f680314dd4eb17e3530541e2d8, type: 2}
   decor:
   - {fileID: 1089946328346852, guid: fa51f0241725d3143a6e5facbac3fe42, type: 2}
   - {fileID: 1952570533557560, guid: dfef129bdb00c744a8f953bc77e6d791, type: 2}
@@ -346,6 +349,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114897060338234738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,6 +367,9 @@ MonoBehaviour:
   newcombo: {fileID: 0}
   f_alpha: 0
   bich: 1
+  ship: 0
+  f_strength: 0
+  hp: 0
 --- !u!212 &212070212929554876
 SpriteRenderer:
   m_ObjectHideFlags: 1
