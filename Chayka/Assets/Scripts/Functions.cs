@@ -9,6 +9,10 @@ public class Functions : MonoBehaviour {
         SaveLoad.Save();
         SceneManager.LoadScene("Main");
     }
+    public void Menu()
+    {
+        SceneManager.LoadScene("menu");
+    }
 
     public void MusicOfOn()
     {
