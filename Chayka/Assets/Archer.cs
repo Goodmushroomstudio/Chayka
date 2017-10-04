@@ -6,9 +6,11 @@ public class Archer : MonoBehaviour {
     public GameObject stone;
     GameObject player;
     public Vector3 upper;
+    public float impulse;
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Bird");
+        
     }
 	
 	// Update is called once per frame
