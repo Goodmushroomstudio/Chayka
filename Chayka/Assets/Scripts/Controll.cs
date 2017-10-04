@@ -247,6 +247,7 @@ public class Controll : MonoBehaviour
         transform.GetChild(0).GetComponent<Anim>().enabled = true;
         transform.GetChild(0).GetComponent<Anim>().i_currentFrame = 0;
         Instantiate(bang, transform.position, Quaternion.identity);
+        f_focusPoint += new Vector3(-2, 0);
     }
     public void DieMotherFuckerDie()
     {
