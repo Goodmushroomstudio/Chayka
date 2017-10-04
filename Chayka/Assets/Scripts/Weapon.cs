@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour {
 
         if (f_timer <= 0)
         {
-            upper = new Vector3(Camera.main.ScreenToWorldPoint(Vector3.zero).x, Random.Range(Camera.main.ScreenToWorldPoint(Vector3.zero).y, Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height)).y));
+            upper = new Vector3(Random.Range(player.transform.position.x, player.transform.position.x + 1), Random.Range(player.transform.position.y +1, player.transform.position.y + 3));
             GameObject bullet = Instantiate(garpun, transform.position, transform.localRotation);
             float vX = Mathf.Clamp(((upper - transform.position) * 1.8f).x, -16, 16);
             float vY = Mathf.Clamp(((upper - transform.position) * 1.8f).y, -14, 14);

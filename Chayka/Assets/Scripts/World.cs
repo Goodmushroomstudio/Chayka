@@ -42,6 +42,7 @@ public class World : MonoBehaviour {
         GameData.gd.f_speed = 1;
         GameData.gd.f_range = 0;
         GameData.gd.currentCoin = 0;
+        GameData.gd.f_currentsp = 0;
         if (GameData.gd.coinBuster)
         {
             coinChanse = 10;

@@ -59,7 +59,7 @@ public class GameData
         maneur = new float[] { 0, 0.001f, 0.002f, 0.003f, 0.004f, 0.005f, 0.006f, 0.007f, 0.008f, 0.009f, 0.01f };
         massFecal = new float[] { 0.05f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1f };
         fecalReload = new float[] { 0.3f, 0.28f, 0.26f, 0.24f, 0.22f, 0.2f, 0.18f, 0.16f, 0.14f, 0.12f, 0.1f };
-        armor = new float[] { 1, 0.95f, 0.90f, 0.85f, 0.80f, 0.75f, 0.70f, 0.65f, 0.60f, 0.55f, 0.50f };
+        armor = new float[] { 1, 0.97f, 0.95f, 0.92f, 0.9f, 0.87f, 0.85f, 0.82f, 0.80f, 0.77f, 0.75f };
         f_currenthp = 1;
         f_currentsp = 1;
         f_magnY = 0;

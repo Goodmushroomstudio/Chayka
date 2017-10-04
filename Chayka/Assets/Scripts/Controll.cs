@@ -23,7 +23,6 @@ public class Controll : MonoBehaviour
     void Start()
     {
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
-        GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
         f_focusPoint = new Vector3(-4, 0, 0);
         screenExt = Screen.width / Screen.height;
 
@@ -172,7 +171,7 @@ public class Controll : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        if (Input.GetMouseButton(1) && GameData.gd.f_currentsp > 0.03f && timer == 0)
+        if (Input.GetMouseButton(1) && GameData.gd.f_currentsp > 0.20f && timer == 0)
         {
             Pocaculki();
         }
@@ -212,7 +211,7 @@ public class Controll : MonoBehaviour
             f_focusPoint += new Vector3(4, 0, 0) * Time.deltaTime;
         }
         
-        f_focusPoint = new Vector3(Mathf.Clamp(f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 1, 8), f_focusPoint.y);
+        f_focusPoint = new Vector3(Mathf.Clamp(f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x, 8), f_focusPoint.y);
 
         if (GameData.gd.f_currenthp <= 0)
         {
@@ -235,7 +234,7 @@ public class Controll : MonoBehaviour
     }
     void Pocaculki()
     {
-        GameData.gd.f_currentsp -= 0.15f;
+        GameData.gd.f_currentsp -= 0.20f;
         timer = GameData.gd.fecalReload[GameData.gd.fecalReloadLevel];
         GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
