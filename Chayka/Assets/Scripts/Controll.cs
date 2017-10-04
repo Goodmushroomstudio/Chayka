@@ -24,7 +24,7 @@ public class Controll : MonoBehaviour
     {
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
         GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
-        f_focusPoint = new Vector3(-6, 0, 0);
+        f_focusPoint = new Vector3(-4, 0, 0);
         screenExt = Screen.width / Screen.height;
 
     }
@@ -111,22 +111,22 @@ public class Controll : MonoBehaviour
         else if (GameData.gd.f_currentsp >= 0.2f && GameData.gd.f_currentsp < 0.4f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[1];
-            movement = 0.035f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
+            movement = 0.037f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
         }
         else if (GameData.gd.f_currentsp >= 0.4f && GameData.gd.f_currentsp < 0.6f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[2];
-            movement = 0.03f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
+            movement = 0.035f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
         }
         else if (GameData.gd.f_currentsp >= 0.6f && GameData.gd.f_currentsp < 0.75f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[3];
-            movement = 0.02f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
+            movement = 0.032f + GameData.gd.maneur[GameData.gd.maneurLevel]; ;
         }
         else if (GameData.gd.f_currentsp >= 0.75f && GameData.gd.f_currentsp < 3f)
         {
             GetComponent<SpriteRenderer>().sprite = puzo[4];
-            movement = 0.01f + GameData.gd.maneur[GameData.gd.maneurLevel];
+            movement = 0.03f + GameData.gd.maneur[GameData.gd.maneurLevel];
         }
         timer -= 1 * Time.deltaTime;
         timer = Mathf.Clamp(timer, 0, GameData.gd.fecalReload[GameData.gd.fecalReloadLevel]);
@@ -203,8 +203,16 @@ public class Controll : MonoBehaviour
 
 
 #endif
-        f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;
-        f_focusPoint = new Vector3(Mathf.Clamp(f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, -1), f_focusPoint.y);
+        if (f_focusPoint.x > Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 5)
+        {
+            f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;
+        }
+        else
+        {
+            f_focusPoint += new Vector3(4, 0, 0) * Time.deltaTime;
+        }
+        
+        f_focusPoint = new Vector3(Mathf.Clamp(f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 1, 8), f_focusPoint.y);
 
         if (GameData.gd.f_currenthp <= 0)
         {
@@ -227,7 +235,7 @@ public class Controll : MonoBehaviour
     }
     void Pocaculki()
     {
-        GameData.gd.f_currentsp -= 0.03f;
+        GameData.gd.f_currentsp -= 0.15f;
         timer = GameData.gd.fecalReload[GameData.gd.fecalReloadLevel];
         GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);

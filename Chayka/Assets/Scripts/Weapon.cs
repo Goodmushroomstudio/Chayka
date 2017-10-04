@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour {
     public GameObject fog;
     public float f_reload;
     public float f_timer;
+    Vector3 upper;
     // Use this for initialization
     void Start () {
         f_timer = f_reload;
@@ -17,7 +18,6 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 upper = new Vector3(player.GetComponent<Controll>().f_focusPoint.x, player.GetComponent<Controll>().f_focusPoint.y + (Vector3.Distance(player.GetComponent<Controll>().f_focusPoint, transform.position) * 0.12f));
         if (transform.position.x > (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x / 2))
         {
             if (transform.position.x < (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x))
@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour {
 
         if (f_timer <= 0)
         {
+            upper = new Vector3(Camera.main.ScreenToWorldPoint(Vector3.zero).x, Random.Range(Camera.main.ScreenToWorldPoint(Vector3.zero).y, Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height)).y));
             GameObject bullet = Instantiate(garpun, transform.position, transform.localRotation);
             float vX = Mathf.Clamp(((upper - transform.position) * 1.8f).x, -16, 16);
             float vY = Mathf.Clamp(((upper - transform.position) * 1.8f).y, -14, 14);
