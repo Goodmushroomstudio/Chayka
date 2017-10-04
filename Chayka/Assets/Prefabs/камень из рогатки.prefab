@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4381194865342920}
   - component: {fileID: 212023927297982454}
-  - component: {fileID: 114069262690084286}
   - component: {fileID: 58316523283302164}
   - component: {fileID: 50613005462402122}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: "\u043A\u0430\u043C\u0435\u043D\u044C \u0438\u0437 \u0440\u043E\u0433\u0430\u0442\u043A\u0438"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +53,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.1
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -78,18 +77,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.13
---- !u!114 &114069262690084286
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1515886280187910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca23b4d5b580c340bf4ac2a452d2ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  core: 1
 --- !u!212 &212023927297982454
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -121,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: cd6ae8656efc8bf45ab945e5fa7dc992, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
