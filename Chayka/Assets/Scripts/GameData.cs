@@ -43,6 +43,9 @@ public class GameData
     public int coin;
     public int currentCoin;
     public bool music;
+    public bool coinBuster;
+    public bool fishBuster;
+    public bool magnerBuster;
     public GameData()
     {
         i_currentChar = 0;

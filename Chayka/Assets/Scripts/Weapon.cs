@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 upper = new Vector3(player.transform.position.x, player.transform.position.y + (Vector3.Magnitude(player.transform.position - transform.position)) / 5.5f);
+        Vector3 upper = new Vector3(player.GetComponent<Controll>().f_focusPoint.x, player.GetComponent<Controll>().f_focusPoint.y + (Vector3.Distance(player.GetComponent<Controll>().f_focusPoint, transform.position) * 0.12f));
         if (transform.position.x > (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x / 2))
         {
             if (transform.position.x < (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x))
@@ -34,9 +34,9 @@ public class Weapon : MonoBehaviour {
         if (f_timer <= 0)
         {
             GameObject bullet = Instantiate(garpun, transform.position, transform.localRotation);
-            float vX = Mathf.Clamp(((upper - transform.position) * 1.5f).x, -15, 15);
-            float vY = Mathf.Clamp(((upper - transform.position) * 1.5f).y, -15, 15);
-            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(vX, vY), ForceMode2D.Impulse);
+            float vX = Mathf.Clamp(((upper - transform.position) * 1.8f).x, -16, 16);
+            float vY = Mathf.Clamp(((upper - transform.position) * 1.8f).y, -14, 14);
+            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(vX,vY), ForceMode2D.Impulse);
             GameObject newfog = Instantiate(fog, transform.position, new Quaternion(0, 0, transform.rotation.z+10, 100));
             f_timer = f_reload;
         }

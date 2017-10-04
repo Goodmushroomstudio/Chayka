@@ -42,6 +42,24 @@ public class World : MonoBehaviour {
         GameData.gd.f_speed = 1;
         GameData.gd.f_range = 0;
         GameData.gd.currentCoin = 0;
+        if (GameData.gd.coinBuster)
+        {
+            coinChanse = 10;
+            GameData.gd.coinBuster = false;
+        }
+        else
+        {
+            coinChanse = 3;
+        }
+        if (GameData.gd.fishBuster)
+        {
+            fishChanse = 5;
+            GameData.gd.fishBuster = false;
+        }
+        else
+        {
+            fishChanse = 2;
+        }
     }
 
     // Use this for initialization
@@ -145,7 +163,7 @@ public class World : MonoBehaviour {
     }
     public void CoinGeneration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(-1, 3.2f), 0);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(-1, 7.5f), 0);
         GameObject newCoin = Instantiate(coin, coord, Quaternion.identity, transform);
         newCoin.GetComponent<Move>().speed = Random.Range(3, 7);
     }

@@ -137,6 +137,49 @@ public class UI : MonoBehaviour {
             SaveLoad.Save();
         }
     }
+
+    public void SetCoinBuster()
+    {
+        if (GameData.gd.coinBuster)
+        {
+            GameData.gd.coinBuster = false;
+            transform.GetChild(6).GetChild(12).GetComponent<Outline>().enabled = false;
+        }
+        else
+        {
+            GameData.gd.coinBuster = true;
+            transform.GetChild(6).GetChild(12).GetComponent<Outline>().enabled = true;
+        }
+    }
+
+    public void SetFishBuster()
+    {
+        if (GameData.gd.fishBuster)
+        {
+            GameData.gd.fishBuster = false;
+            transform.GetChild(6).GetChild(11).GetComponent<Outline>().enabled = false;
+        }
+        else
+        {
+            GameData.gd.fishBuster = true;
+            transform.GetChild(6).GetChild(11).GetComponent<Outline>().enabled = true;
+        }
+    }
+
+    public void SetMagnetBuster()
+    {
+        if (GameData.gd.magnerBuster)
+        {
+            GameData.gd.magnerBuster = false;
+            transform.GetChild(6).GetChild(13).GetComponent<Outline>().enabled = false;
+        }
+        else
+        {
+            GameData.gd.magnerBuster = true;
+            transform.GetChild(6).GetChild(13).GetComponent<Outline>().enabled = true;
+        }
+    }
+
     public void CurrentCoinText()
     {
         t_currentCoinText.text = GameData.gd.currentCoin.ToString();

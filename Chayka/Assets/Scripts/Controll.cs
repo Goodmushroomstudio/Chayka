@@ -8,7 +8,8 @@ public class Controll : MonoBehaviour
 
     Touch left, right;
     bool l, r;
-    Vector3 currentPosition, deltaPositon, lastPositon, f_focusPoint;
+    Vector3 currentPosition, deltaPositon, lastPositon;
+    public Vector3 f_focusPoint;
     public GameObject cacula;
     public GameObject coinOff;
     public GameObject bang;

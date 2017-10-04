@@ -6,6 +6,7 @@ public class Functions : MonoBehaviour {
 
     public void StartGame()
     {
+        SaveLoad.Save();
         SceneManager.LoadScene("Main");
     }
 
