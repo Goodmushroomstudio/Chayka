@@ -71,6 +71,11 @@ public class Eat : MonoBehaviour
             GameData.gd.f_currentsp += GameData.gd.kishechnik[GameData.gd.kishechnikLevel];
             GameData.gd.f_currenthp += GameData.gd.jeludok[GameData.gd.jeludokLevel];
             Destroy(this.gameObject);
+            if (GameData.gd.i_currentMission == 1 && GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+            {
+                GameData.gd.f_currentmissionResult++;
+
+            }
         }
         
             

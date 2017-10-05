@@ -230,6 +230,11 @@ public class Controll : MonoBehaviour
             Destroy(collision.gameObject);
             Instantiate(coinOff,collision.transform.position,Quaternion.identity);
             GameData.gd.f_currentScore += 10;
+            if (GameData.gd.i_currentMission == 0&&GameData.gd.b_m_missions[GameData.gd.i_currentMission,GameData.gd.i_currentLvl]) 
+            {
+                GameData.gd.f_currentmissionResult++;
+
+            }
         }
     }
     void Pocaculki()
