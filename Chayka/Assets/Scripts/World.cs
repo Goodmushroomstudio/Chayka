@@ -45,7 +45,7 @@ public class World : MonoBehaviour {
         GameData.gd.f_currentsp = 0;
         if (GameData.gd.coinBuster)
         {
-            coinChanse = 10;
+            coinChanse = 5;
             GameData.gd.coinBuster = false;
         }
         else
@@ -54,7 +54,7 @@ public class World : MonoBehaviour {
         }
         if (GameData.gd.fishBuster)
         {
-            fishChanse = 5;
+            fishChanse = 4;
             GameData.gd.fishBuster = false;
         }
         else
