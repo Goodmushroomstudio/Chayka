@@ -20,8 +20,7 @@ public class Attack : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown(1))
         {
-            Pocaculki();
-            
+            Pocaculki();   
         }
 	}
 }

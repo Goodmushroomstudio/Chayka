@@ -7,6 +7,7 @@ public class FecalDisperssion : MonoBehaviour {
     public GameObject[] kakashki;
     public float f_value;
     public GameObject canvas;
+    public bool people;
 
 
     // Use this for initialization
@@ -35,7 +36,12 @@ public class FecalDisperssion : MonoBehaviour {
             Destroy(collision.gameObject);
             transform.parent.GetComponent<Mob>().hitCount += 1;
             ScoreText(collision.contacts[0].point, collision);
-          
+            if (people&&GameData.gd.i_currentMission == 4 && GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+            {
+                GameData.gd.f_currentmissionResult++;
+
+            }
+
 
 
 
