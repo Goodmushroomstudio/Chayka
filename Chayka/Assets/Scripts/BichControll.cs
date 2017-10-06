@@ -55,7 +55,7 @@ public class BichControll : MonoBehaviour {
     }
     void PeopleDownGeneration()
     {
-        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x+1, GetComponent<SpriteRenderer>().bounds.max.x-1), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y+1.5f , GetComponent<SpriteRenderer>().bounds.max.y-1));
+        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x+1, GetComponent<SpriteRenderer>().bounds.max.x-1), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y+2f , GetComponent<SpriteRenderer>().bounds.max.y-0.5f));
         GameObject newPeopleDown = Instantiate(peopleDown[Random.Range(0, peopleDown.Length)], coord, Quaternion.identity, transform);
         if (!Proverka(coord))
         {

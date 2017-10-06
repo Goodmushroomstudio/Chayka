@@ -9,11 +9,15 @@ public class Mob : MonoBehaviour {
     public float oldHit;
     public GameObject combo;
     public GameObject newcombo;
+    public GameObject coinBonus;
     bool spawn;
     GameObject canvas;
     Vector3 comboPlace;
     Vector3 centrMass;
     public float f_alpha;
+    public float f_time;
+    public float f_reload;
+    public int i_bonus;
     public bool bich;
     public bool ship;
     public float f_strength;
@@ -77,12 +81,27 @@ public class Mob : MonoBehaviour {
         oldHit = hitCount;
         if(hp<=0 && ship )
         {
+            
             transform.position -= new Vector3(0, 3) * Time.deltaTime;
             if (GameData.gd.i_currentMission == 5 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
             {
                 GameData.gd.f_currentmissionResult++;
             }
+            if(i_bonus>0 )
+            { 
+            f_time -= 1 * Time.deltaTime;
+                if (f_time <= 0)
+                {
+                    f_time = f_reload;
+                    i_bonus -= 1;
+                    GameObject newcoinBonus = Instantiate(coinBonus, transform.position, Quaternion.identity);
+                    GameData.gd.currentCoin += 1;
+
+                }
+            }
         }
+
+
     }
     
    public void Combo()
