@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
     public Text t_scoreText;
@@ -9,7 +10,38 @@ public class UI : MonoBehaviour {
     public Text t_coinText;
     public Text t_currentCoinText;
 
-    void Start () {
+    void Start()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+        string m = "";
+        switch (GameData.gd.i_currentMission)
+        {
+            case 0:
+                m = "Миссия: соберите " + GameData.gd.f_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl].ToString() + " монет.";
+                break;
+            case 1:
+                m = "Миссия: соберите " + GameData.gd.f_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl].ToString() + " рыб.";
+                break;
+            case 2:
+                m = "Миссия: пройдите " + GameData.gd.f_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl].ToString() + " метров.";
+                break;
+            case 3:
+                m = "Миссия: поразите " + GameData.gd.f_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl].ToString() + " кораблей.";
+                break;
+            case 4:
+                m = "Миссия: поразите " + GameData.gd.f_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl].ToString() + " человек.";
+                break;
+            case 5:
+                m = "Миссия: потопите " + GameData.gd.f_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl].ToString() + " кораблей.";
+                break;
+            case 6:
+                m = "Миссия: наберите " + GameData.gd.f_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl].ToString() + " очков.";
+                break;
+        }
+        MissionLabel(m);
         transform.GetChild(6).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
         transform.GetChild(6).GetChild(1).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
         transform.GetChild(6).GetChild(2).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
@@ -19,12 +51,12 @@ public class UI : MonoBehaviour {
         transform.GetChild(6).GetChild(6).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
         transform.GetChild(6).GetChild(7).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
         transform.GetChild(6).GetChild(8).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
-
-	}
+    }
 
     // Update is called once per frame
     void Update()
     {
+        
         if(GameData.gd.death)
         {
             transform.GetChild(6).GetComponent<Animator>().Play("board");
@@ -32,6 +64,14 @@ public class UI : MonoBehaviour {
         SetCurrentScoreText();
         CurrentCoinText();
         CoinText();
+
+        if (GameData.gd.f_currentmissionResult >= GameData.gd.f_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl] && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+        {
+            MissionLabel("Миссия выполнена!!!");
+            Debug.Log("asd");
+            GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl] = true;
+            SaveLoad.Save();
+        }
     }
     void SetCurrentScoreText()
     {
@@ -187,6 +227,12 @@ public class UI : MonoBehaviour {
     public void CoinText()
     {
         t_coinText.text = GameData.gd.coin.ToString();
+    }
+
+    public void MissionLabel(string l)
+    {
+        transform.GetChild(8).GetChild(0).GetComponent<Text>().text = l;
+        transform.GetChild(8).GetComponent<Animator>().Play("label");
     }
     
 }

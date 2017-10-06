@@ -56,7 +56,7 @@ public class GameData
         i_currentChar = 0;
         f_axisY = 0;
         f_speed = 0;
-        f_m_missions = new float[7, 3] { { 100, 200, 300 }, { 100, 200, 300 } , { 1000, 2000, 3000 } , { 25, 50, 100 } , { 25, 50, 100 } , { 25, 50, 100 } , { 1000, 2000, 3000 } };
+        f_m_missions = new float[7, 3] { { 30, 200, 300 }, { 100, 200, 300 } , { 1000, 2000, 3000 } , { 25, 50, 100 } , { 25, 50, 100 } , { 25, 50, 100 } , { 1000, 2000, 3000 } };
         b_m_missions = new bool[7, 3];
         f_hp = new float[] { 1, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1.70f, 1.80f, 2f, 2.5f };
         f_sp = new float[] { 1, 1.1f, 1.2f, 1.3f, 1.4f, 1.5f, 1.6f, 1.7f, 1.8f, 2f, 2.5f };
@@ -79,7 +79,8 @@ public class GameData
         currentCoin = 0;
         coin = 0;
         music = true;
-        f_currentmission = 0;
+        f_currentmissionResult = 0;
+        i_currentLvl = 0;
     }
     
 

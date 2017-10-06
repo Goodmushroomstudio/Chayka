@@ -43,6 +43,7 @@ public class World : MonoBehaviour {
         GameData.gd.f_range = 0;
         GameData.gd.currentCoin = 0;
         GameData.gd.f_currentsp = 0;
+        GameData.gd.f_currentmissionResult = 0;
         if (GameData.gd.coinBuster)
         {
             coinChanse = 5;
@@ -78,12 +79,12 @@ public class World : MonoBehaviour {
     {
         range -= 3 * GameData.gd.f_speed * Time.deltaTime;
         GameData.gd.f_range += 3 * GameData.gd.f_speed * Time.deltaTime;
-        if (GameData.gd.i_currentMission == 2 && GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+        if (GameData.gd.i_currentMission == 2 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
         {
             GameData.gd.f_currentmissionResult++;
 
         }
-        if (GameData.gd.i_currentMission == 6 && GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+        if (GameData.gd.i_currentMission == 6 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
         {
             GameData.gd.f_currentmissionResult=GameData.gd.f_range;
 
