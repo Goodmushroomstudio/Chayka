@@ -504,10 +504,15 @@ MonoBehaviour:
   oldHit: 0
   combo: {fileID: 1296974701845802, guid: 441057b85d6fd2f4695d6ee4b0b2b70f, type: 2}
   newcombo: {fileID: 0}
+  coinBonus: {fileID: 1005489646699990, guid: 2f39f8e119b451c4cb0dbbe5af91c444, type: 2}
   f_alpha: 0
+  f_time: 0
+  f_reload: 0.1
+  i_bonus: 7
   bich: 0
   ship: 1
   f_strength: -4
+  hp: 0
 --- !u!114 &114278708173324636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -554,6 +559,7 @@ MonoBehaviour:
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 5
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114679601441981122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -597,6 +603,7 @@ MonoBehaviour:
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114746009677315698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -653,6 +660,7 @@ MonoBehaviour:
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 5
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114963838829985278
 MonoBehaviour:
   m_ObjectHideFlags: 1

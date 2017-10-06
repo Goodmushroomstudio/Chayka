@@ -23,6 +23,10 @@ public class World : MonoBehaviour {
     public float f_reloadBacground;
     public float f_timerShips;
     public float f_reloadships;
+    public float f_timerCoin;
+    public float f_reloadCoin;
+    public float f_timerFish;
+    public float f_reloadFish;
     float range;
     [Range(0, 50000)]
     public int randomChanse;
@@ -35,6 +39,7 @@ public class World : MonoBehaviour {
     {
         SaveLoad.Load();
         GameData.gd.death = false;
+        GameData.gd.spLevel = 3;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
         GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
         GameData.gd.f_currentScore = 0;
@@ -42,25 +47,27 @@ public class World : MonoBehaviour {
         GameData.gd.f_speed = 1;
         GameData.gd.f_range = 0;
         GameData.gd.currentCoin = 0;
-        GameData.gd.f_currentsp = 0;
+        GameData.gd.f_currentsp = 100;
         GameData.gd.f_currentmissionResult = 0;
+        GameData.gd.massFecalLevel=10;
+        GameData.gd.fecalReloadLevel = 10;
         if (GameData.gd.coinBuster)
         {
-            coinChanse = 5;
+            f_reloadCoin = 1.5f;
             GameData.gd.coinBuster = false;
         }
         else
         {
-            coinChanse = 3;
+            f_reloadCoin = 3;
         }
         if (GameData.gd.fishBuster)
         {
-            fishChanse = 4;
+            f_reloadFish = 2;
             GameData.gd.fishBuster = false;
         }
         else
         {
-            fishChanse = 2;
+            f_reloadFish = 5;
         }
     }
 
@@ -101,13 +108,18 @@ public class World : MonoBehaviour {
             {
                 CloudGeneration();
             }
-            if (Chanse(fishChanse))
+            f_timerFish -= 1 * Time.deltaTime;
+            if (f_timerFish <=0)
             {
                 FishGeneration();
+                f_timerFish = f_reloadFish;
             }
-            if (Chanse(coinChanse))
+            f_timerCoin -= 1 * Time.deltaTime;
+            if (f_timerCoin <= 0)
             {
                 CoinGeneration();
+                f_timerCoin = f_reloadCoin;
+
             }
 
             if (GameData.gd.f_speed > 2 && Chanse(lineChanse))
