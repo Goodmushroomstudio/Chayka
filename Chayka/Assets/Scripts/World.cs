@@ -79,12 +79,12 @@ public class World : MonoBehaviour {
     {
         range -= 3 * GameData.gd.f_speed * Time.deltaTime;
         GameData.gd.f_range += 3 * GameData.gd.f_speed * Time.deltaTime;
-        if (GameData.gd.i_currentMission == 2 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+        if (GameData.gd.i_currentMission == 2 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
         {
             GameData.gd.f_currentmissionResult++;
 
         }
-        if (GameData.gd.i_currentMission == 6 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+        if (GameData.gd.i_currentMission == 6 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
         {
             GameData.gd.f_currentmissionResult=GameData.gd.f_range;
 
