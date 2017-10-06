@@ -79,7 +79,6 @@ public class GameData
         currentCoin = 0;
         coin = 0;
         music = true;
-        f_currentmission = 0;
     }
     
 
