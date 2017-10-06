@@ -25,8 +25,6 @@ public class World : MonoBehaviour {
     public float f_reloadships;
     public float f_timerCoin;
     public float f_reloadCoin;
-    public float f_timerFish;
-    public float f_reloadFish;
     float range;
     [Range(0, 50000)]
     public int randomChanse;
@@ -62,12 +60,12 @@ public class World : MonoBehaviour {
         }
         if (GameData.gd.fishBuster)
         {
-            f_reloadFish = 2;
+            fishChanse = 2;
             GameData.gd.fishBuster = false;
         }
         else
         {
-            f_reloadFish = 5;
+            fishChanse = 1;
         }
     }
 
@@ -108,11 +106,9 @@ public class World : MonoBehaviour {
             {
                 CloudGeneration();
             }
-            f_timerFish -= 1 * Time.deltaTime;
-            if (f_timerFish <=0)
+            if (Chanse(fishChanse))
             {
                 FishGeneration();
-                f_timerFish = f_reloadFish;
             }
             f_timerCoin -= 1 * Time.deltaTime;
             if (f_timerCoin <= 0)
