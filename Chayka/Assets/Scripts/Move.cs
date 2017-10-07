@@ -17,7 +17,7 @@ public class Move : MonoBehaviour {
     public void Moves()
     {
         transform.position -= new Vector3(speed * GameData.gd.f_speed, 0, 0) * Time.deltaTime;
-        if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 15)
+        if (transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x - 15 || transform.position.y < Camera.main.ScreenToWorldPoint(Vector3.zero).y - 15)
         {
             Destroy(this.gameObject);
         }
