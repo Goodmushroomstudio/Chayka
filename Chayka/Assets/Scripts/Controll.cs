@@ -223,6 +223,7 @@ public class Controll : MonoBehaviour
         }
 
 
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
