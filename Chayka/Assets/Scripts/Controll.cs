@@ -222,8 +222,6 @@ public class Controll : MonoBehaviour
             DieMotherFuckerDie();
         }
 
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
