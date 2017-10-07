@@ -70,7 +70,12 @@ public class Eat : MonoBehaviour
         {
             GameData.gd.f_currentsp += GameData.gd.kishechnik[GameData.gd.kishechnikLevel];
             GameData.gd.f_currenthp += GameData.gd.jeludok[GameData.gd.jeludokLevel];
-            Destroy(this.gameObject);
+            GetComponent<SpriteRenderer>().enabled = true;
+            transform.rotation = transform.GetChild(0).transform.rotation;
+            GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-50, 50);
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Eat>().enabled = false;
+            Destroy(transform.GetChild(0).gameObject);
             if (GameData.gd.i_currentMission == 1 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
             {
                 GameData.gd.f_currentmissionResult++;

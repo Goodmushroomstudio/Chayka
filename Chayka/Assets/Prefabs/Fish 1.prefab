@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 50600441444385820}
   - component: {fileID: 61258488708704622}
   - component: {fileID: 114468714586935532}
+  - component: {fileID: 212979955078677488}
   m_Layer: 11
   m_Name: Fish 1
   m_TagString: fish
@@ -129,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910367527986912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.82, y: -5.02, z: 0}
+  m_LocalPosition: {x: 5.2542505, y: -4.89414, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886465560328070}
@@ -171,10 +172,10 @@ BoxCollider2D:
   m_Offset: {x: -0.04743147, y: -0.010945678}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.78, y: 0.94}
+    newSize: {x: 1.78, y: 0.94}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -203,6 +204,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114057014392425814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,6 +242,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114468714586935532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,6 +278,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!212 &212756393779361938
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -397,6 +401,48 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.82, y: 1.27}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!212 &212979955078677488
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910367527986912}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 9338405b89724244fba5fab8c3425f87, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.78, y: 0.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
