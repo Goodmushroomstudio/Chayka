@@ -228,8 +228,7 @@ public class Controll : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("coin"))
         {
-            GameData.gd.currentCoin++;
-            GameData.gd.coin++;
+
             Destroy(collision.gameObject);
             Instantiate(coinOff,collision.transform.position,Quaternion.identity);
             GameData.gd.f_currentScore += 10;
