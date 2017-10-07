@@ -9,9 +9,11 @@ public class UI : MonoBehaviour {
     public Text t_currentScoreText;
     public Text t_coinText;
     public Text t_currentCoinText;
+    int oldCoin;
 
     void Start()
     {
+        oldCoin = 0;
 
         transform.GetChild(6).GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
         transform.GetChild(6).GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
@@ -45,6 +47,12 @@ public class UI : MonoBehaviour {
             MissionLabel("Миссия выполнена!!!");
             GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl] = true;
             SaveLoad.Save();
+        }
+        if(GameData.gd.currentCoin>oldCoin)
+        {
+            transform.GetChild(1).GetComponent<Animator>().Play("coinBoard");
+            GameData.gd.coin++;
+            oldCoin++;
         }
     }
     void SetCurrentScoreText()
