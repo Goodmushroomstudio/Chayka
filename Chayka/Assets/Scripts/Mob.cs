@@ -71,7 +71,7 @@ public class Mob : MonoBehaviour {
         {
             centrMass = transform.position - new Vector3(0, GameData.gd.massFecal[GameData.gd.massFecalLevel]);
             hp -= GameData.gd.massFecal[GameData.gd.massFecalLevel];
-            if (GameData.gd.i_currentMission == 3 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+            if (GameData.gd.i_currentMission == 3 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
             {
                 GameData.gd.f_currentmissionResult++;
 
@@ -83,10 +83,9 @@ public class Mob : MonoBehaviour {
         {
             
             transform.position -= new Vector3(0, 3) * Time.deltaTime;
-            if (GameData.gd.i_currentMission == 5 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentLvl])
+            if (GameData.gd.i_currentMission == 5 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
             {
                 GameData.gd.f_currentmissionResult++;
-
             }
             if(i_bonus>0 )
             { 

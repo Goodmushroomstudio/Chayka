@@ -26,7 +26,7 @@ public class GameData
     public bool[,] b_m_missions;
     public float f_currentmissionResult;
     public int i_currentMission;
-    public int i_currentLvl;
+    public int i_currentMissionLvl;
     public bool death;
     public bool bichGenered;
     public float[] jeludok;
@@ -80,7 +80,7 @@ public class GameData
         coin = 0;
         music = true;
         f_currentmissionResult = 0;
-        i_currentLvl = 0;
+        i_currentMissionLvl = 0;
     }
     
 

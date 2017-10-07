@@ -14,6 +14,8 @@ public class Controll : MonoBehaviour
     public GameObject coinOff;
     public GameObject bang;
     public Sprite[] puzo;
+    float minX;
+    float maxX;
     float screenExt;
     float timer;
     float movement;
@@ -24,7 +26,7 @@ public class Controll : MonoBehaviour
     {
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
         f_focusPoint = new Vector3(-4, 0, 0);
-        screenExt = Screen.width / Screen.height;
+        screenExt = (float)Screen.width / (float)Screen.height;
 
     }
 
@@ -129,6 +131,8 @@ public class Controll : MonoBehaviour
         }
         timer -= 1 * Time.deltaTime;
         timer = Mathf.Clamp(timer, 0, GameData.gd.fecalReload[GameData.gd.fecalReloadLevel]);
+        minX = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2*screenExt;
+        maxX = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 4 * 3 , 0)).x;
         GameData.gd.f_magnY = f_focusPoint.y - transform.position.y;
         GameData.gd.f_magnX = f_focusPoint.x - transform.position.x;
         GameData.gd.f_speed -= 1f*Time.deltaTime;
@@ -136,9 +140,9 @@ public class Controll : MonoBehaviour
         transform.position = new Vector3(Mathf.Lerp(transform.position.x, f_focusPoint.x, movement), Mathf.Lerp(transform.position.y, f_focusPoint.y, movement), transform.position.z);
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, 0f), Mathf.Clamp(transform.position.y, -3.5f, 8.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(GameData.gd.f_magnY * 8)), 100f);
-        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, Camera.main.orthographicSize+transform.position.y, Time.deltaTime*2);
+        Camera.main.orthographicSize -= GameData.gd.f_axisY * (Time.deltaTime * 5);
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 5, 8);
-        Camera.main.transform.position = new Vector3(Mathf.Lerp(Camera.main.transform.position.x, (Camera.main.orthographicSize*screenExt - 5), Time.deltaTime * 10), Mathf.Lerp(Camera.main.transform.position.y, (Camera.main.orthographicSize - 5), Time.deltaTime * 2));
+        Camera.main.transform.position = new Vector3( (Camera.main.orthographicSize-5)*screenExt ,Camera.main.orthographicSize - 5);
         Camera.main.transform.position = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, 0, 3*screenExt), Mathf.Clamp(Camera.main.transform.position.y, 0, 3), -10);
 
         if (GameData.gd.f_magnY < -1)
@@ -202,7 +206,7 @@ public class Controll : MonoBehaviour
 
 
 #endif
-        if (f_focusPoint.x > Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 5)
+        if (f_focusPoint.x > minX)
         {
             f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;
         }
@@ -211,7 +215,7 @@ public class Controll : MonoBehaviour
             f_focusPoint += new Vector3(4, 0, 0) * Time.deltaTime;
         }
         
-        f_focusPoint = new Vector3(Mathf.Clamp(f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x, 8), f_focusPoint.y);
+        f_focusPoint = new Vector3(Mathf.Clamp(f_focusPoint.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x, maxX), f_focusPoint.y);
 
         if (GameData.gd.f_currenthp <= 0)
         {
@@ -230,7 +234,7 @@ public class Controll : MonoBehaviour
             Destroy(collision.gameObject);
             Instantiate(coinOff,collision.transform.position,Quaternion.identity);
             GameData.gd.f_currentScore += 10;
-            if (GameData.gd.i_currentMission == 0 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission,GameData.gd.i_currentLvl]) 
+            if (GameData.gd.i_currentMission == 0 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission,GameData.gd.i_currentMissionLvl]) 
             {
                 GameData.gd.f_currentmissionResult++;
 
