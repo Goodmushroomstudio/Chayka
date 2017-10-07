@@ -140,7 +140,7 @@ public class Controll : MonoBehaviour
         transform.position = new Vector3(Mathf.Lerp(transform.position.x, f_focusPoint.x, movement), Mathf.Lerp(transform.position.y, f_focusPoint.y, movement), transform.position.z);
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x + 2, 0f), Mathf.Clamp(transform.position.y, -3.5f, 8.5f), transform.position.z);
         transform.rotation = new Quaternion(0, 0, GameData.gd.f_axisY * -(Mathf.Abs(GameData.gd.f_magnY * 8)), 100f);
-        Camera.main.orthographicSize -= GameData.gd.f_axisY * (Time.deltaTime * 5);
+        Camera.main.orthographicSize -= GameData.gd.f_axisY * (Time.deltaTime * 3);
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 5, 8);
         Camera.main.transform.position = new Vector3( (Camera.main.orthographicSize-5)*screenExt ,Camera.main.orthographicSize - 5);
         Camera.main.transform.position = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, 0, 3*screenExt), Mathf.Clamp(Camera.main.transform.position.y, 0, 3), -10);

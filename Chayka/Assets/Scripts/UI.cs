@@ -13,15 +13,15 @@ public class UI : MonoBehaviour {
     void Start()
     {
 
-        transform.GetChild(6).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
-        transform.GetChild(6).GetChild(1).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
-        transform.GetChild(6).GetChild(2).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
-        transform.GetChild(6).GetChild(3).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.jeludokLevel / 10;
-        transform.GetChild(6).GetChild(4).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.armorLevel / 10;
-        transform.GetChild(6).GetChild(5).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.birdSpeedLevel / 10;
-        transform.GetChild(6).GetChild(6).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
-        transform.GetChild(6).GetChild(7).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
-        transform.GetChild(6).GetChild(8).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(3).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.jeludokLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(4).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.armorLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(5).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.birdSpeedLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
+        transform.GetChild(6).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
     }
 
     // Update is called once per frame
@@ -59,8 +59,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.hpLevel + 1);
             GameData.gd.hpLevel++;
-            transform.GetChild(6).GetChild(0).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
-            Debug.Log(GameData.gd.f_hp[GameData.gd.hpLevel] + " Level: " + GameData.gd.hpLevel);
+            transform.GetChild(6).GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -70,7 +69,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.spLevel + 1);
             GameData.gd.spLevel += 1;
-            transform.GetChild(6).GetChild(1).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
+            transform.GetChild(6).GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -81,7 +80,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.massFecalLevel + 1);
             GameData.gd.massFecalLevel += 1;
-            transform.GetChild(6).GetChild(2).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
+            transform.GetChild(6).GetChild(0).GetChild(5).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -92,7 +91,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.jeludokLevel + 1);
             GameData.gd.jeludokLevel += 1;
-            transform.GetChild(6).GetChild(3).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.jeludokLevel / 10;
+            transform.GetChild(6).GetChild(0).GetChild(3).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.jeludokLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -103,7 +102,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.armorLevel + 1);
             GameData.gd.armorLevel += 1;
-            transform.GetChild(6).GetChild(4).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.armorLevel / 10;
+            transform.GetChild(6).GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.armorLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -114,7 +113,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.birdSpeedLevel + 1);
             GameData.gd.birdSpeedLevel += 1;
-            transform.GetChild(6).GetChild(5).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.birdSpeedLevel / 10;
+            transform.GetChild(6).GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.birdSpeedLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -125,7 +124,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.kishechnikLevel + 1);
             GameData.gd.kishechnikLevel += 1;
-            transform.GetChild(6).GetChild(6).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
+            transform.GetChild(6).GetChild(0).GetChild(4).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -136,7 +135,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.fecalReloadLevel + 1);
             GameData.gd.fecalReloadLevel += 1;
-            transform.GetChild(6).GetChild(7).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
+            transform.GetChild(6).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -147,7 +146,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.maneurLevel + 1);
             GameData.gd.maneurLevel += 1;
-            transform.GetChild(6).GetChild(8).GetChild(1).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
+            transform.GetChild(6).GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
             SaveLoad.Save();
         }
     }
