@@ -37,7 +37,7 @@ public class BichControll : MonoBehaviour {
     }
     void UmbrellaGeneration()
     {
-        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x+1, GetComponent<SpriteRenderer>().bounds.max.x-1), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y + 1, GetComponent<SpriteRenderer>().bounds.max.y));
+        Vector3 coord = new Vector3(Random.Range(GetComponent<SpriteRenderer>().bounds.min.x+1, GetComponent<SpriteRenderer>().bounds.max.x-1), Random.Range(GetComponent<SpriteRenderer>().bounds.min.y + 1, GetComponent<SpriteRenderer>().bounds.max.y-0.5f));
         GameObject newUmbrella = Instantiate(umbrella[Random.Range(0, umbrella.Length)], coord, Quaternion.identity, transform);
         if (!Proverka(coord))
         {
