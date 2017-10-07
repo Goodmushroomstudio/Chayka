@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour {
             {
                 f_timer -= 1 * Time.deltaTime;
             }
-            Quaternion newRotation = Quaternion.LookRotation(transform.position - upper, Vector3.forward);
+            Quaternion newRotation = Quaternion.LookRotation(transform.position -player.transform.position, Vector3.forward);
             newRotation.x = 0;
             newRotation.y = 0;
             transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 100);
@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour {
         if (f_timer <= 0)
         {
             upper = new Vector3(Random.Range(player.transform.position.x, player.transform.position.x + 1), Random.Range(player.transform.position.y +1, player.transform.position.y + 3));
-            GameObject bullet = Instantiate(garpun, transform.position, transform.localRotation);
+            GameObject bullet = Instantiate(garpun, transform.GetChild(0).transform.position, transform.localRotation);
             float vX = Mathf.Clamp(((upper - transform.position) * 1.8f).x, -16, 16);
             float vY = Mathf.Clamp(((upper - transform.position) * 1.8f).y, -14, 14);
             bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(vX,vY), ForceMode2D.Impulse);
