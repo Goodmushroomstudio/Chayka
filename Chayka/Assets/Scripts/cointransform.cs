@@ -13,6 +13,12 @@ public class cointransform : MonoBehaviour {
     void Update()
     {
         transform.position = Vector3.Lerp(transform.position, Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)), Time.deltaTime * 4);
+        if (transform.position.x>=17)
+        {
+            GameData.gd.currentCoin++;
+            GameData.gd.coin++;
+            Destroy(gameObject);
+        }
         //transform.position+= Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height))*Time.deltaTime*2;
     }
 }
