@@ -71,8 +71,8 @@ public class Eat : MonoBehaviour
             GameData.gd.f_currentsp += GameData.gd.kishechnik[GameData.gd.kishechnikLevel];
             GameData.gd.f_currenthp += GameData.gd.jeludok[GameData.gd.jeludokLevel];
             GetComponent<SpriteRenderer>().enabled = true;
-            transform.rotation = new Quaternion(transform.GetChild(0).transform.rotation.x, transform.GetChild(0).transform.rotation.y, transform.GetChild(0).transform.rotation.z+45,100); 
-            GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-50, 50);
+            transform.rotation = transform.GetChild(0).transform.localRotation;
+            GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-100, 100);
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Eat>().enabled = false;
             Destroy(transform.GetChild(0).gameObject);

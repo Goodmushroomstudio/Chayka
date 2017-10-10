@@ -245,6 +245,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114337165946321246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,6 +271,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114652690782043260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,6 +297,7 @@ MonoBehaviour:
   loop: 1
   selfDestruct: 0
   hide: 0
+  mask: 0
 --- !u!114 &114716400395436632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -310,8 +313,15 @@ MonoBehaviour:
   oldHit: 0
   combo: {fileID: 1296974701845802, guid: 441057b85d6fd2f4695d6ee4b0b2b70f, type: 2}
   newcombo: {fileID: 0}
+  coinBonus: {fileID: 0}
   f_alpha: 0
+  f_time: 0
+  f_reload: 0
+  i_bonus: 0
   bich: 1
+  ship: 0
+  f_strength: 0
+  hp: 0
 --- !u!114 &114793341752230764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,6 +342,7 @@ MonoBehaviour:
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 5
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114809129917638910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,8 +426,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 902477587
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f33bfdc83c5577943a3092048f4c3e9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -243,7 +243,7 @@ public class Controll : MonoBehaviour
     {
         GameData.gd.f_currentsp -= 0.20f;
         timer = GameData.gd.fecalReload[GameData.gd.fecalReloadLevel];
-        GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
+        Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }
     public void Bang()

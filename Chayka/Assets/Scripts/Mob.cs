@@ -94,7 +94,7 @@ public class Mob : MonoBehaviour {
                 {
                     f_time = f_reload;
                     i_bonus -= 1;
-                    GameObject newcoinBonus = Instantiate(coinBonus, transform.position, Quaternion.identity);
+                    Instantiate(coinBonus, transform.position, Quaternion.identity);
                     GameData.gd.currentCoin += 1;
 
                 }

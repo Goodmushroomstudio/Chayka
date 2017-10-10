@@ -12,7 +12,7 @@ public class Attack : MonoBehaviour {
     void Pocaculki()
     {
         GameData.gd.f_currentsp -= 0.1f;
-        GameObject clone = Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.8f),Quaternion.identity );
+        Instantiate(cacula, new Vector3(transform.position.x, transform.position.y - 0.8f),Quaternion.identity );
         //cacula.transform.position = new Vector3(transform.position.x, transform.position.y * f_speed * Time.deltaTime, 0);
     }
 	

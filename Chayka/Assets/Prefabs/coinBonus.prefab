@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1005489646699990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.366885, y: -2.16, z: 0}
+  m_LocalPosition: {x: 6.976998, y: 0.34089398, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c97e851e38cfd44fa383d8e658172b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinOff: {fileID: 1658483437275582, guid: 071e6fb461a44fe4986f7857c73a7110, type: 2}
+  coinOff: {fileID: 1330070198701466, guid: 071e6fb461a44fe4986f7857c73a7110, type: 2}
 --- !u!114 &114535675867363352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,9 +145,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingLayerID: 902477587
+  m_SortingLayer: 2
+  m_SortingOrder: 16
   m_Sprite: {fileID: 21300000, guid: 1956ae53c3beab94c934b7463da95ca5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

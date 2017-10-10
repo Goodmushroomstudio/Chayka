@@ -808,7 +808,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.613}
-    oldSize: {x: 13.56, y: 2.92}
+    oldSize: {x: 13.23, y: 2.92}
     newSize: {x: 13.56, y: 2.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1098,7 +1098,6 @@ MonoBehaviour:
   - {fileID: 1925839907475774, guid: 18e30f117aa86e14b860d01aff65d7b0, type: 2}
   - {fileID: 1700550939827112, guid: 69c694ba1d3cd0840a6e6f8e5879367e, type: 2}
   - {fileID: 1797106998405844, guid: 380583134aae4a74391989693d5e053e, type: 2}
-  bichgen: 0
 --- !u!114 &114015807047200042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1114,6 +1113,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114114403118254138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1129,6 +1129,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114151697112538010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1149,6 +1150,7 @@ MonoBehaviour:
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 5
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114228781308969520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1164,6 +1166,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114230257492783194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1179,6 +1182,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114304110555532718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1194,6 +1198,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114356605211426282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1209,6 +1214,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114411768104616786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1229,6 +1235,7 @@ MonoBehaviour:
   - {fileID: 1468848559616862, guid: 49150977b3233e5468ae98dec04b468b, type: 2}
   f_value: 5
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114463138037806284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1244,6 +1251,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114488198328407048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1259,6 +1267,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114615082101017902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1274,6 +1283,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114722727227068492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1289,6 +1299,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114886634167157500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1304,6 +1315,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114895464113960084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1319,6 +1331,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114901784462541326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1334,6 +1347,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114910583719999538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1349,6 +1363,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114916087092697296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1364,6 +1379,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!114 &114950704458541868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1379,6 +1395,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
+  people: 0
 --- !u!212 &212032068772439000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1912,8 +1929,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 902477587
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9c32b94d35b5c6545b845f1a4ad6c2ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2049,7 +2066,7 @@ SpriteRenderer:
   m_Size: {x: 5.56, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212909383492304324
 SpriteRenderer:

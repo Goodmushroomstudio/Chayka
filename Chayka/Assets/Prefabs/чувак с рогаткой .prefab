@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stone: {fileID: 1515886280187910, guid: a2357d871836d05408d7e9234a84489a, type: 2}
   upper: {x: 0, y: 0, z: 0}
+  impulse: 0
 --- !u!212 &212914503202697300
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,8 +132,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 902477587
+  m_SortingLayer: 2
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: f7bb5b312c1b48f4bbb9282e6dd59308, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -173,8 +174,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 902477587
+  m_SortingLayer: 2
   m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: 1e2bc155370838d4f9dc7a1201d43c8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

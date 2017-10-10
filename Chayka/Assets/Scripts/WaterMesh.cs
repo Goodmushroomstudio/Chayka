@@ -10,7 +10,7 @@ public class WaterMesh : MonoBehaviour {
     public float height;
     public float width;
     float step;
-    Vector3 min, max;
+    Vector3 max;
     bool up;
     Mesh mesh;
     Vector3[] meshVertices;
@@ -56,7 +56,6 @@ public class WaterMesh : MonoBehaviour {
         mesh.uv = baseuvs;
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
-        min = new Vector3(meshVertices[5].x, meshVertices[5].y - 0.2f);
 	}
 	
 	// Update is called once per frame
