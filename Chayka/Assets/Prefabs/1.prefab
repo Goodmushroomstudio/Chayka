@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1944182266705346}
+  m_IsPrefabParent: 1
+--- !u!1 &1944182266705346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4625677823357778}
+  - component: {fileID: 212738900707962668}
+  - component: {fileID: 114471128485782192}
+  - component: {fileID: 114406661390339290}
+  m_Layer: 0
+  m_Name: 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4625677823357778
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944182266705346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.13, y: -2.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114406661390339290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944182266705346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da35f64fee6495541984a25b70c03554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+--- !u!114 &114471128485782192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944182266705346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e007835a34a7a498022c64c5cbd020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i_currentFrame: 0
+  f_maxTime: 0.1
+  f_interval: 0
+  spriteArray:
+  - {fileID: 21300000, guid: 608c28130b86e504d8b4ad251c59a078, type: 3}
+  - {fileID: 21300000, guid: 38f29cdcfc4af304b8330f92ed05fff1, type: 3}
+  - {fileID: 21300000, guid: ede7da28867f2ef4ba795f2b44c4d0e6, type: 3}
+  - {fileID: 21300000, guid: d312c4d0aee2b1a43a3e914903e8a6cd, type: 3}
+  - {fileID: 21300000, guid: 9f1959239d9903e4280cc9ed3d2b3214, type: 3}
+  - {fileID: 21300000, guid: bf245f47d21ac0248a7c6d65b8bc5bb4, type: 3}
+  - {fileID: 21300000, guid: b07a2de87ca9db347b4508f1f6c7fc6d, type: 3}
+  - {fileID: 21300000, guid: 8569089f36c263947ab7dc08da24ab42, type: 3}
+  - {fileID: 21300000, guid: 2d7f86fa0c3dfe945827393531f0da24, type: 3}
+  - {fileID: 21300000, guid: e812829827e759f44a68dccc54085b02, type: 3}
+  - {fileID: 21300000, guid: f1f2b4a0f10f1d04580055d57ed5051f, type: 3}
+  loop: 0
+  selfDestruct: 1
+  hide: 0
+  mask: 0
+--- !u!212 &212738900707962668
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944182266705346}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 902477587
+  m_SortingLayer: 2
+  m_SortingOrder: 18
+  m_Sprite: {fileID: 21300000, guid: 608c28130b86e504d8b4ad251c59a078, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.6, y: 4.1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0

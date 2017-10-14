@@ -39,7 +39,9 @@ public class World : MonoBehaviour {
         GameData.gd.death = false;
         GameData.gd.spLevel = 3;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
-        GameData.gd.f_currentsp = 0;
+        GameData.gd.f_currentsp = 50f;
+        GameData.gd.kishechnikLevel = 9;
+        GameData.gd.massFecalLevel = 9;
         GameData.gd.f_currentScore = 0;
         GameData.gd.f_magnY = 0;
         GameData.gd.f_speed = 1;
@@ -94,7 +96,7 @@ public class World : MonoBehaviour {
         if (range <= 0)
         {
             range = 10 - Mathf.Abs(range);
-            GameObject txtRange = Instantiate(textPrefab,  canvas.transform.GetChild(0).transform);
+            GameObject txtRange = Instantiate(textPrefab,  canvas.transform.GetChild(1).transform);
             txtRange.GetComponent<Text>().text = Mathf.CeilToInt(GameData.gd.f_range-0.5f).ToString() + "m";
         }
         if (GameData.gd.f_speed != 0)

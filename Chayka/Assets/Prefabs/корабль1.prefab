@@ -521,6 +521,8 @@ MonoBehaviour:
   combo: {fileID: 1296974701845802, guid: 441057b85d6fd2f4695d6ee4b0b2b70f, type: 2}
   newcombo: {fileID: 0}
   coinBonus: {fileID: 1005489646699990, guid: 2f39f8e119b451c4cb0dbbe5af91c444, type: 2}
+  splash: {fileID: 1944182266705346, guid: 400738628308a5441baa886db562dbaa, type: 2}
+  b_splash: 0
   f_alpha: 0
   f_time: 0
   f_reload: 0.1
