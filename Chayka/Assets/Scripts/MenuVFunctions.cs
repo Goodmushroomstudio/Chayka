@@ -34,7 +34,7 @@ public class MenuVFunctions : MonoBehaviour {
         {
             water.transform.position += new Vector3(0, 1.5f, 0);
         }
-        if (water.GetComponent<RectTransform>().anchoredPosition.y>=0)
+        if (water.GetComponent<RectTransform>().anchoredPosition.y>=-100)
         {
             if (b_water1)
             {
