@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class GameData
@@ -51,11 +52,14 @@ public class GameData
     public bool coinBuster;
     public bool fishBuster;
     public bool magnerBuster;
+    public string[] s_m_name;
+    public List<float[]> missionsList;
     public GameData()
     {
         i_currentChar = 0;
         f_axisY = 0;
         f_speed = 0;
+        
         f_m_missions = new float[7, 3] { { 30, 200, 300 }, { 100, 200, 300 } , { 1000, 2000, 3000 } , { 25, 50, 100 } , { 25, 50, 100 } , { 25, 50, 100 } , { 1000, 2000, 3000 } };
         b_m_missions = new bool[7, 3];
         f_hp = new float[] { 1, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1.70f, 1.80f, 2f, 2.5f };
