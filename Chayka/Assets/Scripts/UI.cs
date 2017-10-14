@@ -50,7 +50,7 @@ public class UI : MonoBehaviour {
         }
         if(GameData.gd.currentCoin>oldCoin)
         {
-            transform.GetChild(1).GetComponent<Animator>().Play("coinBoard");
+            //transform.GetChild(1).GetComponent<Animator>().Play("coinBoard");
             GameData.gd.coin++;
             oldCoin++;
         }
