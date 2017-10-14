@@ -27,5 +27,9 @@ public class Functions : MonoBehaviour {
             GameObject.Find("MainTheme").GetComponent<AudioSource>().mute = true;
         }
     }
+    public void LoadShop()
+    {
+        SceneManager.LoadScene("MenuV");
+    }
 }	
 

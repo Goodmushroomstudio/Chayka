@@ -12,6 +12,8 @@ public class Mob : MonoBehaviour {
     public GameObject coinBonus;
     bool spawn;
     GameObject canvas;
+    public GameObject splash;
+    public bool b_splash;
     Vector3 comboPlace;
     Vector3 centrMass;
     public float f_alpha;
@@ -28,7 +30,7 @@ public class Mob : MonoBehaviour {
     void Start () {
         if (ship)
         {
-            hp = GetComponent<SpriteRenderer>().bounds.size.y;
+          hp = GetComponent<SpriteRenderer>().bounds.size.y;
         }
         centrMass = transform.position;
         canvas = GameObject.Find("WorldCanvas");
@@ -79,10 +81,11 @@ public class Mob : MonoBehaviour {
 
         }
         oldHit = hitCount;
-        if(hp<=0 && ship )
+        if(hp<=0 && ship)
         {
-            
             transform.position -= new Vector3(0, 3) * Time.deltaTime;
+
+            Splash(); 
             if (GameData.gd.i_currentMission == 5 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
             {
                 GameData.gd.f_currentmissionResult++;
@@ -99,6 +102,7 @@ public class Mob : MonoBehaviour {
 
                 }
             }
+            
         }
 
 
@@ -120,6 +124,15 @@ public class Mob : MonoBehaviour {
            newcombo.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y +0.5f);
         }
 
+    }
+    public void Splash()
+    {
+        if (!b_splash)
+        {
+            GameObject newSplash = Instantiate(splash, new Vector3(transform.position.x, -2.2f), Quaternion.identity);
+            newSplash.transform.localScale = gameObject.transform.localScale*1.5f; 
+            b_splash = true;
+        }
     }
 
 

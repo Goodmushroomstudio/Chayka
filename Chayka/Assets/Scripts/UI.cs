@@ -10,20 +10,21 @@ public class UI : MonoBehaviour {
     public Text t_coinText;
     public Text t_currentCoinText;
     int oldCoin;
+    public int childPanel;
 
     void Start()
     {
         oldCoin = 0;
 
-        transform.GetChild(6).GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
-        transform.GetChild(6).GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
-        transform.GetChild(6).GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
-        transform.GetChild(6).GetChild(0).GetChild(3).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.jeludokLevel / 10;
-        transform.GetChild(6).GetChild(0).GetChild(4).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.armorLevel / 10;
-        transform.GetChild(6).GetChild(0).GetChild(5).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.birdSpeedLevel / 10;
-        transform.GetChild(6).GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
-        transform.GetChild(6).GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
-        transform.GetChild(6).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(3).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.jeludokLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(4).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.armorLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(5).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.birdSpeedLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
+        transform.GetChild(childPanel).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class UI : MonoBehaviour {
 
         if(GameData.gd.death)
         {
-            transform.GetChild(6).GetComponent<Animator>().Play("board");
+            transform.GetChild(childPanel).GetComponent<Animator>().Play("board");
         }
         SetCurrentScoreText();
         CurrentCoinText();
@@ -50,7 +51,6 @@ public class UI : MonoBehaviour {
         }
         if(GameData.gd.currentCoin>oldCoin)
         {
-            //transform.GetChild(1).GetComponent<Animator>().Play("coinBoard");
             GameData.gd.coin++;
             oldCoin++;
         }
@@ -67,7 +67,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.hpLevel + 1);
             GameData.gd.hpLevel++;
-            transform.GetChild(6).GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -77,7 +77,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.spLevel + 1);
             GameData.gd.spLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -88,7 +88,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.massFecalLevel + 1);
             GameData.gd.massFecalLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(5).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(5).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -99,7 +99,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.jeludokLevel + 1);
             GameData.gd.jeludokLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(3).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.jeludokLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(3).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.jeludokLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -110,7 +110,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.armorLevel + 1);
             GameData.gd.armorLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.armorLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.armorLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -121,7 +121,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.birdSpeedLevel + 1);
             GameData.gd.birdSpeedLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.birdSpeedLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.birdSpeedLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -132,7 +132,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.kishechnikLevel + 1);
             GameData.gd.kishechnikLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(4).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(4).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -143,7 +143,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.fecalReloadLevel + 1);
             GameData.gd.fecalReloadLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -154,7 +154,7 @@ public class UI : MonoBehaviour {
         {
             GameData.gd.coin -= 5 * (GameData.gd.maneurLevel + 1);
             GameData.gd.maneurLevel += 1;
-            transform.GetChild(6).GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
+            transform.GetChild(childPanel).GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
             SaveLoad.Save();
         }
     }
@@ -164,12 +164,12 @@ public class UI : MonoBehaviour {
         if (GameData.gd.coinBuster)
         {
             GameData.gd.coinBuster = false;
-            transform.GetChild(6).GetChild(12).GetComponent<Outline>().enabled = false;
+            transform.GetChild(childPanel).GetChild(12).GetComponent<Outline>().enabled = false;
         }
         else
         {
             GameData.gd.coinBuster = true;
-            transform.GetChild(6).GetChild(12).GetComponent<Outline>().enabled = true;
+            transform.GetChild(childPanel).GetChild(12).GetComponent<Outline>().enabled = true;
         }
     }
 
@@ -178,12 +178,12 @@ public class UI : MonoBehaviour {
         if (GameData.gd.fishBuster)
         {
             GameData.gd.fishBuster = false;
-            transform.GetChild(6).GetChild(11).GetComponent<Outline>().enabled = false;
+            transform.GetChild(childPanel).GetChild(11).GetComponent<Outline>().enabled = false;
         }
         else
         {
             GameData.gd.fishBuster = true;
-            transform.GetChild(6).GetChild(11).GetComponent<Outline>().enabled = true;
+            transform.GetChild(childPanel).GetChild(11).GetComponent<Outline>().enabled = true;
         }
     }
 
@@ -192,12 +192,12 @@ public class UI : MonoBehaviour {
         if (GameData.gd.magnerBuster)
         {
             GameData.gd.magnerBuster = false;
-            transform.GetChild(6).GetChild(13).GetComponent<Outline>().enabled = false;
+            transform.GetChild(childPanel).GetChild(13).GetComponent<Outline>().enabled = false;
         }
         else
         {
             GameData.gd.magnerBuster = true;
-            transform.GetChild(6).GetChild(13).GetComponent<Outline>().enabled = true;
+            transform.GetChild(childPanel).GetChild(13).GetComponent<Outline>().enabled = true;
         }
     }
 
@@ -212,8 +212,8 @@ public class UI : MonoBehaviour {
 
     public void MissionLabel(string l)
     {
-        transform.GetChild(8).GetChild(0).GetComponent<Text>().text = l;
-        transform.GetChild(8).GetComponent<Animator>().Play("label");
+        transform.GetChild(5).GetChild(0).GetComponent<Text>().text = l;
+        transform.GetChild(5).GetComponent<Animator>().Play("label");
     }
     
 }

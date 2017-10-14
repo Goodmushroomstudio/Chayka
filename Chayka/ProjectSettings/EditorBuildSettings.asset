@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/menu.unity
     guid: 8b61e39fb629cf249b269b2a2a0b1124
   - enabled: 1
+    path: Assets/MenuV.unity
+    guid: 858ba8b4e69188343bc3e07ae28cf366
+  - enabled: 1
     path: Assets/Main.unity
-    guid: 9c3988dd7f2b9b24483d3b596e461cf5
+    guid: 82fb8da6e9b6e5e4db1936a9f9bea84b
