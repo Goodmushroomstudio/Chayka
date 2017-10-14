@@ -105,7 +105,7 @@ public class Controll : MonoBehaviour
                 if (deltaPositon != Vector3.zero)
                 {
                     f_focusPoint += new Vector3(0, deltaPositon.y);
-                    f_focusPoint = new Vector3(f_focusPoint.x, Mathf.Clamp(f_focusPoint.y, -3.5f, 8.5f));
+                    f_focusPoint = new Vector3(f_focusPoint.x, Mathf.Clamp(f_focusPoint.y, -3.5f, 7.5f));
                     if (deltaPositon.x < 0)
                     {
                         f_focusPoint += new Vector3(deltaPositon.x, 0);
@@ -197,7 +197,7 @@ public class Controll : MonoBehaviour
             if (deltaPositon != Vector3.zero)
             {
                 f_focusPoint += new Vector3(0, deltaPositon.y);
-                f_focusPoint = new Vector3(f_focusPoint.x, Mathf.Clamp(f_focusPoint.y, -3.5f, 8.5f));
+                f_focusPoint = new Vector3(f_focusPoint.x, Mathf.Clamp(f_focusPoint.y, -3.5f, 7.5f));
                 if (deltaPositon.x < 0)
                 {
                     f_focusPoint += new Vector3(deltaPositon.x, 0);
@@ -270,7 +270,6 @@ public class Controll : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         GameData.gd.f_speed = 0;
-        transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
         this.gameObject.SetActive(false);
     }
 

@@ -187,7 +187,7 @@ public class World : MonoBehaviour {
     }
     public void CoinGeneration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(-1, 7.5f), 0);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, Random.Range(-1, 6.5f), 0);
         GameObject newCoin = Instantiate(coin, coord, Quaternion.identity, transform);
         newCoin.GetComponent<Move>().speed = Random.Range(3, 7);
     }
