@@ -261,7 +261,6 @@ public class Controll : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         GameData.gd.f_speed = 0;
-        transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
         this.gameObject.SetActive(false);
     }
 
