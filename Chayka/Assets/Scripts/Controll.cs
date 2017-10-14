@@ -27,6 +27,15 @@ public class Controll : MonoBehaviour
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
         f_focusPoint = new Vector3(-4, 0, 0);
         screenExt = (float)Screen.width / (float)Screen.height;
+        if (GameData.gd.magnerBuster)
+        {
+            transform.GetChild(3).GetComponent<PointEffector2D>().enabled = true;
+            GameData.gd.magnerBuster = false;
+        }
+        else
+        {
+            transform.GetChild(3).GetComponent<PointEffector2D>().enabled = false;
+        }
 
     }
 

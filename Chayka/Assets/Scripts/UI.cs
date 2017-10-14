@@ -15,7 +15,6 @@ public class UI : MonoBehaviour {
     void Start()
     {
         oldCoin = 0;
-
         transform.GetChild(childPanel).GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.hpLevel / 10;
         transform.GetChild(childPanel).GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.spLevel / 10;
         transform.GetChild(childPanel).GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.massFecalLevel / 10;
@@ -25,6 +24,11 @@ public class UI : MonoBehaviour {
         transform.GetChild(childPanel).GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
         transform.GetChild(childPanel).GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
         transform.GetChild(childPanel).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
+        for (int i = 0; i < 3; i++)
+        {
+            transform.GetChild(childPanel).GetChild(7).GetChild(i).GetComponent<Text>().text = Missions.missionHead[GameData.gd.currentMissions[i]] + Missions.f_m_missions[GameData.gd.currentMissions[i], Missions.missionRang] + Missions.missionBody[GameData.gd.currentMissions[i]];
+        }
+
     }
 
     // Update is called once per frame
@@ -164,12 +168,12 @@ public class UI : MonoBehaviour {
         if (GameData.gd.coinBuster)
         {
             GameData.gd.coinBuster = false;
-            transform.GetChild(childPanel).GetChild(12).GetComponent<Outline>().enabled = false;
+            transform.GetChild(childPanel).GetChild(4).GetComponent<Outline>().enabled = false;
         }
         else
         {
             GameData.gd.coinBuster = true;
-            transform.GetChild(childPanel).GetChild(12).GetComponent<Outline>().enabled = true;
+            transform.GetChild(childPanel).GetChild(4).GetComponent<Outline>().enabled = true;
         }
     }
 
@@ -178,12 +182,12 @@ public class UI : MonoBehaviour {
         if (GameData.gd.fishBuster)
         {
             GameData.gd.fishBuster = false;
-            transform.GetChild(childPanel).GetChild(11).GetComponent<Outline>().enabled = false;
+            transform.GetChild(childPanel).GetChild(3).GetComponent<Outline>().enabled = false;
         }
         else
         {
             GameData.gd.fishBuster = true;
-            transform.GetChild(childPanel).GetChild(11).GetComponent<Outline>().enabled = true;
+            transform.GetChild(childPanel).GetChild(3).GetComponent<Outline>().enabled = true;
         }
     }
 
@@ -192,12 +196,12 @@ public class UI : MonoBehaviour {
         if (GameData.gd.magnerBuster)
         {
             GameData.gd.magnerBuster = false;
-            transform.GetChild(childPanel).GetChild(13).GetComponent<Outline>().enabled = false;
+            transform.GetChild(childPanel).GetChild(5).GetComponent<Outline>().enabled = false;
         }
         else
         {
             GameData.gd.magnerBuster = true;
-            transform.GetChild(childPanel).GetChild(13).GetComponent<Outline>().enabled = true;
+            transform.GetChild(childPanel).GetChild(5).GetComponent<Outline>().enabled = true;
         }
     }
 

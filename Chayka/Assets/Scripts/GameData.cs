@@ -53,7 +53,10 @@ public class GameData
     public bool fishBuster;
     public bool magnerBuster;
     public string[] s_m_name;
-    public List<float[]> missionsList;
+    public List<int> missionsLeft;
+    public List<int> currentMissions;
+    public List<bool> bCurrentMissons;
+    public bool[] bMissions;
     public GameData()
     {
         i_currentChar = 0;
@@ -85,6 +88,7 @@ public class GameData
         music = true;
         f_currentmissionResult = 0;
         i_currentMissionLvl = 0;
+        bMissions = new bool[7];
     }
     
 

@@ -36,7 +36,11 @@ public class World : MonoBehaviour {
     void Awake()
     {
         SaveLoad.Load();
-        Missions.RandomMission();
+        if (GameData.gd.currentMissions == null)
+        {
+            Missions.RandomMission();
+            SaveLoad.Save();
+        }
         GameData.gd.death = false;
         GameData.gd.spLevel = 3;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
