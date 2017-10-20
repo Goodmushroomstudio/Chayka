@@ -76,20 +76,19 @@ public class Eat : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Eat>().enabled = false;
             Destroy(transform.GetChild(0).gameObject);
-            if (GameData.gd.currentMissions[0] == 1 || GameData.gd.currentMissions[1] == 1 || GameData.gd.currentMissions[2] == 1)
+            if (!GameData.gd.bMissions[1])
             {
-                if (!GameData.gd.bMissions[1])
+                if (GameData.gd.currentMissions[0] == 1 || GameData.gd.currentMissions[1] == 1 || GameData.gd.currentMissions[2] == 1)
                 {
                     Missions.progress[1] += 1;
                     Debug.Log("Рыба");
-                    if (Missions.progress[1] >= Missions.f_m_missions[1, Missions.missionRang])
+                    if (Missions.progress[1] >= Missions.f_m_missions[1, GameData.gd.missionRang])
                     {
                         GameData.gd.bMissions[1] = true;
                         SaveLoad.Save();
                         Debug.Log("Сбор рыб закончен");
                     }
                 }
-
             }
         }
         

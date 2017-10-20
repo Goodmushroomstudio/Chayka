@@ -41,6 +41,61 @@ public class World : MonoBehaviour {
             Missions.RandomMission();
             SaveLoad.Save();
         }
+        else
+        {
+            int c = 0;
+            for (int i = 0; i < GameData.gd.bMissions.Length; i++)
+            {
+                if (GameData.gd.bMissions[i])
+                    c++;
+            }
+            if (c == 3)
+            {
+                int a = 0;
+                for (int i = 0; i < 3; i++)
+                {
+                    if (GameData.gd.bMissions[GameData.gd.currentMissions[i]])
+                    {
+                        a++;
+                    }
+                    if (a == 3)
+                    {
+                        Missions.RandomMission();
+                        SaveLoad.Save();
+                    }
+                }
+
+                
+            }
+            else if (c == 6)
+            {
+                int a = 0;
+                for (int i = 0; i < 3; i++)
+                {
+                    if (GameData.gd.bMissions[GameData.gd.currentMissions[i]])
+                    {
+                        a++;
+                    }
+                    if (a == 3)
+                    {
+                        Missions.RandomMission();
+                        SaveLoad.Save();
+                    }
+                }
+            }
+            else if (c == 9)
+            {
+                GameData.gd.missionRang++;
+                GameData.gd.bMissions = new bool[9];
+                for(int i = 0; i< GameData.gd.f_m_missions.GetLength(0); i++)
+                {
+                    GameData.gd.missionsLeft.Add(i);
+                }
+                
+                Missions.RandomMission();
+                SaveLoad.Save();
+            }
+        }
         GameData.gd.death = false;
         GameData.gd.spLevel = 3;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
@@ -53,6 +108,8 @@ public class World : MonoBehaviour {
         GameData.gd.f_range = 0;
         GameData.gd.currentCoin = 0;
         GameData.gd.f_currentmissionResult = 0;
+        GameData.gd.hit = false;
+        Missions.progress = new List<float>() { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         if (GameData.gd.coinBuster)
         {
             f_reloadCoin = 1.5f;
@@ -80,7 +137,7 @@ public class World : MonoBehaviour {
         GameData.gd.f_speed = f_speed;
         CloudGeneration();
         canvas = GameObject.Find("Canvas");
-        range = 10;
+        range = 0;
 	}
 
     // Update is called once per frame
@@ -88,21 +145,53 @@ public class World : MonoBehaviour {
     {
         range -= 3 * GameData.gd.f_speed * Time.deltaTime;
         GameData.gd.f_range += 3 * GameData.gd.f_speed * Time.deltaTime;
-        if (GameData.gd.i_currentMission == 2 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
+        if (!GameData.gd.bMissions[2])
         {
-            GameData.gd.f_currentmissionResult++;
-
+            if (GameData.gd.currentMissions[0] == 2 || GameData.gd.currentMissions[1] == 2 || GameData.gd.currentMissions[2] == 2)
+            {
+                Missions.progress[2] = GameData.gd.f_range;
+                if (Missions.progress[2] >= Missions.f_m_missions[2, GameData.gd.missionRang])
+                {
+                    GameData.gd.bMissions[2] = true;
+                    SaveLoad.Save();
+                    Debug.Log("Расстояние пройдено");
+                }
+            }
         }
-        if (GameData.gd.i_currentMission == 6 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
+        if (!GameData.gd.bMissions[6])
         {
-            GameData.gd.f_currentmissionResult=GameData.gd.f_range;
-
+            if (GameData.gd.currentMissions[0] == 6 || GameData.gd.currentMissions[1] == 6 || GameData.gd.currentMissions[2] == 6)
+            {
+                Missions.progress[6] = GameData.gd.f_currentScore;
+                if (Missions.progress[6] >= Missions.f_m_missions[6, GameData.gd.missionRang])
+                {
+                    GameData.gd.bMissions[6] = true;
+                    SaveLoad.Save();
+                    Debug.Log("Очки набраны");
+                }
+            }
+        }
+        if (!GameData.gd.bMissions[8])
+        {
+            if (GameData.gd.currentMissions[0] == 8 || GameData.gd.currentMissions[1] == 8 || GameData.gd.currentMissions[2] == 8)
+            {
+                if (!GameData.gd.hit)
+                {
+                    Missions.progress[8] = GameData.gd.f_range;
+                }
+                if (Missions.progress[8] >= Missions.f_m_missions[8, GameData.gd.missionRang])
+                {
+                    GameData.gd.bMissions[8] = true;
+                    SaveLoad.Save();
+                    Debug.Log("Расстояние без повреждений пройдено");
+                }
+            }
         }
         if (range <= 0)
         {
             range = 10 - Mathf.Abs(range);
             GameObject txtRange = Instantiate(textPrefab,  canvas.transform.GetChild(1).transform);
-            txtRange.GetComponent<Text>().text = Mathf.CeilToInt(GameData.gd.f_range-0.5f).ToString() + "m";
+            txtRange.GetComponent<Text>().text = Mathf.CeilToInt(GameData.gd.f_range-0.5f +10).ToString() + "m";
         }
         if (GameData.gd.f_speed != 0)
         {
@@ -199,7 +288,7 @@ public class World : MonoBehaviour {
     }
     public void ShipsGeheration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -3.2f);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 50, -3.2f);
         if (GameData.gd.f_range > 0 && GameData.gd.f_range<200)
         {
             Instantiate(ships[Random.Range(0, 3)], coord, Quaternion.identity, transform);

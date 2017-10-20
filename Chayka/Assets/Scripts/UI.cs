@@ -26,7 +26,7 @@ public class UI : MonoBehaviour {
         transform.GetChild(childPanel).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
         for (int i = 0; i < 3; i++)
         {
-            transform.GetChild(childPanel).GetChild(7).GetChild(i).GetComponent<Text>().text = Missions.missionHead[GameData.gd.currentMissions[i]] + Missions.f_m_missions[GameData.gd.currentMissions[i], Missions.missionRang] + Missions.missionBody[GameData.gd.currentMissions[i]];
+            transform.GetChild(childPanel).GetChild(7).GetChild(i).GetComponent<Text>().text = Missions.missionHead[GameData.gd.currentMissions[i]] + Missions.f_m_missions[GameData.gd.currentMissions[i], GameData.gd.missionRang] + Missions.missionBody[GameData.gd.currentMissions[i]];
         }
 
     }
@@ -58,6 +58,18 @@ public class UI : MonoBehaviour {
             GameData.gd.coin++;
             oldCoin++;
         }
+        for (int i = 0; i < 3; i++)
+        {
+            if (GameData.gd.bMissions[GameData.gd.currentMissions[i]])
+            {
+                transform.GetChild(0).GetChild(2).GetChild(i).GetComponent<Image>().fillAmount = 1;
+            }
+            else
+            {
+                transform.GetChild(0).GetChild(2).GetChild(i).GetComponent<Image>().fillAmount = Missions.progress[GameData.gd.currentMissions[i]] / Missions.f_m_missions[GameData.gd.currentMissions[i], GameData.gd.missionRang];
+            }
+        }
+
     }
     void SetCurrentScoreText()
     {
@@ -75,6 +87,7 @@ public class UI : MonoBehaviour {
             SaveLoad.Save();
         }
     }
+
     public void SpUp()
     {
         if (GameData.gd.spLevel + 1 < GameData.gd.f_sp.Length && GameData.gd.coin >= 5 * (GameData.gd.spLevel + 1))

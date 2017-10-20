@@ -55,11 +55,27 @@ public class Mob : MonoBehaviour {
         {
             if (!bich)
             {
-                if (hitCount > oldHit && hitCount > 5)
+                if (hitCount > oldHit)
                 {
+                    if (!GameData.gd.bMissions[7])
+                    {
+                        if (GameData.gd.currentMissions[0] == 7 || GameData.gd.currentMissions[1] == 7 || GameData.gd.currentMissions[2] == 7)
+                        {
+                            Missions.progress[7] = hitCount;
+                            if (Missions.progress[7] >= Missions.f_m_missions[7, GameData.gd.missionRang])
+                            {
+                                GameData.gd.bMissions[7] = true;
+                                SaveLoad.Save();
+                                Debug.Log("Комбо");
+                            }
+                        }
+                    }
 
-                    Combo();
-
+                    
+                    if (hitCount >= 5)
+                    {
+                        Combo();
+                    }
                 }
 
                 
@@ -73,10 +89,18 @@ public class Mob : MonoBehaviour {
         {
             centrMass = transform.position - new Vector3(0, GameData.gd.massFecal[GameData.gd.massFecalLevel]);
             hp -= GameData.gd.massFecal[GameData.gd.massFecalLevel];
-            if (GameData.gd.i_currentMission == 3 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
+            if (!GameData.gd.bMissions[3] && ship && oldHit == 0)
             {
-                GameData.gd.f_currentmissionResult++;
-
+                if (GameData.gd.currentMissions[0] == 3 || GameData.gd.currentMissions[1] == 3 || GameData.gd.currentMissions[2] == 3)
+                {
+                    Missions.progress[3] += 1;
+                    if (Missions.progress[3] >= Missions.f_m_missions[3, GameData.gd.missionRang])
+                    {
+                        GameData.gd.bMissions[3] = true;
+                        SaveLoad.Save();
+                        Debug.Log("Корабли засраны");
+                    }
+                }
             }
 
         }
@@ -85,11 +109,8 @@ public class Mob : MonoBehaviour {
         {
             transform.position -= new Vector3(0, 3) * Time.deltaTime;
 
-            Splash(); 
-            if (GameData.gd.i_currentMission == 5 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission, GameData.gd.i_currentMissionLvl])
-            {
-                GameData.gd.f_currentmissionResult++;
-            }
+            Splash();
+
             if(i_bonus>0 )
             { 
             f_time -= 1 * Time.deltaTime;
@@ -113,7 +134,7 @@ public class Mob : MonoBehaviour {
         if (!spawn && !bich)
         {
             comboPlace = new Vector3(transform.position.x, comboPlace.y);
-           newcombo = Instantiate(combo,comboPlace , Quaternion.identity,canvas.transform);
+            newcombo = Instantiate(combo,comboPlace , Quaternion.identity,canvas.transform);
             spawn = true;
         }
         newcombo.GetComponent<Text>().text = "Combo X" + hitCount.ToString();
@@ -121,7 +142,8 @@ public class Mob : MonoBehaviour {
 
         if (hitCount >= 5)
         {
-           newcombo.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y +0.5f);
+            newcombo.GetComponent<Text>().rectTransform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y +0.5f);
+
         }
 
     }
@@ -132,6 +154,20 @@ public class Mob : MonoBehaviour {
             GameObject newSplash = Instantiate(splash, new Vector3(transform.position.x, -2.2f), Quaternion.identity);
             newSplash.transform.localScale = gameObject.transform.localScale*1.5f; 
             b_splash = true;
+            if (!GameData.gd.bMissions[5])
+            {
+                if (GameData.gd.currentMissions[0] == 5 || GameData.gd.currentMissions[1] == 5 || GameData.gd.currentMissions[2] == 5)
+                {
+                    Missions.progress[5]++;
+                    Debug.Log("Потоплен");
+                    if (Missions.progress[5] >= Missions.f_m_missions[5, GameData.gd.missionRang])
+                    {
+                        GameData.gd.bMissions[5] = true;
+                        SaveLoad.Save();
+                        Debug.Log("Корабли потоплены");
+                    }
+                }
+            }
         }
     }
 

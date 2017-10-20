@@ -18,14 +18,14 @@ public static class Missions {
     {
         currentMissions = new List<int>();
         bCurrentMissons = new List<bool>();
-        progress = new List<float>() {0,0,0,0,0,0,0 };
+        progress = new List<float>() {0,0,0,0,0,0,0,0,0};
         missionRang = 0;
         missionsLeft = new List<int>();
-        f_m_missions = new float[7, 3] { { 30, 200, 300 }, { 10, 200, 300 }, { 1000, 2000, 3000 }, { 25, 50, 100 }, { 25, 50, 100 }, { 25, 50, 100 }, { 1000, 2000, 3000 } };
+        f_m_missions = new float[9, 3] { { 5, 200, 300 }, { 5, 200, 300 }, { 100, 2000, 3000 }, { 3, 50, 100 }, { 3, 50, 100 }, { 5, 50, 100 }, { 100, 2000, 3000 }, {6,7,8}, {50,200,300}};
         b_m_missions = new bool[9];
-        missionHead = new string[] { "Собрать ", "Собрать ", "Пролететь ", "Испачкать ", "Испачкать ",  "Потопить ", "Набрать "};
-        missionBody = new string[] { " монет", " рыб", " метров", " кораблей", " человек", " кораблей", " очков"};
-        for (int i = 0; i < f_m_missions.GetLength(0); i++)
+        missionHead = new string[] { "Собрать ", "Собрать ", "Пролететь ", "Испачкать ", "Испачкать ",  "Потопить ", "Набрать ", "Сделать х", "Пролететь "};
+        missionBody = new string[] { " монет", " рыб", " метров", " кораблей", " человек", " кораблей", " очков", " комбо" , " метров без повреждений"};
+        for (int i = 0; i < GameData.gd.f_m_missions.GetLength(0); i++)
         {
             missionsLeft.Add(i);
         }
@@ -33,9 +33,15 @@ public static class Missions {
 
     public static void RandomMission()
     {
+        currentMissions = new List<int>();
+        if (GameData.gd.missionsLeft != null)
+        {
+            missionsLeft = GameData.gd.missionsLeft;
+        }
         for (int i = 0; i < 3; i++)
         {
-            int r = missionsLeft[Random.Range(missionRang, missionsLeft.Count)];
+            Debug.Log(missionsLeft.Count);
+            int r = missionsLeft[Random.Range(0, missionsLeft.Count)];
             currentMissions.Add(r);
             missionsLeft.RemoveAt(missionsLeft.IndexOf(r));
         }

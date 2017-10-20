@@ -241,10 +241,19 @@ public class Controll : MonoBehaviour
             Destroy(collision.gameObject);
             Instantiate(coinOff,collision.transform.position,Quaternion.identity);
             GameData.gd.f_currentScore += 10;
-            if (GameData.gd.i_currentMission == 0 && !GameData.gd.b_m_missions[GameData.gd.i_currentMission,GameData.gd.i_currentMissionLvl]) 
+            if (!GameData.gd.bMissions[0])
             {
-                GameData.gd.f_currentmissionResult++;
-
+                if (GameData.gd.currentMissions[0] == 0 || GameData.gd.currentMissions[1] == 0 || GameData.gd.currentMissions[2] == 0)
+                {
+                    Missions.progress[0] += 1;
+                    Debug.Log("Монетка");
+                    if (Missions.progress[0] >= Missions.f_m_missions[0, Missions.missionRang])
+                    {
+                        GameData.gd.bMissions[0] = true;
+                        SaveLoad.Save();
+                        Debug.Log("Сбор монет закончен");
+                    }
+                }
             }
         }
     }

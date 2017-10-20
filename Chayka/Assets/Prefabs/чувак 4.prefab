@@ -82,7 +82,7 @@ MonoBehaviour:
   - {fileID: 1202277950748322, guid: 0029d5fe669224e4f8b9ff149c5f1b29, type: 2}
   f_value: 20
   canvas: {fileID: 0}
-  people: 0
+  people: 1
 --- !u!212 &212115714446919346
 SpriteRenderer:
   m_ObjectHideFlags: 1

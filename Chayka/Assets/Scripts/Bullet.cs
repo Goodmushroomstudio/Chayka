@@ -30,6 +30,7 @@ public class Bullet : MonoBehaviour {
             GameData.gd.f_currenthp -= 0.15f*GameData.gd.armor[GameData.gd.armorLevel];
             collision.GetComponent<Controll>().Bang();
             Destroy(this.gameObject);
+            GameData.gd.hit = true;
         }
     }
 }
