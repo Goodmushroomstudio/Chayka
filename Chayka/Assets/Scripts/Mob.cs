@@ -28,10 +28,7 @@ public class Mob : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (ship)
-        {
-          hp = GetComponent<SpriteRenderer>().bounds.size.y;
-        }
+       
         centrMass = transform.position;
         canvas = GameObject.Find("WorldCanvas");
         comboPlace = GetComponent<SpriteRenderer>().bounds.max;

@@ -18,16 +18,27 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.position.x > (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x / 2))
+        if (transform.position.x > (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x / 2) && !GameData.gd.boss)
         {
-            if (transform.position.x < (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x))
+            if (transform.position.x < (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x) && !GameData.gd.boss)
             {
                 f_timer -= 1 * Time.deltaTime;
             }
-            Quaternion newRotation = Quaternion.LookRotation(transform.position -player.transform.position, Vector3.forward);
+            Quaternion newRotation = Quaternion.LookRotation(transform.position - player.transform.position, Vector3.forward);
             newRotation.x = 0;
             newRotation.y = 0;
             transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 100);
+        }
+        if (GameData.gd.boss)
+        {
+            if (transform.position.x < (Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x) && transform.position.x > (Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x))
+            {
+                f_timer -= 1 * Time.deltaTime;
+                Quaternion newRotation = Quaternion.LookRotation(transform.position - player.transform.position, Vector3.forward);
+                newRotation.x = 0;
+                newRotation.y = 0;
+                transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 100);
+            }
         }
         
 

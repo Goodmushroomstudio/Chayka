@@ -70,7 +70,7 @@ public class BichControll : MonoBehaviour {
         {
             for (int i = 0; i < transform.childCount-1; i++)
             {
-                if (Vector3.Magnitude(currentPos - transform.GetChild(i).transform.position) <0.9f)
+                if (Vector3.Magnitude(currentPos - transform.GetChild(i).transform.position) <1.3f)
                 {
                     ret = false;
                 }
