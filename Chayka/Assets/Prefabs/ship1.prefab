@@ -792,7 +792,7 @@ MonoBehaviour:
   bich: 0
   ship: 1
   f_strength: -4
-  hp: 0
+  hp: 2
 --- !u!212 &212264691630256862
 SpriteRenderer:
   m_ObjectHideFlags: 1
