@@ -41,7 +41,6 @@ public class Mob : MonoBehaviour {
             }
         }
 
-
     }
 	
 	// Update is called once per frame
@@ -149,7 +148,15 @@ public class Mob : MonoBehaviour {
         if (!b_splash)
         {
             GameObject newSplash = Instantiate(splash, new Vector3(transform.position.x, -2.2f), Quaternion.identity);
-            newSplash.transform.localScale = gameObject.transform.localScale*1.5f; 
+			if (!GameData.gd.boss) 
+			{
+				newSplash.transform.localScale = gameObject.transform.localScale * 1.5f; 
+			}
+			if (GameData.gd.boss)
+			{
+				newSplash.transform.localScale = gameObject.transform.localScale * 2f;
+				GetComponent<Animator> ().enabled = false;
+			}
             b_splash = true;
             if (!GameData.gd.bMissions[5])
             {

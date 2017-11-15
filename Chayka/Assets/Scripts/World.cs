@@ -98,6 +98,7 @@ public class World : MonoBehaviour {
                 SaveLoad.Save();
             }
         }
+		GameData.gd.boss = true;
         GameData.gd.death = false;
         GameData.gd.spLevel = 3;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
@@ -144,7 +145,6 @@ public class World : MonoBehaviour {
         CloudGeneration();
         canvas = GameObject.Find("Canvas");
         range = 0;
-        GameData.gd.boss = false;
         if(GameData.gd.boss)
         {
             BossGeneration();
@@ -316,7 +316,7 @@ public class World : MonoBehaviour {
         {
             Instantiate(ships[Random.Range(0, 7)], coord, Quaternion.identity, transform);
         }
-        else if (GameData.gd.f_range > 1500 && GameData.gd.f_range < 2000)
+        else if (GameData.gd.f_range > 1500)
         {
             Instantiate(ships[Random.Range(0, ships.Length-1)], coord, Quaternion.identity, transform);
         }
