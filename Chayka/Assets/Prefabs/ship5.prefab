@@ -407,7 +407,7 @@ MonoBehaviour:
   bich: 0
   ship: 1
   f_strength: -4
-  hp: 0
+  hp: 1.5
 --- !u!114 &114359812186847246
 MonoBehaviour:
   m_ObjectHideFlags: 1

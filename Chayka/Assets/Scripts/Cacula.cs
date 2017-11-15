@@ -8,7 +8,7 @@ public class Cacula : MonoBehaviour {
     public GameObject textMesh;
     public float massEffect;
 	void Start () {
-
+        transform.localScale += new Vector3(((float)GameData.gd.massFecalLevel) / 30, 0, 0);
     }
 	
 	// Update is called once per frame

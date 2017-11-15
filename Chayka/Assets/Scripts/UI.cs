@@ -9,6 +9,7 @@ public class UI : MonoBehaviour {
     public Text t_currentScoreText;
     public Text t_coinText;
     public Text t_currentCoinText;
+    public Sprite[] missioSprites;
     int oldCoin;
     public int childPanel;
 
@@ -24,11 +25,28 @@ public class UI : MonoBehaviour {
         transform.GetChild(childPanel).GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.kishechnikLevel / 10;
         transform.GetChild(childPanel).GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.fecalReloadLevel / 10;
         transform.GetChild(childPanel).GetChild(0).GetChild(8).GetChild(0).GetComponent<Image>().fillAmount = (float)GameData.gd.maneurLevel / 10;
-        for (int i = 0; i < 3; i++)
+        if (!GameData.gd.unique)
         {
-            transform.GetChild(childPanel).GetChild(7).GetChild(i).GetComponent<Text>().text = Missions.missionHead[GameData.gd.currentMissions[i]] + Missions.f_m_missions[GameData.gd.currentMissions[i], GameData.gd.missionRang] + Missions.missionBody[GameData.gd.currentMissions[i]];
+            for (int i = 0; i < 3; i++)
+            {
+                transform.GetChild(childPanel).GetChild(7).GetChild(i).GetComponent<Text>().text = Missions.missionHead[GameData.gd.currentMissions[i]] + Missions.f_m_missions[GameData.gd.currentMissions[i], GameData.gd.missionRang] + Missions.missionBody[GameData.gd.currentMissions[i]];
+                transform.GetChild(0).GetChild(2).GetChild(i).GetChild(0).GetComponent<Image>().sprite = missioSprites[GameData.gd.currentMissions[i]];
+                transform.GetChild(childPanel).GetChild(7).GetChild(i).GetChild(0).GetComponent<Image>().sprite = missioSprites[GameData.gd.currentMissions[i]];
+            }
         }
-
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                transform.GetChild(childPanel).GetChild(7).GetChild(i).GetComponent<Text>().enabled = false;
+                transform.GetChild(0).GetChild(2).GetChild(i).gameObject.SetActive(false);
+                transform.GetChild(childPanel).GetChild(7).GetChild(i).GetChild(0).GetComponent<Image>().enabled = false;
+            }
+            transform.GetChild(0).GetChild(2).GetChild(3).gameObject.SetActive(true);
+            transform.GetChild(childPanel).GetChild(7).GetChild(0).GetComponent<Text>().text = Missions.uniqueBody[GameData.gd.uniqueRang];
+            transform.GetChild(0).GetChild(4).GetComponent<Image>().enabled = false;
+            transform.GetChild(0).GetChild(5).GetComponent<Image>().enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -63,10 +81,21 @@ public class UI : MonoBehaviour {
             if (GameData.gd.bMissions[GameData.gd.currentMissions[i]])
             {
                 transform.GetChild(0).GetChild(2).GetChild(i).GetComponent<Image>().fillAmount = 1;
+                transform.GetChild(childPanel).GetChild(7).GetChild(i).GetChild(0).GetChild(0).GetComponent<Text>().text = "100%";
+                transform.GetChild(childPanel).GetChild(7).GetChild(i).GetChild(0).GetChild(0).GetComponent<Text>().color = Color.green;
             }
             else
             {
                 transform.GetChild(0).GetChild(2).GetChild(i).GetComponent<Image>().fillAmount = Missions.progress[GameData.gd.currentMissions[i]] / Missions.f_m_missions[GameData.gd.currentMissions[i], GameData.gd.missionRang];
+                transform.GetChild(childPanel).GetChild(7).GetChild(i).GetChild(0).GetChild(0).GetComponent<Text>().text = Mathf.Ceil((int)(Missions.progress[GameData.gd.currentMissions[i]] / Missions.f_m_missions[GameData.gd.currentMissions[i], GameData.gd.missionRang] * 100)).ToString() + "%";
+            }
+        }
+
+        if (GameData.gd.unique)
+        {
+            if (GameData.gd.uniqueRang == 0)
+            {
+                transform.GetChild(0).GetChild(2).GetChild(3).GetComponent<Image>().fillAmount = GameData.gd.uniqueShipsCurrent / 9;
             }
         }
 

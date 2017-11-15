@@ -10,6 +10,7 @@ public class World : MonoBehaviour {
     public GameObject backGround;
     public GameObject line;
     public GameObject[] ships;
+    bool[] shipsUnique;
     public GameObject bich;
     public Sprite[] cloudSprites;
     public GameObject textPrefab;
@@ -83,25 +84,15 @@ public class World : MonoBehaviour {
                     }
                 }
             }
-            else if (c == 9)
+            else if (c == 9 && !GameData.gd.unique)
             {
-                GameData.gd.missionRang++;
-                GameData.gd.bMissions = new bool[9];
-                for(int i = 0; i< GameData.gd.f_m_missions.GetLength(0); i++)
-                {
-                    GameData.gd.missionsLeft.Add(i);
-                }
-                
-                Missions.RandomMission();
-                SaveLoad.Save();
+                GameData.gd.unique = true;
+                Missions.UniqueMission();
             }
         }
         GameData.gd.death = false;
-        GameData.gd.spLevel = 3;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
-        GameData.gd.f_currentsp = 50f;
-        GameData.gd.kishechnikLevel = 9;
-        GameData.gd.massFecalLevel = 9;
+        GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
         GameData.gd.f_currentScore = 0;
         GameData.gd.f_magnY = 0;
         GameData.gd.f_speed = 1;
@@ -138,6 +129,8 @@ public class World : MonoBehaviour {
         CloudGeneration();
         canvas = GameObject.Find("Canvas");
         range = 0;
+        shipsUnique = new bool[9];
+        CheckUniqueShipMission();
 	}
 
     // Update is called once per frame
@@ -187,6 +180,8 @@ public class World : MonoBehaviour {
                 }
             }
         }
+
+
         if (range <= 0)
         {
             range = 10 - Mathf.Abs(range);
@@ -239,9 +234,6 @@ public class World : MonoBehaviour {
             }
         }
 
-
-
-
     }
     public void CloudGeneration()
     {
@@ -288,25 +280,34 @@ public class World : MonoBehaviour {
     }
     public void ShipsGeheration()
     {
-        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 50, -3.2f);
+        Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 5, -3.2f);
         if (GameData.gd.f_range > 0 && GameData.gd.f_range<200)
         {
-            Instantiate(ships[Random.Range(0, 3)], coord, Quaternion.identity, transform);
+            int r = Random.Range(0, 3);
+            Instantiate(ships[r], coord, Quaternion.identity, transform);
+            shipsUnique[r] = true;
+            
         }
         else if (GameData.gd.f_range>200 && GameData.gd.f_range < 1000)
         {
-            Instantiate(ships[Random.Range(0, 5)], coord, Quaternion.identity, transform);
+            int r = Random.Range(0, 5);
+            Instantiate(ships[r], coord, Quaternion.identity, transform);
+            shipsUnique[r] = true;
         }
         else if(GameData.gd.f_range > 1000 && GameData.gd.f_range < 1500)
         {
-            Instantiate(ships[Random.Range(0, 7)], coord, Quaternion.identity, transform);
+            int r = Random.Range(0, 7);
+            Instantiate(ships[r], coord, Quaternion.identity, transform);
+            shipsUnique[r] = true;
         }
         else if (GameData.gd.f_range > 1500 && GameData.gd.f_range < 2000)
         {
-            Instantiate(ships[Random.Range(0, ships.Length-1)], coord, Quaternion.identity, transform);
+            int r = Random.Range(0, ships.Length);
+            Instantiate(ships[r], coord, Quaternion.identity, transform);
+            shipsUnique[r] = true;
         }
-
-       
+        CheckUniqueShipMission();
+        
         
     }
 
@@ -328,6 +329,37 @@ public class World : MonoBehaviour {
             return true;
         else
             return false;
+    }
+
+    void CheckUniqueShipMission()
+    {
+        if (GameData.gd.unique && GameData.gd.uniqueRang == 0)
+        {
+            int c = 0;
+            for (int i = 0; i < shipsUnique.Length; i++)
+            {
+                if (shipsUnique[i])
+                {
+                    c++;
+                    
+                }
+                Debug.Log(c.ToString() + " count; " + i.ToString() + " i;" + shipsUnique[i].ToString());
+            }
+            GameData.gd.uniqueShipsCurrent = c;
+            if (c == shipsUnique.Length)
+            {
+                GameData.gd.unique = false;
+                GameData.gd.uniqueRang = 1;
+                GameData.gd.missionRang++;
+                GameData.gd.bMissions = new bool[9];
+                for (int i = 0; i < GameData.gd.f_m_missions.GetLength(0); i++)
+                {
+                    GameData.gd.missionsLeft.Add(i);
+                }
+                Missions.RandomMission();
+                SaveLoad.Save();
+            }
+        }
     }
 
 

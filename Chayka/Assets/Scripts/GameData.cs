@@ -59,6 +59,10 @@ public class GameData
     public bool[] bMissions;
     public bool hit;
     public int missionRang;
+    public bool unique;
+    public int uniqueRang;
+    public bool fireButton;
+    public float uniqueShipsCurrent;
     public GameData()
     {
         i_currentChar = 0;
@@ -91,6 +95,9 @@ public class GameData
         i_currentMissionLvl = 0;
         bMissions = new bool[9];
         missionRang = 0;
+        unique = false;
+        uniqueRang = 0;
+        uniqueShipsCurrent = 0;
     }
     
 
