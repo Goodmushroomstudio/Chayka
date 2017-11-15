@@ -28,10 +28,7 @@ public class Mob : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (ship)
-        {
-          hp = GetComponent<SpriteRenderer>().bounds.size.y;
-        }
+       
         centrMass = transform.position;
         canvas = GameObject.Find("WorldCanvas");
         comboPlace = GetComponent<SpriteRenderer>().bounds.max;
@@ -43,7 +40,6 @@ public class Mob : MonoBehaviour {
                 transform.GetChild(transform.childCount - 1).GetChild(i).GetComponent<Anim>().f_interval = Random.Range(5, 10);
             }
         }
-
 
     }
 	
@@ -152,7 +148,15 @@ public class Mob : MonoBehaviour {
         if (!b_splash)
         {
             GameObject newSplash = Instantiate(splash, new Vector3(transform.position.x, -2.2f), Quaternion.identity);
-            newSplash.transform.localScale = gameObject.transform.localScale*1.5f; 
+			if (!GameData.gd.boss) 
+			{
+				newSplash.transform.localScale = gameObject.transform.localScale * 1.5f; 
+			}
+			if (GameData.gd.boss)
+			{
+				newSplash.transform.localScale = gameObject.transform.localScale * 2f;
+				GetComponent<Animator> ().enabled = false;
+			}
             b_splash = true;
             if (!GameData.gd.bMissions[5])
             {

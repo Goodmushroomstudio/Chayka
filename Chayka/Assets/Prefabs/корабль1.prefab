@@ -281,7 +281,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1697922732128608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.39, y: -1.24, z: 0}
+  m_LocalPosition: {x: 9.24, y: -3.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4871184295382294}
@@ -530,7 +530,7 @@ MonoBehaviour:
   bich: 0
   ship: 1
   f_strength: -4
-  hp: 0
+  hp: 4
 --- !u!114 &114629055855977066
 MonoBehaviour:
   m_ObjectHideFlags: 1

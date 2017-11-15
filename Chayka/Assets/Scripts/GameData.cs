@@ -6,6 +6,11 @@ using System.Collections.Generic;
 public class GameData
 {
     public static GameData gd = new GameData();
+    public float f_screen_x_min;
+    public float f_screen_x_max;
+    public float f_screen_y_min;
+    public float f_screen_y_max;
+    public float f_screen_centr;
     public float f_axisY; // в Joystick
     public float f_axysX;
     public float f_speed;
@@ -52,6 +57,7 @@ public class GameData
     public bool coinBuster;
     public bool fishBuster;
     public bool magnerBuster;
+    public bool boss;
     public string[] s_m_name;
     public List<int> missionsLeft;
     public List<int> currentMissions;
@@ -65,6 +71,10 @@ public class GameData
     public float uniqueShipsCurrent;
     public GameData()
     {
+        f_screen_x_min = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x;
+        f_screen_x_max = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x;
+        f_screen_y_min = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).y;
+        f_screen_y_max = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height)).y;
         i_currentChar = 0;
         f_axisY = 0;
         f_speed = 0;

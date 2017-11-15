@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class World : MonoBehaviour {
     public GameObject cloud;
@@ -12,10 +13,10 @@ public class World : MonoBehaviour {
     public GameObject[] ships;
     bool[] shipsUnique;
     public GameObject bich;
+    public GameObject boss;
     public Sprite[] cloudSprites;
     public GameObject textPrefab;
     [Range(0,100)]
-
     public float f_speed;
     public float cloudChanse;
     public float fishChanse;
@@ -33,6 +34,7 @@ public class World : MonoBehaviour {
     int schetchik;
     public Sprite[] back;
     GameObject canvas;
+    public bool b_boss;
 
     void Awake()
     {
@@ -90,6 +92,7 @@ public class World : MonoBehaviour {
                 Missions.UniqueMission();
             }
         }
+		GameData.gd.boss = true;
         GameData.gd.death = false;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
         GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
@@ -119,6 +122,10 @@ public class World : MonoBehaviour {
         {
             fishChanse = 1;
         }
+        GameData.gd.f_screen_x_min = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x;
+        GameData.gd.f_screen_x_max = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x;
+        GameData.gd.f_screen_y_min = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).y;
+        GameData.gd.f_screen_y_max = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height)).y;
     }
 
     // Use this for initialization
@@ -131,11 +138,19 @@ public class World : MonoBehaviour {
         range = 0;
         shipsUnique = new bool[9];
         CheckUniqueShipMission();
+        if(GameData.gd.boss)
+        {
+            BossGeneration();
+        }
 	}
 
     // Update is called once per frame
     void Update()
     {
+        GameData.gd.f_screen_x_min = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x;
+        GameData.gd.f_screen_x_max = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x;
+        GameData.gd.f_screen_y_min = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).y;
+        GameData.gd.f_screen_y_max = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height)).y;
         range -= 3 * GameData.gd.f_speed * Time.deltaTime;
         GameData.gd.f_range += 3 * GameData.gd.f_speed * Time.deltaTime;
         if (!GameData.gd.bMissions[2])
@@ -219,13 +234,13 @@ public class World : MonoBehaviour {
                 f_timerBackGround = f_reloadBacground;
             }
             f_timerShips -= 1 * Time.deltaTime;
-            if (f_timerShips <= 0 && !GameData.gd.bichGenered)
+            if (f_timerShips <= 0 && !GameData.gd.bichGenered&&!GameData.gd.boss)
             {
                 ShipsGeheration();
                 f_reloadships = Random.Range(3, 5);
                 f_timerShips = f_reloadships;
             }
-            if (GameData.gd.f_range >= schetchik * 500)
+            if (GameData.gd.f_range >= schetchik * 500&&!GameData.gd.boss)
             {
                 schetchik++;
                 GameData.gd.bichGenered = true;
@@ -300,7 +315,7 @@ public class World : MonoBehaviour {
             Instantiate(ships[r], coord, Quaternion.identity, transform);
             shipsUnique[r] = true;
         }
-        else if (GameData.gd.f_range > 1500 && GameData.gd.f_range < 2000)
+        else if (GameData.gd.f_range > 1500)
         {
             int r = Random.Range(0, ships.Length);
             Instantiate(ships[r], coord, Quaternion.identity, transform);
@@ -320,6 +335,16 @@ public class World : MonoBehaviour {
     {
         Vector3 coord = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height)).x + 10, -2.8f);
         Instantiate(bich, coord, Quaternion.identity, transform);
+    }
+    public void BossGeneration()
+    {
+        if (!b_boss)
+        {
+            Vector3 coord = new Vector3(GameData.gd.f_screen_x_max, GameData.gd.f_screen_y_min-8);
+            boss = Instantiate(boss, coord, Quaternion.identity);
+            b_boss = true;
+        }
+
     }
 
     public bool Chanse(float c)

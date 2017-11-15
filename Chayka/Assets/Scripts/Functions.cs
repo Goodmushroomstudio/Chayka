@@ -6,8 +6,16 @@ public class Functions : MonoBehaviour {
 
     public void StartGame()
     {
-        SaveLoad.Save();
-        SceneManager.LoadScene("Main");
+        if (!GameData.gd.boss)
+        {
+            SaveLoad.Save();
+            SceneManager.LoadScene("Main");
+        }
+        else
+        {
+            SaveLoad.Save();
+            SceneManager.LoadScene("boss");
+        }
     }
     public void Menu()
     {
