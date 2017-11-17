@@ -170,7 +170,7 @@ public class Controll : MonoBehaviour
 
 
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
         if (Input.GetMouseButton(1) && GameData.gd.f_currentsp > 0.20f && timer == 0)
         {
             Pocaculki();
@@ -202,7 +202,7 @@ public class Controll : MonoBehaviour
         
 
 
-#endif
+//#endif
         if (f_focusPoint.x > minX)
         {
             f_focusPoint -= new Vector3(4, 0, 0) * Time.deltaTime;

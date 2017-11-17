@@ -86,14 +86,50 @@ public class World : MonoBehaviour {
                     }
                 }
             }
-            else if (c == 9 && !GameData.gd.unique)
+            else if (c == 9)
             {
-                GameData.gd.unique = true;
-                Missions.UniqueMission();
+                if (!GameData.gd.unique)
+                {
+                    if (GameData.gd.uniqueRang == 0 || GameData.gd.uniqueRang == 1 || GameData.gd.uniqueRang == 2)
+                    {
+                        GameData.gd.unique = true;
+                        Missions.UniqueMission();
+                        if (GameData.gd.uniqueRang == 2)
+                        {
+                            GameData.gd.boss = true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (GameData.gd.uniqueDone)
+                    {
+                        GameData.gd.unique = false;
+                        GameData.gd.uniqueRang++;
+                        GameData.gd.missionRang++;
+                        GameData.gd.missionRang = Mathf.Clamp(GameData.gd.missionRang, 0, 2);
+                        GameData.gd.bMissions = new bool[9];
+                        for (int i = 0; i < GameData.gd.f_m_missions.GetLength(0); i++)
+                        {
+                            GameData.gd.missionsLeft.Add(i);
+                        }
+                        GameData.gd.uniqueDone = false;
+                        Missions.RandomMission();
+                        SaveLoad.Save();
+                    }
+                }
+
             }
         }
-		GameData.gd.boss = true;
         GameData.gd.death = false;
+        GameData.gd.armorLevel = 10;
+        GameData.gd.birdSpeedLevel = 10;
+        GameData.gd.fecalReloadLevel = 10;
+        GameData.gd.hpLevel = 10;
+        GameData.gd.jeludokLevel = 10;
+        GameData.gd.kishechnikLevel = 10;
+        GameData.gd.massFecalLevel = 10;
+        GameData.gd.spLevel = 10;
         GameData.gd.f_currenthp = GameData.gd.f_hp[GameData.gd.hpLevel];
         GameData.gd.f_currentsp = GameData.gd.f_sp[GameData.gd.spLevel];
         GameData.gd.f_currentScore = 0;
@@ -102,6 +138,7 @@ public class World : MonoBehaviour {
         GameData.gd.f_range = 0;
         GameData.gd.currentCoin = 0;
         GameData.gd.f_currentmissionResult = 0;
+        GameData.gd.uniqueShipsCurrent = 0;
         GameData.gd.hit = false;
         Missions.progress = new List<float>() { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         if (GameData.gd.coinBuster)
@@ -126,6 +163,7 @@ public class World : MonoBehaviour {
         GameData.gd.f_screen_x_max = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x;
         GameData.gd.f_screen_y_min = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).y;
         GameData.gd.f_screen_y_max = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height)).y;
+        CheckUniqueUpMission();
     }
 
     // Use this for initialization
@@ -138,6 +176,7 @@ public class World : MonoBehaviour {
         range = 0;
         shipsUnique = new bool[9];
         CheckUniqueShipMission();
+        
         if(GameData.gd.boss)
         {
             BossGeneration();
@@ -366,25 +405,26 @@ public class World : MonoBehaviour {
                 if (shipsUnique[i])
                 {
                     c++;
-                    
                 }
-                Debug.Log(c.ToString() + " count; " + i.ToString() + " i;" + shipsUnique[i].ToString());
             }
             GameData.gd.uniqueShipsCurrent = c;
-            if (c == shipsUnique.Length)
-            {
-                GameData.gd.unique = false;
-                GameData.gd.uniqueRang = 1;
-                GameData.gd.missionRang++;
-                GameData.gd.bMissions = new bool[9];
-                for (int i = 0; i < GameData.gd.f_m_missions.GetLength(0); i++)
-                {
-                    GameData.gd.missionsLeft.Add(i);
-                }
-                Missions.RandomMission();
-                SaveLoad.Save();
-            }
         }
+    }
+
+    void CheckUniqueUpMission()
+    {
+        int c = 0;
+        c += GameData.gd.armorLevel;
+        c += GameData.gd.birdSpeedLevel;
+        c += GameData.gd.fecalReloadLevel;
+        c += GameData.gd.hpLevel;
+        c += GameData.gd.jeludokLevel;
+        c += GameData.gd.kishechnikLevel;
+        c += GameData.gd.maneurLevel;
+        c += GameData.gd.massFecalLevel;
+        c += GameData.gd.spLevel;
+        GameData.gd.uniqueLvlUp = c;
+
     }
 
 

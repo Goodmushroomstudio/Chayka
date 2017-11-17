@@ -33,7 +33,7 @@ public class Mob : MonoBehaviour {
         canvas = GameObject.Find("WorldCanvas");
         comboPlace = GetComponent<SpriteRenderer>().bounds.max;
         f_alpha = 1;
-        if (!bich)
+        if (!bich && !GameData.gd.boss)
         {
             for (int i = 0; i < transform.GetChild(transform.childCount - 1).childCount; i++)
             {
@@ -156,6 +156,9 @@ public class Mob : MonoBehaviour {
 			{
 				newSplash.transform.localScale = gameObject.transform.localScale * 2f;
 				GetComponent<Animator> ().enabled = false;
+                GameData.gd.boss = false;
+                GameData.gd.uniqueDone = true;
+                SaveLoad.Save();
 			}
             b_splash = true;
             if (!GameData.gd.bMissions[5])
