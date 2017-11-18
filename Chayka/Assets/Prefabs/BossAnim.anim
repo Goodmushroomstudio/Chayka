@@ -67,10 +67,16 @@ AnimationClip:
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
-        time: 22.033333
-        value: {x: -16.42, y: -2.7403278, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        time: 18.466667
+        value: {x: -20.8, y: -10.656121, z: 0}
+        inSlope: {x: 0, y: 0.34531754, z: 0}
+        outSlope: {x: 0, y: 0.34531754, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 21.95
+        value: {x: -20, y: -2.7524471, z: 0}
+        inSlope: {x: 0.30331728, y: 0.004594882, z: 0}
+        outSlope: {x: 0.30331728, y: 0.004594882, z: 0}
         tangentMode: 0
       - serializedVersion: 2
         time: 29.016666
@@ -205,13 +211,31 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 1
+        time: 3.7666667
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
+        time: 4.7166667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
         time: 14.8
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 22.966667
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 23.916668
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -234,13 +258,31 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 1
+        time: 5.1666665
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
+        time: 5.6666665
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
         time: 14.8
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 24.366667
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 24.866667
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -297,7 +339,7 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 4.5333333
+        time: 2.6333334
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -307,6 +349,47 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_Enabled
     path: pushka
+    classID: 114
+    script: {fileID: 11500000, guid: 0235429911be63347805cc3f2c1b2010, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.7166667
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 5.1666665
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 23.916668
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 24.366667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: "\u0432\u043E\u0435\u043D\u043D\u0430\u044F \u043F\u0443\u0448\u043A\u0430
+      3 (1)"
     classID: 114
     script: {fileID: 11500000, guid: 0235429911be63347805cc3f2c1b2010, type: 3}
   m_PPtrCurves: []
@@ -380,6 +463,13 @@ AnimationClip:
       typeID: 114
       customType: 24
       isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 490882815
+      attribute: 3305885265
+      script: {fileID: 11500000, guid: 0235429911be63347805cc3f2c1b2010, type: 3}
+      typeID: 114
+      customType: 24
+      isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -430,10 +520,16 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 22.033333
-        value: -16.42
+        time: 18.466667
+        value: -20.8
         inSlope: 0
         outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 21.95
+        value: -20
+        inSlope: 0.30331728
+        outSlope: 0.30331728
         tangentMode: 136
       - serializedVersion: 2
         time: 29.016666
@@ -482,10 +578,16 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 22.033333
-        value: -2.7403278
-        inSlope: 0
-        outSlope: 0
+        time: 18.466667
+        value: -10.656121
+        inSlope: 0.34531754
+        outSlope: 0.34531754
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 21.95
+        value: -2.7524471
+        inSlope: 0.004594882
+        outSlope: 0.004594882
         tangentMode: 136
       - serializedVersion: 2
         time: 29.016666
@@ -534,7 +636,13 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 22.033333
+        time: 18.466667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 21.95
         value: 0
         inSlope: 0
         outSlope: 0
@@ -732,13 +840,31 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 1
+        time: 3.7666667
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
+        time: 4.7166667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
         time: 14.8
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 22.966667
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 23.916668
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -761,13 +887,31 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 1
+        time: 5.1666665
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
+        time: 5.6666665
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
         time: 14.8
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 24.366667
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 24.866667
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -908,7 +1052,7 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 4.5333333
+        time: 2.6333334
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -918,6 +1062,47 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_Enabled
     path: pushka
+    classID: 114
+    script: {fileID: 11500000, guid: 0235429911be63347805cc3f2c1b2010, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 4.7166667
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 5.1666665
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 23.916668
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 24.366667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: "\u0432\u043E\u0435\u043D\u043D\u0430\u044F \u043F\u0443\u0448\u043A\u0430
+      3 (1)"
     classID: 114
     script: {fileID: 11500000, guid: 0235429911be63347805cc3f2c1b2010, type: 3}
   m_EulerEditorCurves:
