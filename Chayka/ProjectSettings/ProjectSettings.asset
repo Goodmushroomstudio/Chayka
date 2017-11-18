@@ -593,9 +593,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: bc01a83d-3b8c-414c-a966-c8f1ecb38d83
-  projectName: Chayka
-  organizationId: mike-anderson-3663706
+  cloudProjectId: e007f6d0-ccb1-47b5-9a1e-66dc9427f7d3
+  projectName: Seagull Rush
+  organizationId: pe4atnik
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
