@@ -66,9 +66,12 @@ public class GameData
     public bool hit;
     public int missionRang;
     public bool unique;
+    public bool uniqueDone;
     public int uniqueRang;
     public bool fireButton;
     public float uniqueShipsCurrent;
+    public int uniqueLvlUp;
+    public int locNum;
     public GameData()
     {
         f_screen_x_min = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x;
@@ -78,7 +81,7 @@ public class GameData
         i_currentChar = 0;
         f_axisY = 0;
         f_speed = 0;
-        f_m_missions = new float[9, 3] { { 5, 200, 300 }, { 5, 200, 300 } , { 100, 2000, 3000 } , { 3, 50, 100 } , { 3, 50, 100 } , { 5, 50, 100 } , { 100, 2000, 3000 },{6,7,8}, {50,200,300} };
+        f_m_missions = new float[9, 3] { { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } };
         b_m_missions = new bool[9, 3];
         f_hp = new float[] { 1, 1.10f, 1.20f, 1.30f, 1.40f, 1.50f, 1.60f, 1.70f, 1.80f, 2f, 2.5f };
         f_sp = new float[] { 1, 1.1f, 1.2f, 1.3f, 1.4f, 1.5f, 1.6f, 1.7f, 1.8f, 2f, 2.5f };

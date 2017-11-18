@@ -20,11 +20,11 @@ public static class Missions {
         bCurrentMissons = new List<bool>();
         progress = new List<float>() {0,0,0,0,0,0,0,0,0};
         missionsLeft = new List<int>();
-        f_m_missions = new float[9, 3] { { 1, 200, 300 }, { 1, 200, 300 }, { 1, 2000, 3000 }, { 1, 50, 100 }, { 1, 50, 100 }, { 1, 15, 30 }, { 1, 2000, 3000 }, {1,6,7}, {1,300,350}};
+        f_m_missions = new float[9, 3] { { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, {1,2,3}, {1,2,3}};
         b_m_missions = new bool[9];
-        missionHead = new string[] { "Собрать ", "Собрать ", "Пролететь ", "Испачкать ", "Испачкать ",  "Потопить ", "Набрать ", "Сделать х", ""};
-        missionBody = new string[] { " монет", " рыб", " метров", " кораблей", " человек", " кораблей", " очков", " комбо" , " метров без урона"};
-        uniqueBody = new string[] {"Увидеть все виды кораблей", "Приобрести все улучшения", "Потопить босса" };
+        missionHead = new string[] { Loc.l[GameData.gd.locNum, 0], Loc.l[GameData.gd.locNum, 0], Loc.l[GameData.gd.locNum, 1], Loc.l[GameData.gd.locNum, 2], Loc.l[GameData.gd.locNum, 2], Loc.l[GameData.gd.locNum, 3], Loc.l[GameData.gd.locNum, 4], Loc.l[GameData.gd.locNum, 5], Loc.l[GameData.gd.locNum, 6] };
+        missionBody = new string[] { Loc.l[GameData.gd.locNum, 7], Loc.l[GameData.gd.locNum, 8], Loc.l[GameData.gd.locNum, 9], Loc.l[GameData.gd.locNum, 10], Loc.l[GameData.gd.locNum, 11], Loc.l[GameData.gd.locNum, 10], Loc.l[GameData.gd.locNum, 12], Loc.l[GameData.gd.locNum, 13], Loc.l[GameData.gd.locNum, 14] };
+        uniqueBody = new string[] { Loc.l[GameData.gd.locNum, 15], Loc.l[GameData.gd.locNum, 16], Loc.l[GameData.gd.locNum, 17] };
         for (int i = 0; i < GameData.gd.f_m_missions.GetLength(0); i++)
         {
             missionsLeft.Add(i);
@@ -40,7 +40,6 @@ public static class Missions {
         }
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log(missionsLeft.Count);
             int r = missionsLeft[Random.Range(0, missionsLeft.Count)];
             currentMissions.Add(r);
             missionsLeft.RemoveAt(missionsLeft.IndexOf(r));
